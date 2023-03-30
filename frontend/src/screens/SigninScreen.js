@@ -34,7 +34,7 @@ export default function SigninScreen() {
       toast.error(getError(err));
     }
   };
-
+//user info 
   useEffect(() => {
     if (userInfo) {
       navigate(redirect);
