@@ -10,7 +10,6 @@ userRouter.post(
   '/signin',
   expressAsyncHandler(async (req, res) => {
     const user = await User.findOne({ email: req.body.email });
-    console.log(req.body)
     if (user) {
       if (bcrypt.compareSync(req.body.password, user.password)) {
         res.send({
