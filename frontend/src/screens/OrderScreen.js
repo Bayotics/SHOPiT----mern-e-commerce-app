@@ -11,6 +11,8 @@ import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { Store } from '../Store';
 import { getError } from '../utils';
+import {usePaystackPayment} from "react-paystack";
+
 
 function reducer(state, action) {
   switch (action.type) {
@@ -58,9 +60,40 @@ export default function OrderScreen() {
     if (!order._id || (order._id && order._id !== orderId)) {
       fetchOrder();
     }else{
-      
+
     }
   }, [order, userInfo, orderId, navigate]);
+
+  const config = {
+      reference: (new Date()).getTime().toString(),
+      email: "user@example.com",
+      amount: (order.totalPrice) * 100, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
+      publicKey: 'pk_test_8d9e427702c5b457180503dd7a71fc3c41e276de',
+  };
+  
+  // you can call this function anything
+  const onSuccess = (reference) => {
+    // Implementation for whatever you want to do with reference and after success call.
+    console.log(reference);
+  };
+
+  // you can call this function anything
+  const onClose = () => {
+    // implementation for  whatever you want to do when the Paystack dialog closed.
+    console.log('closed')
+  }
+
+  const PaystackHookExample = () => {
+      const initializePayment = usePaystackPayment(config);
+      return (
+        <div>
+            <button onClick={() => {
+                initializePayment(onSuccess, onClose)
+            }}>Paystack Hooks Implementation</button>
+        </div>
+      );
+  };
+
   return loading ? (
     <LoadingBox></LoadingBox>
   ) : error ? (
@@ -164,6 +197,7 @@ export default function OrderScreen() {
                     <Col>
                       <strong>${order.totalPrice.toFixed(2)}</strong>
                     </Col>
+                    <PaystackHookExample />
                   </Row>
                 </ListGroup.Item>
               </ListGroup>
