@@ -23,6 +23,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get('api/keys/paystack', (res, req) => {
+  res.send(process.env.PAYSTACK_KEY)
+})
 app.use('/api/seed', seedRouter);
 app.use('/api/products', productRouter);
 app.use('/api/users', userRouter);

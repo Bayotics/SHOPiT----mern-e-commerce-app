@@ -57,6 +57,8 @@ export default function OrderScreen() {
     }
     if (!order._id || (order._id && order._id !== orderId)) {
       fetchOrder();
+    }else{
+      
     }
   }, [order, userInfo, orderId, navigate]);
   return loading ? (
