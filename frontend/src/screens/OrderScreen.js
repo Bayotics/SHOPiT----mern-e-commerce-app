@@ -63,23 +63,20 @@ export default function OrderScreen() {
 
     }
   }, [order, userInfo, orderId, navigate]);
-
+// paystack implementation
   const config = {
       reference: (new Date()).getTime().toString(),
       email: "user@example.com",
-      amount: (order.totalPrice) * 100, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
+      amount: (order.totalPrice) * 100, 
       publicKey: 'pk_test_8d9e427702c5b457180503dd7a71fc3c41e276de',
   };
   
-  // you can call this function anything
   const onSuccess = (reference) => {
-    // Implementation for whatever you want to do with reference and after success call.
-    console.log(reference);
+    console.log(reference)
+    console.log(reference.status);
   };
 
-  // you can call this function anything
   const onClose = () => {
-    // implementation for  whatever you want to do when the Paystack dialog closed.
     console.log('closed')
   }
 
@@ -89,7 +86,7 @@ export default function OrderScreen() {
         <div>
             <button onClick={() => {
                 initializePayment(onSuccess, onClose)
-            }}>Paystack Hooks Implementation</button>
+            }}>Pay with Paystack</button>
         </div>
       );
   };
