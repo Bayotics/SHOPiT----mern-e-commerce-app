@@ -71,9 +71,45 @@ export default function OrderScreen() {
       publicKey: 'pk_test_8d9e427702c5b457180503dd7a71fc3c41e276de',
   };
   
-  const onSuccess = async (reference) => {
-    
+  const onSuccess = (reference) => {
+    const postFunc = async () => {
+       await axios.post(
+        '/api/payments',
+        {
+          message: reference.message,
+          paidAt: order.paidAt,
+          reference: reference.reference,
+          status: reference.status,
+          transaction: reference.transaction,
+          shippingAddress: order.shippingAddress.address,
+          totalPrice: order.totalPrice
+        },
+        {
+          headers: {
+            authorization: `Bearer ${userInfo.token}`,
+          },
+        }
+      )
+    };
+    postFunc();
 
+      // await axios.post(
+      //   '/api/payments',
+      //   {
+      //     message: reference.message,
+      //     paidAt: order.paidAt,
+      //     reference: reference.reference,
+      //     status: reference.status,
+      //     transaction: reference.transaction,
+      //     shippingAddress: order.shippingAddress.address,
+      //     totalPrice: order.totalPrice
+      //   },
+      //   {
+      //     headers: {
+      //       authorization: `Bearer ${userInfo.token}`,
+      //     },
+      //   }
+      // )
     console.log(reference)
     console.log(reference.status);
   };
@@ -129,7 +165,7 @@ export default function OrderScreen() {
               <Card.Text>
                 <strong>Method:</strong> {order.paymentMethod}
               </Card.Text>
-              {onSuccess ? (
+              {order.isDelivered  ? (
                 <MessageBox variant="success">
                   Paid at {order.paidAt}
                 </MessageBox>
