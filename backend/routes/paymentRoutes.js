@@ -8,7 +8,7 @@ paymentRouter.post(
   '/',
   isAuth,
   expressAsyncHandler(async (req, res) => {
-        const newOrder = new Payment({
+    const newPayment = new Payment({
         shippingAddress: req.body.shippingAddress,
         totalPrice: req.body.totalPrice,
         user: req.user._id,
@@ -19,7 +19,9 @@ paymentRouter.post(
         transaction: req.body.transaction,
     });
 
-    const payment = await newOrder.save();
+    const payment = await newPayment.save();
     res.status(201).send({ message: 'New Payment Created', payment });
   })
 );
+
+export default paymentRouter;

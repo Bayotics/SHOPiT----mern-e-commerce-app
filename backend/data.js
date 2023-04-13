@@ -23,7 +23,8 @@ const data = {
         status: "successful",
         transaction: "73778748hurr",
         shippingAddress: "Epe, Lagos",
-        totalPrice: 300
+        totalPrice: 300,
+        user: '642d4fda2ce3738988682c37'
     }
   ],
   products: [
