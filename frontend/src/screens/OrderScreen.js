@@ -76,6 +76,7 @@ export default function OrderScreen() {
        await axios.post(
         '/api/payments',
         {
+          orderItems: order.orderItems,
           message: reference.message,
           paidAt: order.paidAt,
           reference: reference.reference,

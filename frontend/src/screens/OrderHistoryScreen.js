@@ -86,7 +86,7 @@ export default function OrderHistoryScreen() {
                 <td>
                   <Button
                     type="button"
-                    variant="light"
+                    variant="success"
                     onClick={() => {
                         console.log("hello")
                       navigate(`/payment/${payment._id}`);

@@ -9,6 +9,7 @@ paymentRouter.post(
   isAuth,
   expressAsyncHandler(async (req, res) => {
     const newPayment = new Payment({
+        orderItems: req.body.orderItems.map((x) => ({ ...x, product: x._id })),
         shippingAddress: req.body.shippingAddress,
         totalPrice: req.body.totalPrice,
         user: req.user._id,

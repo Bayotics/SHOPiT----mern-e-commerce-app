@@ -13,6 +13,6 @@ seedRouter.get('/', async (req, res) => {
   const createdPayments = await Payment.insertMany(data.payments);
   await User.remove({});
   const createdUsers = await User.insertMany(data.users);
-  res.send({ createdProducts, createdUsers, createdPayments});
+  // res.send({ createdProducts, createdUsers, createdPayments}); repop
 });
 export default seedRouter;
