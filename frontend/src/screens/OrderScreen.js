@@ -71,7 +71,9 @@ export default function OrderScreen() {
       publicKey: 'pk_test_8d9e427702c5b457180503dd7a71fc3c41e276de',
   };
   
-  const onSuccess = (reference) => {
+  const onSuccess = async (reference) => {
+    
+
     console.log(reference)
     console.log(reference.status);
   };
@@ -127,7 +129,7 @@ export default function OrderScreen() {
               <Card.Text>
                 <strong>Method:</strong> {order.paymentMethod}
               </Card.Text>
-              {order.isPaid ? (
+              {onSuccess ? (
                 <MessageBox variant="success">
                   Paid at {order.paidAt}
                 </MessageBox>
