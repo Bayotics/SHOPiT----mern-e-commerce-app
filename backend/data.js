@@ -15,6 +15,17 @@ const data = {
       isAdmin: false,
     },
   ],
+  payments:[
+    {
+        message: "Success",
+        paidAt: Date.now(),
+        reference: "456789320093",
+        status: "successful",
+        transaction: "73778748hurr",
+        shippingAddress: "Epe, Lagos",
+        totalPrice: 300
+    }
+  ],
   products: [
     {
       // _id: '1',
