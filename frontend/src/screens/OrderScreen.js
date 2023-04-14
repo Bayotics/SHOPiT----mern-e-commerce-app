@@ -93,24 +93,6 @@ export default function OrderScreen() {
       )
     };
     postFunc();
-
-      // await axios.post(
-      //   '/api/payments',
-      //   {
-      //     message: reference.message,
-      //     paidAt: order.paidAt,
-      //     reference: reference.reference,
-      //     status: reference.status,
-      //     transaction: reference.transaction,
-      //     shippingAddress: order.shippingAddress.address,
-      //     totalPrice: order.totalPrice
-      //   },
-      //   {
-      //     headers: {
-      //       authorization: `Bearer ${userInfo.token}`,
-      //     },
-      //   }
-      // )
     console.log(reference)
     console.log(reference.status);
   };
