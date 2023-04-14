@@ -65,8 +65,29 @@ const PaymentScreen = () =>
 
     }
   }, [payment, userInfo, paymentId, navigate]);
-    return(
-        <div>This is the payment Screen</div>
+    return loading ? (<LoadingBox></LoadingBox>) : (
+
+        <div className = "container bg-gray-300 h-full w-screen">
+            <h1>payment id: {paymentId}</h1>
+            <h3>Payment status: {payment.status}</h3>
+            <h3>Payment date: {payment.createdAt.substring(0, 19)}</h3>
+            <h3>Total price: ₦{payment.totalPrice}</h3>
+            <br/>
+            <br/>
+        <div>{payment.orderItems.map((e) => (
+                <div key = {e._id}>
+                    <h3>order name: {e.name}</h3>
+                    <h3>order id: {e._id}</h3>
+                    <h3>quantity: {e.quantity}</h3>
+                    <h3>order price: {e.price}</h3>
+                    <img
+                          src={e.image}
+                          alt={e.name}
+                          className="img-fluid rounded img-thumbnail"
+                    ></img>{' '}
+                </div>
+        ))}</div>
+        </div>
     )
 }
 
