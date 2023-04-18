@@ -49,6 +49,7 @@ export default function OrderHistoryScreen() {
     };
     fetchData();
   }, [userInfo]);
+  console.log(payments)
   return (
     <div>
       <Helmet>
@@ -72,17 +73,14 @@ export default function OrderHistoryScreen() {
             </tr>
           </thead>
           <tbody>
-            {payments.map((payment) => (
+            {/* 
+             {payments.map((payment) => (
               <tr key={payment._id}>
                 <td>{payment._id}</td>
                 <td>{payment.createdAt.substring(0, 19)}</td>
                 <td>{payment.totalPrice.toFixed(2)}</td>
                 <td><p>Paid</p></td>
-                {/* <td>
-                  {order.isDelivered
-                    ? order.deliveredAt.substring(0, 10)
-                    : 'No'}
-                </td> */}
+               
                 <td>
                   <Button
                     type="button"
@@ -97,6 +95,8 @@ export default function OrderHistoryScreen() {
                 </td>
               </tr>
             ))}
+            */}
+            
           </tbody>
         </table>
       )}
