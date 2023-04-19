@@ -24,25 +24,27 @@ paymentRouter.post(
     res.status(201).send({ message: 'New Payment Created', payment });
   })
 );
+
+
+paymentRouter.get(
+  '/:id',
+  isAuth,
+  expressAsyncHandler(async (req, res) => {
+    const payment = await Payment.findById(req.params.id); 
+    if (payment) {
+      res.send(payment);
+    } else {
+      res.status(404).send({ message: 'Payment Log Not Found' });
+    }
+  })
+);
+
 paymentRouter.get(
   '/mine',
   isAuth,
   expressAsyncHandler(async (req, res) => {
     const payments = await Payment.find({ user: req.user._id });
     res.send(payments);
-  })
-);
-
-paymentRouter.get(
-  '/:id',
-  isAuth,
-  expressAsyncHandler(async (req, res) => {
-    const payment = await Payment.findById(req.params.id);
-    if (payment) {
-      res.send(payment);
-    } else {
-      res.status(404).send({ message: 'Payment Log Not Found' });
-    }
   })
 );
 
