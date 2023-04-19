@@ -78,13 +78,12 @@ export default function OrderScreen() {
         {
           orderItems: order.orderItems,
           message: reference.message,
-          paidAt: order.paidAt, 
+          paidAt: order.paidAt,
           reference: reference.reference,
           status: reference.status,
           transaction: reference.transaction,
           shippingAddress: order.shippingAddress.address,
-          totalPrice: order.totalPrice,
-          // user: userInfo.token
+          totalPrice: order.totalPrice
         },
         {
           headers: {
