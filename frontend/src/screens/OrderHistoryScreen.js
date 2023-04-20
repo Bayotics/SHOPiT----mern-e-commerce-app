@@ -30,25 +30,25 @@ export default function OrderHistoryScreen() {
     loading: true,
     error: '',
   });
-  useEffect(() => {
-    const fetchData = async () => {
-      dispatch({ type: 'FETCH_REQUEST' });
-      try {
-        const { data } = await axios.get(
-          `/api/payments/mine`,
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     dispatch({ type: 'FETCH_REQUEST' });
+  //     try {
+  //       const { data } = await axios.get(
+  //         `/api/payments/mine`,
 
-          { headers: { Authorization: `Bearer ${userInfo.token}` } }
-        );
-        dispatch({ type: 'FETCH_SUCCESS', payload: data });
-      } catch (error) {
-        dispatch({
-          type: 'FETCH_FAIL',
-          payload: getError(error),
-        });
-      }
-    };
-    fetchData();
-  }, [userInfo]);
+  //         { headers: { Authorization: `Bearer ${userInfo.token}` } }
+  //       );
+  //       dispatch({ type: 'FETCH_SUCCESS', payload: data });
+  //     } catch (error) {
+  //       dispatch({
+  //         type: 'FETCH_FAIL',
+  //         payload: getError(error),
+  //       });
+  //     }
+  //   };
+  //   fetchData();
+  // }, [userInfo]);
   return (
     <div>
       <Helmet>
