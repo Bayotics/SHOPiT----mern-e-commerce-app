@@ -78,11 +78,7 @@ export default function OrderHistoryScreen() {
                 <td>{payment.createdAt.substring(0, 19)}</td>
                 <td>{payment.totalPrice.toFixed(2)}</td>
                 <td><p>Paid</p></td>
-                {/* <td>
-                  {order.isDelivered
-                    ? order.deliveredAt.substring(0, 10)
-                    : 'No'}
-                </td> */}
+              
                 <td>
                   <Button
                     type="button"
