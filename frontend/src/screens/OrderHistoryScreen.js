@@ -71,7 +71,7 @@ export default function OrderHistoryScreen() {
               <th>Details</th>
             </tr>
           </thead>
-          <tbody>
+          {/* <tbody>
             {payments.map((payment) => (
               <tr key={payment._id}>
                 <td>{payment._id}</td>
@@ -93,7 +93,7 @@ export default function OrderHistoryScreen() {
                 </td>
               </tr>
             ))}
-          </tbody>
+          </tbody> */}
         </table>
       )}
     </div>
