@@ -49,8 +49,6 @@ export default function OrderHistoryScreen() {
     };
     fetchData();
   }, [userInfo]);
-  console.log(payments)
-  console.log(userInfo)
   return (
     <div>
       <Helmet>
@@ -58,11 +56,11 @@ export default function OrderHistoryScreen() {
       </Helmet>
 
       <h1>Order History</h1>
-      {/* {loading ? (
+      {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
-      ) : ( */}
+      ) : (
         <table className="table">
           <thead>
             <tr>
@@ -74,28 +72,34 @@ export default function OrderHistoryScreen() {
             </tr>
           </thead>
           <tbody>
-              <tr key={payments._id}>
-                <td>{payments._id}</td>
-                <td>{payments.createdAt.substring(0, 19)}</td>
-                <td>{payments.totalPrice.toFixed(2)}</td>
+            {payments.map((payment) => (
+              <tr key={payment._id}>
+                <td>{payment._id}</td>
+                <td>{payment.createdAt.substring(0, 19)}</td>
+                <td>{payment.totalPrice.toFixed(2)}</td>
                 <td><p>Paid</p></td>
-              
+                {/* <td>
+                  {order.isDelivered
+                    ? order.deliveredAt.substring(0, 10)
+                    : 'No'}
+                </td> */}
                 <td>
                   <Button
                     type="button"
                     variant="success"
                     onClick={() => {
                         console.log("hello")
-                      navigate(`/payment/${payments._id}`);
+                      navigate(`/payment/${payment._id}`);
                     }}
                   >
                     Details
                   </Button>
                 </td>
               </tr>
+            ))}
           </tbody>
         </table>
-      {/* )} */}
+      )}
     </div>
   );
 }
