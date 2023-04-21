@@ -49,7 +49,8 @@ export default function OrderHistoryScreen() {
     };
     fetchData();
   }, [userInfo]);
-  
+  console.log(payments)
+  console.log(userInfo)
   return (
     <div>
       <Helmet>
