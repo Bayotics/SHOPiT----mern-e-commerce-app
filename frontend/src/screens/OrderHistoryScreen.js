@@ -28,7 +28,7 @@ export default function OrderHistoryScreen() {
   const { id: orderId } = params;
   const navigate = useNavigate();
 
-  const [{ loading, error, payments }, dispatch] = useReducer(reducer, {
+  const [{ loading, error, order }, dispatch] = useReducer(reducer, {
     loading: true,
     error: '',
   });
@@ -55,6 +55,9 @@ export default function OrderHistoryScreen() {
 
     }
   }, [order, userInfo, orderId, navigate]);
+  console.log(userInfo)
+  console.log(order)
+  console.log(orderId)
   // useEffect(() => {
   //   const fetchData = async () => {
   //     dispatch({ type: 'FETCH_REQUEST' });
