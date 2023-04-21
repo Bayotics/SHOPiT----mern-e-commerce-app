@@ -73,12 +73,11 @@ export default function OrderHistoryScreen() {
               <th>Details</th>
             </tr>
           </thead>
-          {/* <tbody>
-            {payments.map((payment) => (
-              <tr key={payment._id}>
-                <td>{payment._id}</td>
-                <td>{payment.createdAt.substring(0, 19)}</td>
-                <td>{payment.totalPrice.toFixed(2)}</td>
+          <tbody>
+              <tr key={payments._id}>
+                <td>{payments._id}</td>
+                <td>{payments.createdAt.substring(0, 19)}</td>
+                <td>{payments.totalPrice.toFixed(2)}</td>
                 <td><p>Paid</p></td>
               
                 <td>
@@ -87,15 +86,14 @@ export default function OrderHistoryScreen() {
                     variant="success"
                     onClick={() => {
                         console.log("hello")
-                      navigate(`/payment/${payment._id}`);
+                      navigate(`/payment/${payments._id}`);
                     }}
                   >
                     Details
                   </Button>
                 </td>
               </tr>
-            ))}
-          </tbody> */}
+          </tbody>
         </table>
       {/* )} */}
     </div>
