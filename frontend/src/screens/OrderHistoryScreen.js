@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useReducer } from 'react';
 import { Helmet } from 'react-helmet-async';
 import axios from 'axios';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { Store } from '../Store';
@@ -24,59 +24,32 @@ const reducer = (state, action) => {
 export default function OrderHistoryScreen() {
   const { state } = useContext(Store);
   const { userInfo } = state;
-   const params = useParams();
-  const { id: orderId } = params;
   const navigate = useNavigate();
 
-  const [{ loading, error, order }, dispatch] = useReducer(reducer, {
+  const [{ loading, error, payments }, dispatch] = useReducer(reducer, {
     loading: true,
     error: '',
   });
-
   useEffect(() => {
-    const fetchOrder = async () => {
+    const fetchData = async () => {
+      dispatch({ type: 'FETCH_REQUEST' });
       try {
-        dispatch({ type: 'FETCH_REQUEST' });
-        const { data } = await axios.get(`/api/orders/${orderId}`, {
-          headers: { authorization: `Bearer ${userInfo.token}` },
-        });
+        const { data } = await axios.get(
+          `/api/payments/mine`,
+
+          { headers: { Authorization: `Bearer ${userInfo.token}` } }
+        );
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
-      } catch (err) {
-        dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
+      } catch (error) {
+        dispatch({
+          type: 'FETCH_FAIL',
+          payload: getError(error),
+        });
       }
     };
-
-    if (!userInfo) {
-      return navigate('/login');
-    }
-    if (!order._id || (order._id && order._id !== orderId)) {
-      fetchOrder();
-    }else{
-
-    }
-  }, [order, userInfo, orderId, navigate]);
-  console.log(userInfo)
-  console.log(order)
-  console.log(orderId)
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     dispatch({ type: 'FETCH_REQUEST' });
-  //     try {
-  //       const { data } = await axios.get(
-  //         `/api/payments/mine`,
-
-  //         { headers: { Authorization: `Bearer ${userInfo.token}` } }
-  //       );
-  //       dispatch({ type: 'FETCH_SUCCESS', payload: data });
-  //     } catch (error) {
-  //       dispatch({
-  //         type: 'FETCH_FAIL',
-  //         payload: getError(error),
-  //       });
-  //     }
-  //   };
-  //   fetchData();
-  // }, [userInfo]);
+    fetchData();
+  }, [userInfo]);
+  
   return (
     <div>
       <Helmet>
