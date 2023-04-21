@@ -6,6 +6,8 @@ import seedRouter from './routes/seedRoutes.js';
 import productRouter from './routes/productRoutes.js';
 import userRouter from './routes/userRoutes.js';
 import orderRouter from './routes/orderRoutes.js';
+import paymentRouter from './routes/paymentRoutes.js';
+
 
 dotenv.config();
 
@@ -31,6 +33,7 @@ app.use('/api/seed', seedRouter);
 app.use('/api/products', productRouter);
 app.use('/api/users', userRouter);
 app.use('/api/orders', orderRouter);
+app.use('/api/payments', paymentRouter);
 
 // const __dirname = path.resolve();
 // app.use(express.static(path.join(__dirname, '/frontend/build')));
