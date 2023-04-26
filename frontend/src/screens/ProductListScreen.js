@@ -87,7 +87,7 @@ export default function ProductListScreen() {
               <Link
                 className={x + 1 === Number(page) ? 'btn text-bold' : 'btn'}
                 key={x + 1}
-                to={`/admin/products?page=${x + 1}`}
+                to={`/admin/productlist?page=${x + 1}`}
               >
                 {x + 1}
               </Link>
