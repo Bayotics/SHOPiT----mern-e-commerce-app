@@ -24,6 +24,7 @@ paymentRouter.post(
     res.status(201).send({ message: 'New Payment Created', payment });
   })
 );
+// payment history for each (logged in) user
 paymentRouter.get(
   '/mine',
   isAuth,
