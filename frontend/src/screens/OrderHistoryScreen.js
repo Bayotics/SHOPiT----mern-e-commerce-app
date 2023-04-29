@@ -49,7 +49,7 @@ export default function OrderHistoryScreen() {
     };
     fetchData();
   }, [ userInfo]);
-  console.log(payments)
+  // console.log(payments)
   return (
     <div>
       <Helmet>
@@ -89,7 +89,6 @@ export default function OrderHistoryScreen() {
                     type="button"
                     variant="success"
                     onClick={() => {
-                        console.log("hello")
                       navigate(`/payment/${payment._id}`);
                     }}
                   >

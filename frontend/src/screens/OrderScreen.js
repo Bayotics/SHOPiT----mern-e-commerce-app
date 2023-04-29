@@ -93,8 +93,7 @@ export default function OrderScreen() {
       )
     };
     postFunc();
-    console.log(reference)
-    console.log(reference.status);
+    console.log(reference)    
   };
 
   const onClose = () => {
