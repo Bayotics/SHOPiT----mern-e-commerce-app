@@ -138,7 +138,7 @@ export default function OrderListScreen() {
                   &nbsp;
                   <Button
                     type="button"
-                    variant="light"
+                    variant="danger"
                     onClick={() => deleteHandler(order)}
                   >
                     Delete
