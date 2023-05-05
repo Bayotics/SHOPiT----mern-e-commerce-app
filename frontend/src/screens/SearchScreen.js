@@ -118,15 +118,16 @@ export default function SearchScreen() {
     fetchCategories();
   }, [dispatch]);
 
-  const getFilterUrl = (filter) => {
+  const getFilterUrl = (filter, skipPathname) => {
     const filterPage = filter.page || page;
     const filterCategory = filter.category || category;
     const filterQuery = filter.query || query;
     const filterRating = filter.rating || rating;
     const filterPrice = filter.price || price;
     const sortOrder = filter.order || order;
-    return `/search?category=${filterCategory}&query=${filterQuery}&price=${filterPrice}&rating=${filterRating}&order=${sortOrder}&page=${filterPage}`;
-  };
+    return `${
+      skipPathname ? '' : '/search?'
+    }category=${filterCategory}&query=${filterQuery}&price=${filterPrice}&rating=${filterRating}&order=${sortOrder}&page=${filterPage}`;
   return (
     <div>
       <Helmet>
