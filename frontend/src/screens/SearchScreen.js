@@ -128,7 +128,8 @@ export default function SearchScreen() {
     return `${
       skipPathname ? '' : '/search?'
     }category=${filterCategory}&query=${filterQuery}&price=${filterPrice}&rating=${filterRating}&order=${sortOrder}&page=${filterPage}`;
-  return (
+  };
+    return (
     <div>
       <Helmet>
         <title>Search Products</title>
