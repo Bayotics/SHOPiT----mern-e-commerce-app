@@ -128,7 +128,7 @@ export default function OrderListScreen() {
                 <td>
                   <Button
                     type="button"
-                    variant="light"
+                    variant="success"
                     onClick={() => {
                       navigate(`/order/${order._id}`);
                     }}
