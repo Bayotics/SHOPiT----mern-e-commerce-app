@@ -78,7 +78,7 @@ const PaymentScreen = () =>
                     <h3>order name: {e.name}</h3>
                     <h3>order id: {e._id}</h3>
                     <h3>quantity: {e.quantity}</h3>
-                    <h3>order price: {e.price}</h3>
+                    <h3>price: {e.price}</h3>
                     <img
                           src={e.image}
                           alt={e.name}
