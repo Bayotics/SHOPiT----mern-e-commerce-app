@@ -12,6 +12,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { useContext, useEffect, useState } from 'react';
 import { Store } from './Store';
 import CartScreen from './screens/CartScreen';
+import MainScreen from "./screens/MainScreen";
 import SigninScreen from './screens/SigninScreen';
 import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import SignupScreen from './screens/SignupScreen';
@@ -165,6 +166,7 @@ function App() {
           </Nav>
         </div>
         <main>
+          <MainScreen />
           <Container className="mt-3">
             <Routes>
               <Route path="/product/:slug" element={<ProductScreen />} />
