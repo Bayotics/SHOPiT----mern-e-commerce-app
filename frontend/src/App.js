@@ -72,73 +72,165 @@ function App() {
         }
       >
         <ToastContainer position="bottom-center" limit={1} />
-        <header>
-          <Navbar bg="dark" variant="dark" expand="lg">
-            <Container>
-               <Button
-                variant="dark"
-                onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
-              >
-                <i className="fas fa-bars"></i>
-              </Button>
-              <LinkContainer to="/">
-                <Navbar.Brand>SHOPiT</Navbar.Brand>
-              </LinkContainer>
-              <Navbar.Toggle aria-controls="basic-navbar-nav" />
-              <Navbar.Collapse id="basic-navbar-nav">
-                  <SearchBox />
-                <Nav className="me-auto  w-100  justify-content-end">
-                  <Link to="/cart" className="nav-link">
-                    Cart
-                    {cart.cartItems.length > 0 && (
-                      <Badge pill bg="danger">
-                        {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
-                      </Badge>
-                    )}
-                  </Link>
-                  {userInfo ? (
-                    <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
-                      <LinkContainer to="/profile">
-                        <NavDropdown.Item>User Profile</NavDropdown.Item>
-                      </LinkContainer>
-                      <LinkContainer to="/orderhistory">
-                        <NavDropdown.Item>Order History</NavDropdown.Item>
-                      </LinkContainer>
-                      <NavDropdown.Divider />
-                      <Link
-                        className="dropdown-item"
-                        to="#signout"
-                        onClick={signoutHandler}
-                      >
-                        Sign Out
+        <div className='banner_bg_main'>
+            <div className='container'><header>
+            <div className = "header_section_top">
+            <Navbar bg="dark" variant="dark" expand="lg">
+              <Container>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                  <Nav className="me-auto  w-100  justify-content-end">
+                    {userInfo ? (
+                      <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
+                        <LinkContainer to="/profile">
+                          <NavDropdown.Item>User Profile</NavDropdown.Item>
+                        </LinkContainer>
+                        <LinkContainer to="/orderhistory">
+                          <NavDropdown.Item>Order History</NavDropdown.Item>
+                        </LinkContainer>
+                        <NavDropdown.Divider />
+                        <Link
+                          className="dropdown-item"
+                          to="#signout"
+                          onClick={signoutHandler}
+                        >
+                          Sign Out
+                        </Link>
+                      </NavDropdown>
+                    ) : (
+                      <Link className="nav-link" to="/signin">
+                        Sign In
                       </Link>
-                    </NavDropdown>
-                  ) : (
-                    <Link className="nav-link" to="/signin">
-                      Sign In
-                    </Link>
-                  )}
-                   {userInfo && userInfo.isAdmin && (
-                    <NavDropdown title="Admin" id="admin-nav-dropdown">
-                      <LinkContainer to="/admin/dashboard">
-                        <NavDropdown.Item>Dashboard</NavDropdown.Item>
-                      </LinkContainer>
-                      <LinkContainer to="/admin/products">
-                        <NavDropdown.Item>Products</NavDropdown.Item>
-                      </LinkContainer>
-                      <LinkContainer to="/admin/orders">
-                        <NavDropdown.Item>Orders</NavDropdown.Item>
-                      </LinkContainer>
-                      <LinkContainer to="/admin/users">
-                        <NavDropdown.Item>Users</NavDropdown.Item>
-                      </LinkContainer>
-                    </NavDropdown>
-                  )}
-                </Nav>
-              </Navbar.Collapse>
-            </Container>
-          </Navbar>
-        </header>
+                    )}
+                    {userInfo && userInfo.isAdmin && (
+                      <NavDropdown title="Admin" id="admin-nav-dropdown">
+                        <LinkContainer to="/admin/dashboard">
+                          <NavDropdown.Item>Dashboard</NavDropdown.Item>
+                        </LinkContainer>
+                        <LinkContainer to="/admin/products">
+                          <NavDropdown.Item>Products</NavDropdown.Item>
+                        </LinkContainer>
+                        <LinkContainer to="/admin/orders">
+                          <NavDropdown.Item>Orders</NavDropdown.Item>
+                        </LinkContainer>
+                        <LinkContainer to="/admin/users">
+                          <NavDropdown.Item>Users</NavDropdown.Item>
+                        </LinkContainer>
+                      </NavDropdown>
+                    )}
+                  </Nav>
+                </Navbar.Collapse>
+              </Container>
+            </Navbar>
+            </div>
+          </header>
+          </div>
+          <div className="logo_section">
+              <div className="container">
+                <div className="row">
+                    <div className="col-sm-12">
+                      <div className="logo"> <LinkContainer to="/">
+                      <Navbar.Brand>SHOPiT</Navbar.Brand>
+                      </LinkContainer> </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <div className="header_section">
+            <div className="container">
+               <div className="containt_main">
+                  <div id="mySidenav" className="sidenav">
+                     {/* <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> */}
+                     <a>Home</a>
+                     <a>Fashion</a>
+                     <a>Electronic</a>
+                     <a>Jewellery</a>
+                  </div>
+                  <span className="toggle_icon">
+                    <Button
+                  variant="dark"
+                  onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
+                >
+                  <i className="fas fa-bars"></i>
+                </Button>
+                  </span>
+                  <div className="dropdown">
+                     <button className = "btn btn-secondary" aria-expanded="false">
+                          {userInfo ? (
+                            <div>
+                                <i className="fa fa-user" aria-hidden="true"></i>
+                                <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
+                                  <LinkContainer to="/profile">
+                                    <NavDropdown.Item>User Profile</NavDropdown.Item>
+                                  </LinkContainer>
+                                  <LinkContainer to="/orderhistory">
+                                    <NavDropdown.Item>Order History</NavDropdown.Item>
+                                  </LinkContainer>
+                                  <NavDropdown.Divider />
+                                  <Link
+                                    className="dropdown-item"
+                                    to="#signout"
+                                    onClick={signoutHandler}
+                                  >
+                                    Sign Out
+                                  </Link>
+                                </NavDropdown>
+                            </div>
+                        ) : (
+                          <Link className="nav-link" to="/signin">
+                            Sign In
+                          </Link>
+                        )} 
+                     </button>
+                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a className="dropdown-item">Action</a>
+                        <a className="dropdown-item">Another action</a>
+                        <a className="dropdown-item">Something else here</a>
+                     </div>
+                  </div>
+                  <div className="main">
+                     <div className="">
+                         <SearchBox />
+                     </div>
+                  </div>
+                  <div className="header_box">
+                     <div className="lang_box ">
+                        <a title="Language" className="nav-link" data-toggle="dropdown" aria-expanded="true">
+                        {/* <img src="images/flag-uk.png" alt="flag" class="mr-2 " title="United Kingdom"> English <i class="fa fa-angle-down ml-2" aria-hidden="true"></i> */}
+                        </a>
+                        <div className="dropdown-menu ">
+                           <a className="dropdown-item">
+                           {/* <img src="images/flag-france.png" class="mr-2" alt="flag"> */}
+                           French
+                           </a>
+                        </div>
+                     </div>
+                     <div className="login_menu">
+                        <ul>
+                           <li>
+                              <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+                              <span className="padding_10">
+                                <Link to="/cart" className="">
+                                  Cart
+                                  {cart.cartItems.length > 0 && (
+                                    <Badge pill bg="danger">
+                                      {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+                                    </Badge>
+                                  )}
+                                </Link>
+                              </span>
+                           </li>
+                           <li><a>
+                              <i className="fa fa-user" aria-hidden="true"></i>
+                              <span className="padding_10">Cart</span></a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+        </div>
         <div
           className={
             sidebarIsOpen
