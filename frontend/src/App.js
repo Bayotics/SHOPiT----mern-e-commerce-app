@@ -80,28 +80,6 @@ function App() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="me-auto  w-100  justify-content-end">
-                    {userInfo ? (
-                      <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
-                        <LinkContainer to="/profile">
-                          <NavDropdown.Item>User Profile</NavDropdown.Item>
-                        </LinkContainer>
-                        <LinkContainer to="/orderhistory">
-                          <NavDropdown.Item>Order History</NavDropdown.Item>
-                        </LinkContainer>
-                        <NavDropdown.Divider />
-                        <Link
-                          className="dropdown-item"
-                          to="#signout"
-                          onClick={signoutHandler}
-                        >
-                          Sign Out
-                        </Link>
-                      </NavDropdown>
-                    ) : (
-                      <Link className="nav-link" to="/signin">
-                        Sign In
-                      </Link>
-                    )}
                     {userInfo && userInfo.isAdmin && (
                       <NavDropdown title="Admin" id="admin-nav-dropdown">
                         <LinkContainer to="/admin/dashboard">
@@ -140,7 +118,6 @@ function App() {
             <div className="container">
                <div className="containt_main">
                   <div id="mySidenav" className="sidenav">
-                     {/* <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> */}
                      <a>Home</a>
                      <a>Fashion</a>
                      <a>Electronic</a>
