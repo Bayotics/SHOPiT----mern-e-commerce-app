@@ -80,22 +80,7 @@ function App() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="me-auto  w-100  justify-content-end">
-                    {userInfo && userInfo.isAdmin && (
-                      <NavDropdown title="Admin" id="admin-nav-dropdown">
-                        <LinkContainer to="/admin/dashboard">
-                          <NavDropdown.Item>Dashboard</NavDropdown.Item>
-                        </LinkContainer>
-                        <LinkContainer to="/admin/products">
-                          <NavDropdown.Item>Products</NavDropdown.Item>
-                        </LinkContainer>
-                        <LinkContainer to="/admin/orders">
-                          <NavDropdown.Item>Orders</NavDropdown.Item>
-                        </LinkContainer>
-                        <LinkContainer to="/admin/users">
-                          <NavDropdown.Item>Users</NavDropdown.Item>
-                        </LinkContainer>
-                      </NavDropdown>
-                    )}
+                  {/*  */}
                   </Nav>
                 </Navbar.Collapse>
               </Container>
@@ -124,19 +109,23 @@ function App() {
                      <a>Jewellery</a>
                   </div>
                   <span className="toggle_icon">
-                    <Button
+                  <Button
                   variant="dark"
                   onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
-                >
+                  >
                   <i className="fas fa-bars"></i>
-                </Button>
+                  </Button>
                   </span>
                   <div className="dropdown">
-                     <button className = "btn btn-secondary" aria-expanded="false">
+                     <button className = "btn btn-secondary" id = "user-button" aria-expanded="false">
                           {userInfo ? (
-                            <div>
-                                <i className="fa fa-user" aria-hidden="true"></i>
-                                <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
+                            <div className='container'>
+                              <div className='row'>
+                                <div className='col'>
+                                  <i className="fa fa-user" aria-hidden="true"></i>
+                                </div>
+                                <div className='col'>
+                                  <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
                                   <LinkContainer to="/profile">
                                     <NavDropdown.Item>User Profile</NavDropdown.Item>
                                   </LinkContainer>
@@ -151,7 +140,9 @@ function App() {
                                   >
                                     Sign Out
                                   </Link>
-                                </NavDropdown>
+                                  </NavDropdown>
+                                </div>
+                                </div>
                             </div>
                         ) : (
                           <Link className="nav-link" to="/signin">
@@ -171,16 +162,24 @@ function App() {
                      </div>
                   </div>
                   <div className="header_box">
-                     <div className="lang_box ">
-                        <a title="Language" className="nav-link" data-toggle="dropdown" aria-expanded="true">
-                        {/* <img src="images/flag-uk.png" alt="flag" class="mr-2 " title="United Kingdom"> English <i class="fa fa-angle-down ml-2" aria-hidden="true"></i> */}
-                        </a>
-                        <div className="dropdown-menu ">
-                           <a className="dropdown-item">
-                           {/* <img src="images/flag-france.png" class="mr-2" alt="flag"> */}
-                           French
-                           </a>
-                        </div>
+                     <div className="lang_box bg-dark">
+                      <i className="fa fa-user" aria-hidden="true"></i>
+                       {userInfo && userInfo.isAdmin && (
+                      <NavDropdown title="Admin" id="admin-nav-dropdown">
+                        <LinkContainer to="/admin/dashboard">
+                          <NavDropdown.Item>Dashboard</NavDropdown.Item>
+                        </LinkContainer>
+                        <LinkContainer to="/admin/products">
+                          <NavDropdown.Item>Products</NavDropdown.Item>
+                        </LinkContainer>
+                        <LinkContainer to="/admin/orders">
+                          <NavDropdown.Item>Orders</NavDropdown.Item>
+                        </LinkContainer>
+                        <LinkContainer to="/admin/users">
+                          <NavDropdown.Item>Users</NavDropdown.Item>
+                        </LinkContainer>
+                      </NavDropdown>
+                    )}
                      </div>
                      <div className="login_menu">
                         <ul>
@@ -196,10 +195,6 @@ function App() {
                                   )}
                                 </Link>
                               </span>
-                           </li>
-                           <li><a>
-                              <i className="fa fa-user" aria-hidden="true"></i>
-                              <span className="padding_10">Cart</span></a>
                            </li>
                         </ul>
                      </div>

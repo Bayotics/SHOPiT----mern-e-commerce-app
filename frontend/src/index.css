@@ -358,3 +358,9 @@ a:hover {
 .search-section{
   /* width: 500px; */
 }
+.input-group{
+  width: 95%;
+}
+#user-button{
+  height: 40px;
+}
