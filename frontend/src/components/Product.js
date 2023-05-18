@@ -29,22 +29,29 @@ function Product(props) {
   };
 
   return (
-    <Card>
+    <Card className='shadow-2xl'>
       <Link to={`/product/${product.slug}`}>
         <img src={product.image} className="card-img-top" alt={product.name} />
       </Link>
-      <Card.Body>
+      <Card.Body className = "">
         <Link to={`/product/${product.slug}`}>
-          <Card.Title>{product.name}</Card.Title>
+          <Card.Title><p className='text-center'>{product.name}</p></Card.Title>
         </Link>
-        <Rating rating={product.rating} numReviews={product.numReviews} />
-        <Card.Text>₦{product.price}</Card.Text>
+        <div className = "flex justify-center">
+          <Rating rating={product.rating} numReviews={product.numReviews} />
+        </div>
+        <Card.Text><p className='text-xl font-semibold text-center'>₦{product.price}</p></Card.Text>
         {product.countInStock === 0 ? (
-          <Button variant="light" disabled>
+          <div  className='flex justify-center'>
+            <Button variant="danger" disabled>
             Out of stock
           </Button>
+          </div>
+          
         ) : (
-          <Button onClick={() => addToCartHandler(product)}>Add to cart</Button>
+          <div className='flex justify-center'>
+            <Button onClick={() => addToCartHandler(product)}>Add to cart</Button>
+          </div>
         )}
       </Card.Body>
     </Card>

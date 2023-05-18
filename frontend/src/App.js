@@ -75,11 +75,17 @@ function App() {
         <div className='banner_bg_main'>
             <div className='container'><header>
             <div className = "header_section_top">
-            <Navbar bg="dark" variant="dark" expand="lg">
+            <Navbar expand="lg">
               <Container>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                  <Nav className="me-auto  w-100  justify-content-end">
+                  <Nav className="w-100">
+                    <div className='flex justify-center'>
+                      {/* <h1 className='text-white'>Hello</h1> */}
+                      {/* <div><h1 className='text-white'>Home</h1></div>
+                      <div><h1>About</h1></div>
+                      <div><h1>Contact Us</h1></div> */}
+                    </div>
                   {/*  */}
                   </Nav>
                 </Navbar.Collapse>
@@ -91,7 +97,7 @@ function App() {
           <div className="logo_section">
               <div className="container">
                 <div className="row">
-                    <div className="col-sm-12">
+                    <div className="col-sm-12 mt-5">
                       <div className="logo"> <LinkContainer to="/">
                       <Navbar.Brand>SHOPiT</Navbar.Brand>
                       </LinkContainer> </div>
@@ -150,11 +156,6 @@ function App() {
                           </Link>
                         )} 
                      </button>
-                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a className="dropdown-item">Action</a>
-                        <a className="dropdown-item">Another action</a>
-                        <a className="dropdown-item">Something else here</a>
-                     </div>
                   </div>
                   <div className="main">
                      <div className="">
@@ -202,6 +203,14 @@ function App() {
                </div>
             </div>
          </div>
+         <div className='main_heading flex justify-center mt-36'>
+          <h1 className='text-white text-6xl font-bold'>Get the best deals on SHOPiT!</h1>
+         </div>
+         <div className='flex justify-center mt-8'>
+            <button className = "rounded-md bg-black w-36">
+              <p className='text-white text-lg font-medium mt-2'>Shop Now!</p>
+            </button>
+         </div>
         </div>
         <div
           className={
@@ -229,8 +238,8 @@ function App() {
             ))}
           </Nav>
         </div>
-        <main>
-          <MainScreen />
+        <main className='bg-gray-50'>
+          {/* <MainScreen /> */}
           <Container className="mt-3">
             <Routes>
               <Route path="/product/:slug" element={<ProductScreen />} />
