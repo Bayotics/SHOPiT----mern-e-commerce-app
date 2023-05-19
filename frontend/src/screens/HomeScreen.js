@@ -47,8 +47,8 @@ function HomeScreen() {
       <Helmet>
         <title>SHOPiT</title>
       </Helmet>
-      <h1 className='text-center font-bold text-5xl'>Featured Products</h1>
-      <div className="products mt-6">
+      <h1>Featured Products</h1>
+      <div className="products">
         {loading ? (
           <LoadingBox />
         ) : error ? (

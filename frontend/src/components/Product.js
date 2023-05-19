@@ -35,12 +35,12 @@ function Product(props) {
       </Link>
       <Card.Body className = "">
         <Link to={`/product/${product.slug}`}>
-          <Card.Title><p className='text-center'>{product.name}</p></Card.Title>
+          <Card.Title className='text-center'>{product.name}</Card.Title>
         </Link>
         <div className = "flex justify-center">
           <Rating rating={product.rating} numReviews={product.numReviews} />
         </div>
-        <Card.Text><p className='text-xl font-semibold text-center'>₦{product.price}</p></Card.Text>
+        <Card.Text className='text-xl font-semibold text-center'>₦{product.price}</Card.Text>
         {product.countInStock === 0 ? (
           <div  className='flex justify-center'>
             <Button variant="danger" disabled>
