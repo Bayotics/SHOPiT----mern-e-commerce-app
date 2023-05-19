@@ -29,12 +29,12 @@ function Product(props) {
   };
 
   return (
-    <Card className='shadow-2xl'>
+    <Card className='shadow-lg p-3 mb-5 bg-white rounded'>
       <Link to={`/product/${product.slug}`}>
         <img src={product.image} className="card-img-top" alt={product.name} />
       </Link>
       <Card.Body className = "">
-        <Link to={`/product/${product.slug}`}>
+        <Link className='text-decoration-none' to={`/product/${product.slug}`}>
           <Card.Title className='text-center'>{product.name}</Card.Title>
         </Link>
         <div className = "flex justify-center">
