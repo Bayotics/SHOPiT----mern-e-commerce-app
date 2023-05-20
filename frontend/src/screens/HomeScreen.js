@@ -43,11 +43,14 @@ function HomeScreen() {
     fetchData();
   }, []);
   return (
-    <div>
+    <div className='border'>
       <Helmet>
         <title>SHOPiT</title>
       </Helmet>
-      <h1>Featured Products</h1>
+      <div className='' id ="hero-background">
+
+      </div>
+      <h1 className='text-center'>Featured Products</h1>
       <div className="products">
         {loading ? (
           <LoadingBox />
