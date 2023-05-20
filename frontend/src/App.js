@@ -167,7 +167,7 @@ function App() {
           </Nav>
         </div>
         <main>
-          <MainScreen />
+          {/* <MainScreen /> */}
           <Container className="mt-3">
             <Routes>
               <Route path="/product/:slug" element={<ProductScreen />} />
