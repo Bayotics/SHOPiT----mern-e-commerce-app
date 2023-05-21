@@ -72,11 +72,11 @@ function App() {
         }
       >
         <ToastContainer position="bottom-center" limit={1} />
-        <header>
-          <Navbar bg="dark" variant="dark" expand="lg">
-            <Container>
+        <header className='mt-20'>
+          <Navbar bg="white" variant="white" expand="lg">
+            <Container id = "main-container">
                <Button
-                variant="dark"
+                variant="white"
                 onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
               >
                 <i className="fas fa-bars"></i>
@@ -88,8 +88,12 @@ function App() {
               <Navbar.Collapse id="basic-navbar-nav">
                   <SearchBox />
                 <Nav className="me-auto  w-100  justify-content-end">
-                  <Link to = "/" className='nav-link'>Dark mode</Link>
-                  <Link to="/cart" className="nav-link">
+                      <Link to = "/" className='nav-link text-dark'>HOME</Link>
+                      <Link to = "/" className='nav-link text-dark'>SHOP</Link>
+                      <Link to = "/" className='nav-link text-dark'>ABOUT</Link>
+                      <Link to = "/" className='nav-link text-dark' id = "contact-nav">CONTACT</Link>
+                  <Link to = "/" className='nav-link text-dark'>Dark mode</Link>
+                  <Link to="/cart" className="nav-link text-dark">
                     Cart
                     {cart.cartItems.length > 0 && (
                       <Badge pill bg="danger">
@@ -107,7 +111,7 @@ function App() {
                       </LinkContainer>
                       <NavDropdown.Divider />
                       <Link
-                        className="dropdown-item"
+                        className="dropdown-item text-dark"
                         to="#signout"
                         onClick={signoutHandler}
                       >
@@ -115,7 +119,7 @@ function App() {
                       </Link>
                     </NavDropdown>
                   ) : (
-                    <Link className="nav-link" to="/signin">
+                    <Link className="nav-link text-dark" to="/signin">
                       Sign In
                     </Link>
                   )}
@@ -168,7 +172,7 @@ function App() {
         </div>
         <main>
           {/* <MainScreen /> */}
-          <Container className="mt-3">
+          <Container className="mt-3" id = "main-container">
             <Routes>
               <Route path="/product/:slug" element={<ProductScreen />} />
               <Route path="/cart" element={<CartScreen />} />

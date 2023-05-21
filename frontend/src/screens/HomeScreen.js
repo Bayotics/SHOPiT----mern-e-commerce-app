@@ -43,30 +43,35 @@ function HomeScreen() {
     fetchData();
   }, []);
   return (
-    <div className='border'>
-      <Helmet>
-        <title>SHOPiT</title>
-      </Helmet>
-      <div className='' id ="hero-background">
-
+    <div>
+      <div id = "hero-background" className='w-100 border mb-4'>
+      
       </div>
-      <h1 className='text-center'>Featured Products</h1>
-      <div className="products">
-        {loading ? (
-          <LoadingBox />
-        ) : error ? (
-          <MessageBox variant="danger">{error}</MessageBox>
-        ) : (
-          <Row>
-            {products.map((product) => (
-              <Col key={product.slug} sm={6} md={4} lg={3} className="mb-3">
-                <Product product={product}></Product>
-              </Col>
-            ))}
-          </Row>
-        )}
+      <div className='border'>
+
+        <Helmet>
+          <title>SHOPiT</title>
+        </Helmet>
+        
+        <h1 className='text-center'>Featured Products</h1>
+        <div className="products">
+          {loading ? (
+            <LoadingBox />
+          ) : error ? (
+            <MessageBox variant="danger">{error}</MessageBox>
+          ) : (
+            <Row>
+              {products.map((product) => (
+                <Col key={product.slug} sm={6} md={4} lg={3} className="mb-3">
+                  <Product product={product}></Product>
+                </Col>
+              ))}
+            </Row>
+          )}
+        </div>
       </div>
     </div>
+
   );
 }
 export default HomeScreen;

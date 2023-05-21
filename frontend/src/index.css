@@ -142,3 +142,26 @@ main {
 button.thumbnail {
   padding: 0;
 }
+#hero-background{
+  height: 1080px;
+  background-image: url(./assets/hero-3.jpg);
+  background-size: cover;
+}
+#contact-nav{
+  margin-right: 70px;
+}
+.mt-20{
+  margin-top: 20px;;
+}
+#basic-nav-dropdown{
+  color: black;
+}
+#admin-nav-dropdown{
+  color:black;
+}
+#main-container{
+  max-width: 1300px;
+}
+#search-bar{
+  width: 500px;
+}
