@@ -27,7 +27,7 @@ function HomeScreen() {
     loading: true,
     error: '',
   });
-  // const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);..
   useEffect(() => {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
@@ -44,15 +44,15 @@ function HomeScreen() {
   }, []);
   return (
     <div>
-      <div id = "hero-background" className='w-100 border mb-4'>
-      
+      <div id="hero-background" className='w-100 border mb-4'>
+
       </div>
       <div className='border'>
 
         <Helmet>
           <title>SHOPiT</title>
         </Helmet>
-        
+
         <h1 className='text-center'>Featured Products</h1>
         <div className="products">
           {loading ? (
