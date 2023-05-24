@@ -50,7 +50,9 @@ function Product(props) {
           
         ) : (
           <div className='d-flex justify-content-center'>
-            <Button onClick={() => addToCartHandler(product)}>Add to cart</Button>
+            <Button onClick={() => addToCartHandler(product)}>
+              <i className="fas fa-shopping-cart"></i>
+            </Button>
           </div>
         )}
       </Card.Body>
