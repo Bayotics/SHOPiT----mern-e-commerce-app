@@ -35,21 +35,21 @@ function Product(props) {
       </Link>
       <Card.Body className = "">
         <Link className='text-decoration-none' to={`/product/${product.slug}`}>
-          <Card.Title className='text-center'>{product.name}</Card.Title>
+          <Card.Title className='text-center text-dark font-weight-bold'>{product.name}</Card.Title>
         </Link>
-        <div className = "flex justify-center">
-          <Rating rating={product.rating} numReviews={product.numReviews} />
+        <div className = "d-flex justify-content-center">
+          <Rating rating={product.rating} />
         </div>
         <Card.Text className='text-xl font-semibold text-center'>₦{product.price}</Card.Text>
         {product.countInStock === 0 ? (
-          <div  className='flex justify-center'>
+          <div  className='d-flex justify-content-center'>
             <Button variant="danger" disabled>
             Out of stock
           </Button>
           </div>
           
         ) : (
-          <div className='flex justify-center'>
+          <div className='d-flex justify-content-center'>
             <Button onClick={() => addToCartHandler(product)}>Add to cart</Button>
           </div>
         )}
