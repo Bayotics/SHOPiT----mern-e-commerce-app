@@ -47,14 +47,14 @@ function HomeScreen() {
       <div id="hero-background" className='w-100 border mb-4'>
 
       </div>
-      <div className='border'>
+      <div className='border' id = "main-products">
 
         <Helmet>
           <title>SHOPiT</title>
         </Helmet>
 
-        <h1 className='text-center'>Featured Products</h1>
-        <div className="products">
+        <h1 className='text-center fw-bold'>FEATURED PRODUCTS</h1>
+        <div className="products" id = "featured-products">
           {loading ? (
             <LoadingBox />
           ) : error ? (
