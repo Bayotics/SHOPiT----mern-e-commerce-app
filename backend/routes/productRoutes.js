@@ -26,6 +26,7 @@ productRouter.post(
       rating: 0,
       numReviews: 0,
       description: 'sample description',
+      longDescription: 'Everything About Your product'
     });
     const product = await newProduct.save();
     res.send({ message: 'Product Created', product });
