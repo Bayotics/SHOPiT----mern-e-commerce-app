@@ -131,7 +131,7 @@ function ProductScreen() {
             alt={product.name}
           ></img>
         </Col>
-        <Col md={3}>
+        <Col md={6}>
           <ListGroup variant="flush">
             <ListGroup.Item>
               <Helmet>
@@ -145,7 +145,7 @@ function ProductScreen() {
               ></Rating>
               <div>{product.numReviews} review(s)</div>
             </ListGroup.Item>
-            <ListGroup.Item>Pirce : ${product.price}</ListGroup.Item>
+            <ListGroup.Item><p className='fs-4'> ₦{product.price}</p></ListGroup.Item>
             <ListGroup.Item>
               <Row xs={1} md={2} className="g-2">
                 {[product.image, ...product.images].map((x) => (
@@ -165,22 +165,9 @@ function ProductScreen() {
               </Row>
             </ListGroup.Item>
             <ListGroup.Item>
-              Description:
               <p>{product.description}</p>
             </ListGroup.Item>
-          </ListGroup>
-        </Col>
-        <Col md={3}>
-          <Card>
-            <Card.Body>
-              <ListGroup variant="flush">
-                <ListGroup.Item>
-                  <Row>
-                    <Col>Price:</Col>
-                    <Col>${product.price}</Col>
-                  </Row>
-                </ListGroup.Item>
-                <ListGroup.Item>
+            <ListGroup.Item>
                   <Row>
                     <Col>Status:</Col>
                     <Col>
@@ -191,9 +178,8 @@ function ProductScreen() {
                       )}
                     </Col>
                   </Row>
-                </ListGroup.Item>
-
-                {product.countInStock > 0 && (
+            </ListGroup.Item>
+            {product.countInStock > 0 && (
                   <ListGroup.Item>
                     <div className="d-grid">
                       <Button onClick={addToCartHandler} variant="primary">
@@ -202,9 +188,7 @@ function ProductScreen() {
                     </div>
                   </ListGroup.Item>
                 )}
-              </ListGroup>
-            </Card.Body>
-          </Card>
+          </ListGroup>
         </Col>
       </Row>
       <div className="product-details-tab">
