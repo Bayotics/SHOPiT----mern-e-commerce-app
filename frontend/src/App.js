@@ -31,6 +31,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import DashboardScreen from './screens/DashboardScreen';
 import AdminRoute from './components/AdminRoute';
 import ProductListScreen from './screens/ProductListScreen';
+import ProductCreateScreen from './screens/ProductCreateScreen';
 import ProductEditScreen from './screens/ProductEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
 import UserListScreen from './screens/UserListScreen';
@@ -93,7 +94,7 @@ function App() {
                       <Link to = "/" className='nav-link text-dark'>ABOUT</Link>
                       <Link to = "/" className='nav-link text-dark' id = "contact-nav">CONTACT</Link>
                   <Link to = "/" className='nav-link text-dark'>Dark mode
-                  <i class="fa fa-toggle-off" aria-hidden="true"></i></Link>
+                  <i className="fa fa-toggle-off" aria-hidden="true"></i></Link>
                   <Link to="/cart" className="nav-link text-dark">
                     <i className="fas fa-shopping-cart"></i>
                     {cart.cartItems.length > 0 && (
@@ -251,6 +252,14 @@ function App() {
                   </AdminRoute>
                 }
               ></Route>
+              <Route
+                path="/productcreatescreen"
+                element={
+                  <AdminRoute>
+                    <ProductCreateScreen />
+                  </AdminRoute>
+                }
+              ></Route>             
                <Route
                 path="/admin/user/:id"
                 element={

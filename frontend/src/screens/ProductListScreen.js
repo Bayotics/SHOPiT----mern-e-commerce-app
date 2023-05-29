@@ -116,7 +116,9 @@ export default function ProductListScreen() {
       }
     }
   };
-
+  const createProduct = () => {
+    navigate(`/ProductCreateScreen`)
+  }
   const deleteHandler = async (product) => {
     if (window.confirm('Are you sure to delete?')) {
       try {
@@ -144,6 +146,9 @@ export default function ProductListScreen() {
           <div>
             <Button type="button" onClick={createHandler}>
               Create Product
+            </Button>
+            <Button type="button" onClick={createProduct}>
+              Test
             </Button>
           </div>
         </Col>
