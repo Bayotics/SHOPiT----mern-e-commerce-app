@@ -92,10 +92,10 @@ function App() {
                       <Link to = "/" className='nav-link text-dark'>SHOP</Link>
                       <Link to = "/" className='nav-link text-dark'>ABOUT</Link>
                       <Link to = "/" className='nav-link text-dark' id = "contact-nav">CONTACT</Link>
-                  <Link to = "/" className='nav-link text-dark'>Dark mode</Link>
+                  <Link to = "/" className='nav-link text-dark'>Dark mode
+                  <i class="fa fa-toggle-off" aria-hidden="true"></i></Link>
                   <Link to="/cart" className="nav-link text-dark">
-                    <i className="fa-solid fa-cart-shopping"></i>
-                    cart
+                    <i className="fas fa-shopping-cart"></i>
                     {cart.cartItems.length > 0 && (
                       <Badge pill bg="danger">
                         {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}

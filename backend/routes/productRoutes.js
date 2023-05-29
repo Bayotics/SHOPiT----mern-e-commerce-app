@@ -50,6 +50,7 @@ productRouter.put(
       product.brand = req.body.brand;
       product.countInStock = req.body.countInStock;
       product.description = req.body.description;
+      product.longDescrition = req.body.longDescription
       await product.save();
       res.send({ message: 'Product Updated' });
     } else {

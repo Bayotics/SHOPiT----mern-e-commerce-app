@@ -36,7 +36,19 @@ const reducer = (state, action) => {
       };
     case 'UPLOAD_FAIL':
       return { ...state, loadingUpload: false, errorUpload: action.payload };
+    case 'DELETE_REQUEST':
+      return { ...state, loadingDelete: true, successDelete: false };
+    case 'DELETE_SUCCESS':
+      return {
+        ...state,
+        loadingDelete: false,
+        successDelete: true,
+      };
+    case 'DELETE_FAIL':
+      return { ...state, loadingDelete: false, successDelete: false };
 
+    case 'DELETE_RESET':
+      return { ...state, loadingDelete: false, successDelete: false };
     default:
       return state;
   }
@@ -48,7 +60,7 @@ export default function ProductEditScreen() {
 
   const { state } = useContext(Store);
   const { userInfo } = state;
-  const [{ loading, error, loadingUpdate, loadingUpload }, dispatch] =
+  const [{ loading, error, loadingUpdate, loadingUpload, loadingDelete, successDelete}, dispatch] =
     useReducer(reducer, {
       loading: true,
       error: '',
@@ -63,6 +75,7 @@ export default function ProductEditScreen() {
   const [countInStock, setCountInStock] = useState('');
   const [brand, setBrand] = useState('');
   const [description, setDescription] = useState('');
+  const [longDescription, setLongDescription] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -78,6 +91,7 @@ export default function ProductEditScreen() {
         setCountInStock(data.countInStock);
         setBrand(data.brand);
         setDescription(data.description);
+        setLongDescription(data.longDescription);
         dispatch({ type: 'FETCH_SUCCESS' });
       } catch (err) {
         dispatch({
@@ -86,8 +100,14 @@ export default function ProductEditScreen() {
         });
       }
     };
+
+    if (successDelete) {
+      dispatch({ type: 'DELETE_RESET' });
+    } else {
+      fetchData();
+    }
     fetchData();
-  }, [productId]);
+  }, [productId, successDelete]);
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -106,6 +126,7 @@ export default function ProductEditScreen() {
           brand,
           countInStock,
           description,
+          longDescription
         },
         {
           headers: { Authorization: `Bearer ${userInfo.token}` },
@@ -153,6 +174,22 @@ export default function ProductEditScreen() {
     setImages(images.filter((x) => x !== fileName));
     toast.success('Image removed successfully. click Update to apply it');
   };
+  const cancelHandler = async (product) => {
+    if (window.confirm('Are you sure you want to cancel?')) {
+      try {
+        await axios.delete(`/api/products/${productId}`, {
+          headers: { Authorization: `Bearer ${userInfo.token}` },
+        });
+        navigate('/admin/products');
+      } catch (err) {
+        toast.error(getError(error));
+        dispatch({
+          type: 'Error! Check your Connection :(',
+        });
+      }
+    }
+  };
+  console.log(productId)
   return (
     <Container className="small-container">
       <Helmet>
@@ -259,11 +296,27 @@ export default function ProductEditScreen() {
               required
             />
           </Form.Group>
+          <Form.Group className="mb-3" controlId="longDescription">
+            <Form.Label>Long Description</Form.Label>
+            <Form.Control
+              value={longDescription}
+              onChange={(e) => setLongDescription(e.target.value)}
+              required
+            />
+            </Form.Group>
           <div className="mb-3">
             <Button disabled={loadingUpdate} type="submit">
               Update
             </Button>
             {loadingUpdate && <LoadingBox></LoadingBox>}
+
+            <Button
+            type="button"
+            variant="danger"
+            onClick={() => cancelHandler()}
+          >
+            Cancel
+          </Button>
           </div>
         </Form>
       )}
