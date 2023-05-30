@@ -142,6 +142,9 @@ export default function ProductCreateScreen() {
     setImages(images.filter((x) => x !== fileName));
     toast.success('Image removed successfully. click Update to apply it');
   };
+  const cancelHandler = () => {
+    navigate(`/admin/products`)
+  }
   return (
     <Container className="small-container">
       <Helmet>
@@ -258,13 +261,14 @@ export default function ProductCreateScreen() {
             </Form.Group>
           <div className="mb-3">
             <Button disabled={loadingUpdate} type="submit">
-              Update
+              Create
             </Button>
             {loadingUpdate && <LoadingBox></LoadingBox>}
 
             <Button
             type="button"
             variant="danger"
+            onClick={cancelHandler}
           >
             Cancel
           </Button>
