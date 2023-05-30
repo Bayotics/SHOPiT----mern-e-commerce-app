@@ -128,16 +128,16 @@ function ProductScreen() {
           <img
             className="img-large"
             src={selectedImage || product.image}
-            alt={product.name}
+            alt={product.title}
           ></img>
         </Col>
         <Col md={6}>
           <ListGroup variant="flush">
             <ListGroup.Item>
               <Helmet>
-                <title>{product.name}</title>
+                <title>{product.title}</title>
               </Helmet>
-              <h1>{product.name}</h1>
+              <h1>{product.title}</h1>
             </ListGroup.Item>
             <ListGroup.Item>
               <Rating

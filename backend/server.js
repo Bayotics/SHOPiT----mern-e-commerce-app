@@ -8,7 +8,10 @@ import userRouter from './routes/userRoutes.js';
 import orderRouter from './routes/orderRoutes.js';
 import paymentRouter from './routes/paymentRoutes.js';
 import uploadRouter from './routes/uploadRoutes.js';
-
+import Product from './models/productModel.js';
+import User from './models/userModel.js';
+import Payment from './models/paymentModel.js';
+import data from "./data.js"
 
 
 dotenv.config();
@@ -16,6 +19,9 @@ dotenv.config();
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
+    // Product.insertMany(data.products);
+    // User.insertMany(data.users);
+    // Payment.insertMany(data.payments);
     console.log('connected to db');
   })
   .catch((err) => {

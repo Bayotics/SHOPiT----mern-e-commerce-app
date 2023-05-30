@@ -15,18 +15,19 @@ productRouter.post(
   isAuth,
   isAdmin,
   expressAsyncHandler(async (req, res) => {
+    const {title,slug,image,price,category,brand,countInStock,rating,numReviews,description,longDescription } = req.body;
     const newProduct = new Product({
-      name: 'sample name ' + Date.now(),
-      slug: 'sample-name-' + Date.now(),
-      image: '/images/p1.jpg',
-      price: 0,
-      category: 'sample category',
-      brand: 'sample brand',
-      countInStock: 0,
-      rating: 0,
-      numReviews: 0,
-      description: 'sample description',
-      longDescription: 'Everything About Your product'
+      title,
+      slug,
+      image,
+      price,
+      category,
+      brand,
+      countInStock,
+      rating,
+      numReviews,
+      description,
+      longDescription
     });
     const product = await newProduct.save();
     res.send({ message: 'Product Created', product });
@@ -41,7 +42,7 @@ productRouter.put(
     const productId = req.params.id;
     const product = await Product.findById(productId);
     if (product) {
-      product.name = req.body.name;
+      product.title = req.body.title;
       product.slug = req.body.slug;
       product.price = req.body.price;
       product.image = req.body.image;
