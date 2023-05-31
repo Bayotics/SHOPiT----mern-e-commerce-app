@@ -6,6 +6,7 @@ import { Store } from '../Store';
 import { getError } from '../utils';
 import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
+import Dropdown from 'react-bootstrap/Dropdown'
 import Form from 'react-bootstrap/Form';
 import { Helmet } from 'react-helmet-async';
 import LoadingBox from '../components/LoadingBox';
@@ -75,7 +76,14 @@ export default function ProductCreateScreen() {
   const [description, setDescription] = useState('');
   const [longDescription, setLongDescription] = useState('');
 
-
+  const categoriesList = [
+    "", "Food, fruits and Beverages", "Household Cleaning", "Drinks",
+    "Fragrance", "Hair Care", "Oral Care", "Health Care","Home, Office and kitchen furniture","Appliances",
+    "Phones and tablets","Computers and Computer Accessories","Electronics","Generators and Portable power","Men's Fashion",
+    "Women's Fashion", "Watches", "Sunglasses", "Fashion", "Baby Products", "Sporting and Sporting accessories",
+    "Books, Movies and Music", "Pets","Make up", "Personal care","Gaming and toys", "Vehicles", "Others"
+  ]
+  categoriesList.sort();
 
   const submitHandler = async (e) => {
     console.log("Form is working")
@@ -222,10 +230,20 @@ export default function ProductCreateScreen() {
           <Form.Group className="mb-3" controlId="category">
             <Form.Label>Category</Form.Label>
             <Form.Control
+              as = "select"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
               required
-            />
+            >
+              {categoriesList.map((e) => {
+                return(
+                  <option key = {e}>{e}</option>
+                )
+              })}
+              {/* <option>Select Product category</option>
+              <option>Constancia</option>
+              <option>Complemento</option> */}
+            </Form.Control>
           </Form.Group>
           <Form.Group className="mb-3" controlId="brand">
             <Form.Label>Brand</Form.Label>
