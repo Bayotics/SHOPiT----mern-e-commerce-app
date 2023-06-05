@@ -27,14 +27,15 @@ function Product(props) {
       payload: { ...item, quantity },
     });
   };
+  console.log()
 
   return (
     <Card className='shadow-lg p-3 mb-5 bg-white rounded'>
-      <Link to={`/product/${product.slug}`}>
+      <Link to={`/product/${product._id}`}>
         <img src={product.image} className="card-img-top" alt={product.title} />
       </Link>
       <Card.Body className = "">
-        <Link className='text-decoration-none' to={`/product/${product.slug}`}>
+        <Link className='text-decoration-none' to={`/product/${product._id}`}>
           <Card.Title className='text-center text-dark font-weight-bold'>{product.title}</Card.Title>
         </Link>
         <div className = "d-flex justify-content-center">
