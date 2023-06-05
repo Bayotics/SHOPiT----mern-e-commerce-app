@@ -1,7 +1,8 @@
 import axios from 'axios';
-import React, { useContext, useEffect, useReducer } from 'react';
+import React, { useContext, useEffect, useReducer,useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
@@ -22,6 +23,12 @@ function reducer(state, action) {
       return { ...state, loading: false, order: action.payload, error: '' };
     case 'FETCH_FAIL':
       return { ...state, loading: false, error: action.payload };
+       case 'UPDATE_REQUEST':
+      return { ...state, loadingUpdate: true };
+    case 'UPDATE_SUCCESS':
+      return { ...state, loadingUpdate: false };
+    case 'UPDATE_FAIL':
+      return { ...state, loadingUpdate: false };
 
     default:
       return state;
@@ -30,7 +37,7 @@ function reducer(state, action) {
 export default function OrderScreen() {
   const { state } = useContext(Store);
   const { userInfo } = state;
-
+  // const [orderIsPaid, setOrderisPaid] = useState(false);
   const params = useParams();
   const { id: orderId } = params;
   const navigate = useNavigate();
@@ -63,6 +70,8 @@ export default function OrderScreen() {
 
     }
   }, [order, userInfo, orderId, navigate]);
+  console.log(order)
+  const orderIsPaid = order.isPaid
 // paystack implementation
   const config = {
       reference: (new Date()).getTime().toString(),
@@ -90,9 +99,35 @@ export default function OrderScreen() {
             authorization: `Bearer ${userInfo.token}`,
           },
         }
-      )
+      );
+      // setOrderisPaid(true);
+      //order put request to change order.isPaid to true
+      try {
+      dispatch({ type: 'UPDATE_REQUEST' });
+      await axios.put(
+        `/api/orders/${orderId}/pay`,
+        {
+          orderIsPaid
+        },
+        {
+          headers: { Authorization: `Bearer ${userInfo.token}` },
+        }
+      );
+      dispatch({
+        type: 'UPDATE_SUCCESS',
+      });
+      toast.success('Product updated successfully');
+      // navigate('/admin/products');
+    } catch (err) {
+      toast.error(getError(err));
+      dispatch({ type: 'UPDATE_FAIL' });
+    }
+      console.log(order.isPaid)
+      order.isPaid = true;
     };
     postFunc();
+    order.isPaid = true;
+    // navigate('/')
     console.log(reference)    
   };
 
@@ -121,6 +156,7 @@ export default function OrderScreen() {
         <title>Order {orderId}</title>
       </Helmet>
       <h1 className="my-3">Order {orderId}</h1>
+      {/* <button onClick={() => {setOrderisPaid(true)}}>Test</button> */}
       <Row>
         <Col md={8}>
           <Card className="mb-3">
@@ -147,7 +183,7 @@ export default function OrderScreen() {
               <Card.Text>
                 <strong>Method:</strong> {order.paymentMethod}
               </Card.Text>
-              {order.isDelivered  ? (
+              {order.isPaid  ? (
                 <MessageBox variant="success">
                   Paid at {order.paidAt}
                 </MessageBox>
@@ -184,6 +220,7 @@ export default function OrderScreen() {
           </Card>
         </Col>
         <Col md={4}>
+          {}
           <Card className="mb-3">
             <Card.Body>
               <Card.Title>Order Summary</Card.Title>
@@ -214,7 +251,7 @@ export default function OrderScreen() {
                     <Col>
                       <strong>₦{order.totalPrice.toFixed(2)}</strong>
                     </Col>
-                    <PaystackHookExample />
+                    {order.isPaid ? <div></div> : <PaystackHookExample />}
                   </Row>
                 </ListGroup.Item>
               </ListGroup>
