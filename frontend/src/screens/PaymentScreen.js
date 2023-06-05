@@ -75,7 +75,7 @@ const PaymentScreen = () =>
             <br/>
         <div>{payment.orderItems.map((e) => (
                 <div key = {e._id}>
-                    <h3>order name: {e.name}</h3>
+                    <h3>order name: {e.title}</h3>
                     <h3>order id: {e._id}</h3>
                     <h3>quantity: {e.quantity}</h3>
                     <h3>price: {e.price}</h3>

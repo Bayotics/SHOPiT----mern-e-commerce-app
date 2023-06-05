@@ -174,20 +174,8 @@ export default function ProductEditScreen() {
     setImages(images.filter((x) => x !== fileName));
     toast.success('Image removed successfully. click Update to apply it');
   };
-  const cancelHandler = async (product) => {
-    if (window.confirm('Are you sure you want to cancel?')) {
-      try {
-        await axios.delete(`/api/products/${productId}`, {
-          headers: { Authorization: `Bearer ${userInfo.token}` },
-        });
+  const cancelHandler = async () => {
         navigate('/admin/products');
-      } catch (err) {
-        toast.error(getError(error));
-        dispatch({
-          type: 'Error! Check your Connection :(',
-        });
-      }
-    }
   };
   console.log(productId)
   return (

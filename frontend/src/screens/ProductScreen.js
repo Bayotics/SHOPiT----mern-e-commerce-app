@@ -47,7 +47,8 @@ function ProductScreen() {
 
   const navigate = useNavigate();
   const params = useParams();
-  const { slug } = params;
+  const productId = params.id
+  console.log(productId);
 
   const [{ loading, error, product, loadingCreateReview }, dispatch] =
     useReducer(reducer, {
@@ -59,19 +60,19 @@ function ProductScreen() {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
       try {
-        const result = await axios.get(`/api/products/slug/${slug}`);
+        const result = await axios.get(`/api/products/${productId}`);
         dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
       }
     };
     fetchData();
-  }, [slug]);
-
+  }, [productId]);
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart, userInfo } = state;
   const addToCartHandler = async () => {
     const existItem = cart.cartItems.find((x) => x._id === product._id);
+    console.log(product._id)
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/products/${product._id}`);
     if (data.countInStock < quantity) {
@@ -117,6 +118,11 @@ function ProductScreen() {
       dispatch({ type: 'CREATE_FAIL' });
     }
   };
+  //   console.log(product)
+  //   console.log(product._id)
+  // return(
+  //   <div><h1>This is the product screen for product {productId}</h1></div>
+  // )
   return loading ? (
     <LoadingBox />
   ) : error ? (
@@ -363,7 +369,7 @@ function ProductScreen() {
           ) : (
             <MessageBox>
               Please{' '}
-              <Link to={`/signin?redirect=/product/${product.slug}`}>
+              <Link to={`/signin?redirect=/product/${product._id}`}>
                 Sign In
               </Link>{' '}
               to write a review
