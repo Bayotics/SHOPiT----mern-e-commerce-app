@@ -181,6 +181,7 @@ function App() {
               <Route path="/search" element={<SearchScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
               <Route path="/signup" element={<SignupScreen />} />
+              <Route path='/mainscreen' element = {<MainScreen />} />
               <Route
                 path="/profile"
                 element={
