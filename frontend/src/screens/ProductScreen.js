@@ -110,10 +110,10 @@ function ProductScreen() {
       product.numReviews = data.numReviews;
       product.rating = data.rating;
       dispatch({ type: 'REFRESH_PRODUCT', payload: product });
-      window.scrollTo({
-        behavior: 'smooth',
-        top: reviewsRef.current.offsetTop,
-      });
+      // window.scrollTo({
+      //   behavior: 'smooth',
+      //   top: reviewsRef.current.offsetTop,
+      // });
     } catch (error) {
       toast.error(getError(error));
       dispatch({ type: 'CREATE_FAIL' });
@@ -194,25 +194,11 @@ function ProductScreen() {
         </Col>
       </Row>
       <div className="product-details-tab">
-        <ProductDetails />
+        <ProductDetails 
+        product = {product}
+        />
       </div>
       <div className="my-3">
-        <h2 ref={reviewsRef}>Reviews</h2>
-        <div className="mb-3">
-          {product.reviews.length === 0 && (
-            <MessageBox>There is no review</MessageBox>
-          )}
-        </div>
-        <ListGroup>
-          {product.reviews.map((review) => (
-            <ListGroup.Item key={review._id}>
-              <strong>{review.name}</strong>
-              <Rating rating={review.rating} caption=" "></Rating>
-              <p>{review.createdAt.substring(0, 10)}</p>
-              <p>{review.comment}</p>
-            </ListGroup.Item>
-          ))}
-        </ListGroup>
         <div className="my-3">
           {userInfo ? (
             <form onSubmit={submitHandler}>
