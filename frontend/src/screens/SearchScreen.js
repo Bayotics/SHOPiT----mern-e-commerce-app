@@ -36,17 +36,33 @@ const reducer = (state, action) => {
 
 const prices = [
   {
-    name: '$1 to $50',
-    value: '1-50',
+    name: '₦1 to ₦1,000',
+    value: '1-1000',
   },
   {
-    name: '$51 to $200',
-    value: '51-200',
+    name: '₦1k to ₦10k',
+    value: '1000-10000',
   },
   {
-    name: '$201 to $1000',
-    value: '201-1000',
+    name: '₦10k to ₦100k',
+    value: '10000-100000',
   },
+  {
+    name: '₦100k to ₦500k',
+    value: '100000-500000'
+  },
+  {
+    name: '₦500k to ₦1M',
+    value: '500000-1000000'
+  },
+  {
+    name: '₦1M to ₦5M',
+    value: '1000000-5000000'
+  },
+  {
+    name: '₦5M to ₦20M',
+    value: '5000000-20000000'
+  }
 ];
 
 export const ratings = [
@@ -74,7 +90,7 @@ export const ratings = [
 export default function SearchScreen() {
   const navigate = useNavigate();
   const { search } = useLocation();
-  const sp = new URLSearchParams(search); // /search?category=Shirts
+  const sp = new URLSearchParams(search); 
   const category = sp.get('category') || 'all';
   const query = sp.get('query') || 'all';
   const price = sp.get('price') || 'all';
