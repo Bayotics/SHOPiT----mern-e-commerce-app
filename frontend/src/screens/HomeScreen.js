@@ -3,6 +3,7 @@ import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Product from '../components/Product';
+import Categories from '../components/Categories';
 import { Helmet } from 'react-helmet-async';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
@@ -52,7 +53,9 @@ function HomeScreen() {
         <Helmet>
           <title>SHOPiT</title>
         </Helmet>
-
+        <div >
+          <Categories />
+        </div>
         <h1 className='text-center fw-bold'>FEATURED PRODUCTS</h1>
         <div className="products" id = "featured-products">
           {loading ? (
