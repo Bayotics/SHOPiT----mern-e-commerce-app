@@ -408,3 +408,10 @@ product-details-tab {
 .product-details-extended .tab-content .tab-pane {
   padding: 0
 }
+#category-item{
+  height: 260px;
+  margin-bottom: 6vh;
+}
+#category-inner{
+  height: 230px
+}
