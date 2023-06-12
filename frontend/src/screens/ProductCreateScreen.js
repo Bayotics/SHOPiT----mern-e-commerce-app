@@ -81,7 +81,8 @@ export default function ProductCreateScreen() {
     "Fragrance", "Hair Care", "Oral Care", "Health Care","Home, Office and kitchen furniture","Appliances",
     "Phones and tablets","Computers and Computer Accessories","Electronics","Generators and Portable power","Men's Fashion",
     "Women's Fashion", "Watches", "Sunglasses", "Fashion", "Baby Products", "Sporting and Sporting accessories",
-    "Books, Movies and Music", "Pets","Make up", "Personal care","Gaming and toys", "Vehicles", "Others"
+    "Books, Movies and Music", "Pets","Make up", "Personal care","Gaming and toys", "Vehicles",
+    "Men's Shoes", "Women's Shoes", "Others",
   ]
   categoriesList.sort();
 
