@@ -1,20 +1,25 @@
 import Nav from 'react-bootstrap/Nav';
 import { useState } from 'react';
+import {Link} from "react-router-dom";
 
 const Categories = () => {
 
     const allCat = <div className="row g-3">
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Phones and tablets</p>
-                        </div>
+                        <Link to={'/search?category=Phones%20and%20tablets'} className = 'nav-link text-dark'>
+                            <div  id = "category-item">
+                                <div class="p-3 border bg-light" id = "category-inner"></div>
+                                <p className='mt-2 text-center'>Phones and tablets</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Phones and tablets</p>
-                        </div>
+                        <Link to={'/search?category=Computers%20and%20Computer%20Accessories'}>
+                            <div  id = "category-item">
+                                <div class="p-3 border bg-light" id = "category-inner"></div>
+                                <p className='mt-2 text-center'>Computers and Computer Accessories</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
                         <div  id = "category-item">
