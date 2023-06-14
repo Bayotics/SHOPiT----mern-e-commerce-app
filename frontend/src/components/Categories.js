@@ -1,6 +1,8 @@
 import Nav from 'react-bootstrap/Nav';
 import { useState } from 'react';
 import {Link} from "react-router-dom";
+import phones_and_accessories from '../assets/phones_and_tab.jpg';
+import computer from '../assets/computer_and_accessories.jpg';
 
 const Categories = () => {
 
@@ -8,7 +10,12 @@ const Categories = () => {
                     <div class="col-3">
                         <Link to={'/search?category=Phones%20and%20tablets'} className = 'nav-link text-dark'>
                             <div  id = "category-item">
-                                <div class="p-3 border bg-light phones-and-tab" id = "category-inner"></div>
+                                <div class=" border bg-light phones-and-tab" id = "category-inner">
+                                    <img
+                                     src={phones_and_accessories}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "phones and tabs"/>
+                                </div>
                                 <p className='mt-2 text-center'>PHONES AND TABLETS</p>
                             </div>
                         </Link>
@@ -16,7 +23,12 @@ const Categories = () => {
                     <div class="col-3">
                         <Link className = 'nav-link text-dark' to={'/search?category=Computers%20and%20Computer%20Accessories'}>
                             <div  id = "category-item">
-                                <div class="p-3 border bg-light computer_and_accessories" id = "category-inner"></div>
+                                <div class="border bg-light computer_and_accessories" id = "category-inner">
+                                    <img
+                                     src={computer}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "phones and tabs"/>
+                                </div>
                                 <p className='mt-2 text-center'>COMPUTERS & COMPUTER ACCESSORIES</p>
                             </div>
                         </Link>

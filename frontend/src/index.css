@@ -415,3 +415,8 @@ product-details-tab {
 #category-inner{
   height: 230px
 }
+/* category images */
+.phones-and-tab{
+  /* background-image: url(../src/assets/phones_and_tab.jpg); */
+  background-size: cover;
+}
