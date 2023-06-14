@@ -8,42 +8,50 @@ const Categories = () => {
                     <div class="col-3">
                         <Link to={'/search?category=Phones%20and%20tablets'} className = 'nav-link text-dark'>
                             <div  id = "category-item">
-                                <div class="p-3 border bg-light" id = "category-inner"></div>
-                                <p className='mt-2 text-center'>Phones and tablets</p>
+                                <div class="p-3 border bg-light phones-and-tab" id = "category-inner"></div>
+                                <p className='mt-2 text-center'>PHONES AND TABLETS</p>
                             </div>
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link to={'/search?category=Computers%20and%20Computer%20Accessories'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Computers%20and%20Computer%20Accessories'}>
                             <div  id = "category-item">
-                                <div class="p-3 border bg-light" id = "category-inner"></div>
-                                <p className='mt-2 text-center'>Computers and Computer Accessories</p>
+                                <div class="p-3 border bg-light computer_and_accessories" id = "category-inner"></div>
+                                <p className='mt-2 text-center'>COMPUTERS & COMPUTER ACCESSORIES</p>
                             </div>
                         </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Phones and tablets</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=men%20fashion'}>
+                            <div  id = "category-item">
+                                <div class="p-3 border bg-light men_fashion" id = "category-inner"></div>
+                                <p className='mt-2 text-center'>MEN FASHION</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Phones and tablets</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=food%20and%20beverages'}>
+                            <div  id = "category-item">
+                                <div class="p-3 border bg-light food_and_beverages" id = "category-inner"></div>
+                                <p className='mt-2 text-center'>FOOD AND BEVERAGES</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Phones and tablets</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=fragrance'}>
+                            <div  id = "category-item">
+                                <div class="p-3 border bg-light fragrance" id = "category-inner"></div>
+                                <p className='mt-2 text-center'>FRAGRANCE</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Phones and tablets</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=household%20cleaning'}>
+                            <div  id = "category-item">
+                                <div class="p-3 border bg-light household_cleaning" id = "category-inner"></div>
+                                <p className='mt-2 text-center'>HOUSEHOLD CLEANING</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
                         <div  id = "category-item">
