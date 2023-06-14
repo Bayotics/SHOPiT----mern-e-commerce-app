@@ -77,12 +77,12 @@ export default function ProductCreateScreen() {
   const [longDescription, setLongDescription] = useState('');
 
   const categoriesList = [
-    "", "Food, fruits and Beverages", "Household Cleaning", "Drinks",
+    "", "Food and Beverages", "Household Cleaning", "Drinks",
     "Fragrance", "Hair Care", "Oral Care", "Health Care","Home, Office and kitchen furniture","Appliances",
-    "Phones and tablets","Computers and Computer Accessories","Electronics","Generators and Portable power","Men's Fashion",
-    "Women's Fashion", "Watches", "Sunglasses", "Fashion", "Baby Products", "Sporting and Sporting accessories",
+    "Phones and tablets","Computers and Computer Accessories","Electronics","Generators and Portable power","Men Fashion",
+    "Women Fashion", "Watches", "Sunglasses", "Fashion", "Baby Products", "Sporting and Sporting accessories",
     "Books, Movies and Music", "Pets","Make up", "Personal care","Gaming and toys", "Vehicles",
-    "Men's Shoes", "Women's Shoes", "Others",
+    "Men Shoes", "Women Shoes", "Others",
   ]
   categoriesList.sort();
 
