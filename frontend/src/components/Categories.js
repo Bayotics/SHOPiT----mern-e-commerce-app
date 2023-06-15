@@ -3,6 +3,7 @@ import { useState } from 'react';
 import {Link} from "react-router-dom";
 import phones_and_accessories from '../assets/phones_and_tab.jpg';
 import computer from '../assets/computer_and_accessories.jpg';
+import men_fashion from '../assets/men_fashion.jpg'
 
 const Categories = () => {
 
@@ -36,7 +37,12 @@ const Categories = () => {
                     <div class="col-3">
                         <Link className = 'nav-link text-dark' to={'/search?category=men%20fashion'}>
                             <div  id = "category-item">
-                                <div class="p-3 border bg-light men_fashion" id = "category-inner"></div>
+                                <div class="border bg-light men_fashion" id = "category-inner">
+                                    <img
+                                     src={men_fashion}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "phones and tabs"/>
+                                </div>
                                 <p className='mt-2 text-center'>MEN FASHION</p>
                             </div>
                         </Link>
