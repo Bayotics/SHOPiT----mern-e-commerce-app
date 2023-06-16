@@ -420,3 +420,9 @@ product-details-tab {
   /* background-image: url(../src/assets/phones_and_tab.jpg); */
   background-size: cover;
 }
+#category-inner img{
+  transition: .3s;
+}
+#category-inner img:hover{
+  transform: translateY(-15px);
+}

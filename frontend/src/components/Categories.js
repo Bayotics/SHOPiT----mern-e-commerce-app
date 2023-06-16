@@ -3,15 +3,20 @@ import { useState } from 'react';
 import {Link} from "react-router-dom";
 import phones_and_accessories from '../assets/phones_and_tab.jpg';
 import computer from '../assets/computer_and_accessories.jpg';
-import men_fashion from '../assets/men_fashion.jpg'
+import men_fashion from '../assets/men_fashion.jpg';
+import food_and_beverages from '../assets/food_and_beverages.jpg';
+import fragrance from '../assets/fragrance.jpg';
+import household_cleaning from '../assets/household_cleaning.jpg';
+
 
 const Categories = () => {
 
-    const allCat = <div className="row g-3">
+    const allCat =
+    <div className="row g-3">
                     <div class="col-3">
                         <Link to={'/search?category=Phones%20and%20tablets'} className = 'nav-link text-dark'>
                             <div  id = "category-item">
-                                <div class=" border bg-light phones-and-tab" id = "category-inner">
+                                <div class="bg-light phones-and-tab" id = "category-inner">
                                     <img
                                      src={phones_and_accessories}
                                      style={{height: "100%", width: "100%"}}
@@ -24,11 +29,11 @@ const Categories = () => {
                     <div class="col-3">
                         <Link className = 'nav-link text-dark' to={'/search?category=Computers%20and%20Computer%20Accessories'}>
                             <div  id = "category-item">
-                                <div class="border bg-light computer_and_accessories" id = "category-inner">
+                                <div class="bg-light computer_and_accessories" id = "category-inner">
                                     <img
                                      src={computer}
                                      style={{height: "100%", width: "100%"}}
-                                       alt= "phones and tabs"/>
+                                       alt= "computer_and_accessories"/>
                                 </div>
                                 <p className='mt-2 text-center'>COMPUTERS & COMPUTER ACCESSORIES</p>
                             </div>
@@ -41,7 +46,7 @@ const Categories = () => {
                                     <img
                                      src={men_fashion}
                                      style={{height: "100%", width: "100%"}}
-                                       alt= "phones and tabs"/>
+                                       alt= "men_fashion"/>
                                 </div>
                                 <p className='mt-2 text-center'>MEN FASHION</p>
                             </div>
@@ -50,7 +55,12 @@ const Categories = () => {
                     <div class="col-3">
                         <Link className = 'nav-link text-dark' to={'/search?category=food%20and%20beverages'}>
                             <div  id = "category-item">
-                                <div class="p-3 border bg-light food_and_beverages" id = "category-inner"></div>
+                                <div class=" border bg-light food_and_beverages" id = "category-inner">
+                                    <img
+                                     src={food_and_beverages}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "food and beverages"/>
+                                </div>
                                 <p className='mt-2 text-center'>FOOD AND BEVERAGES</p>
                             </div>
                         </Link>
@@ -58,7 +68,12 @@ const Categories = () => {
                     <div class="col-3">
                         <Link className = 'nav-link text-dark' to={'/search?category=fragrance'}>
                             <div  id = "category-item">
-                                <div class="p-3 border bg-light fragrance" id = "category-inner"></div>
+                                <div class="border bg-light fragrance" id = "category-inner">
+                                    <img
+                                     src={fragrance}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "fragrance"/>
+                                </div>
                                 <p className='mt-2 text-center'>FRAGRANCE</p>
                             </div>
                         </Link>
@@ -66,7 +81,12 @@ const Categories = () => {
                     <div class="col-3">
                         <Link className = 'nav-link text-dark' to={'/search?category=household%20cleaning'}>
                             <div  id = "category-item">
-                                <div class="p-3 border bg-light household_cleaning" id = "category-inner"></div>
+                                <div class="border bg-light household_cleaning" id = "category-inner">
+                                    <img
+                                     src={household_cleaning}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "household_cleaning"/>
+                                </div>
                                 <p className='mt-2 text-center'>HOUSEHOLD CLEANING</p>
                             </div>
                         </Link>
@@ -336,7 +356,7 @@ const Categories = () => {
                       </Nav>
                 </div>
             </div>
-            <div className ="container mt-4">
+            <div className =" mt-4">
                 <div className="row g-3">
                     {cat}
                     {/* All */}
