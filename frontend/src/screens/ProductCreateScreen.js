@@ -78,10 +78,10 @@ export default function ProductCreateScreen() {
 
   const categoriesList = [
     "", "Food and Beverages", "Household Cleaning", "Drinks",
-    "Fragrance", "Hair Care", "Oral Care", "Health Care","Home, Office and kitchen furniture","Appliances",
-    "Phones and tablets","Computers and Computer Accessories","Electronics","Generators and Portable power","Men Fashion",
-    "Women Fashion", "Watches", "Sunglasses", "Fashion", "Baby Products", "Sporting and Sporting accessories",
-    "Books, Movies and Music", "Pets","Make up", "Personal care","Gaming and toys", "Vehicles",
+    "Fragrance", "Hair Care", "Oral Care", "Health Care","furniture","Electronic Appliances",
+    "Phones and tablets","Computers and Computer Accessories","Generators and Portable power","Men Fashion",
+    "Women Fashion", "Watches", "glasses", "Fashion", "Baby Products", "Sporting and Sporting accessories",
+    "Books", "Music", "Pets","Make up", "skin care","Gaming and toys", "Vehicles",
     "Men Shoes", "Women Shoes", "Others",
   ]
   categoriesList.sort();
