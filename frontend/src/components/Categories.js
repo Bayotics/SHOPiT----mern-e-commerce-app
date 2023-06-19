@@ -255,10 +255,17 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Phones and tablets</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=music'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light music" id = "category-inner">
+                                    <img
+                                     src={music}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "music"/>
+                                </div>
+                                <p className='mt-2 text-center'>MUSIC</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
                         <div  id = "category-item">
