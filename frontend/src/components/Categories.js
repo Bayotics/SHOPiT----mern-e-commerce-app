@@ -268,40 +268,121 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Phones and tablets</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=oral%20care'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light oral_care" id = "category-inner">
+                                    <img
+                                     src={oral_care}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "oral_care"/>
+                                </div>
+                                <p className='mt-2 text-center'>ORAL CARE</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Phones and tablets</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=pets'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light pets" id = "category-inner">
+                                    <img
+                                     src={pets}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "pets"/>
+                                </div>
+                                <p className='mt-2 text-center'>PETS</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Phones and tablets</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=sporting'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light sporting" id = "category-inner">
+                                    <img
+                                     src={sporting}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "sporting"/>
+                                </div>
+                                <p className='mt-2 text-center'>SPORTING</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Phones and tablets</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=skin%20care'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light skin_care" id = "category-inner">
+                                    <img
+                                     src={skincare}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "skin_care"/>
+                                </div>
+                                <p className='mt-2 text-center'>SKIN CARE</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Phones and tablets</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=vehicles'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light vehicles" id = "category-inner">
+                                    <img
+                                     src={vehicles}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "vehicles"/>
+                                </div>
+                                <p className='mt-2 text-center'>VEHICLES</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Phones and tablets</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=watches'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light watches" id = "category-inner">
+                                    <img
+                                     src={watches}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "watches"/>
+                                </div>
+                                <p className='mt-2 text-center'>WATCHES</p>
+                            </div>
+                        </Link>
+                    </div>
+                    <div class="col-3">
+                        <Link className = 'nav-link text-dark' to={'/search?category=men%20shoes'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light men_shoes" id = "category-inner">
+                                    <img
+                                     src={men_shoes}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "men_shoes"/>
+                                </div>
+                                <p className='mt-2 text-center'>MEN SHOES</p>
+                            </div>
+                        </Link>
+                    </div>
+                    <div class="col-3">
+                        <Link className = 'nav-link text-dark' to={'/search?category=women%20fashion'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light women_fashion" id = "category-inner">
+                                    <img
+                                     src={women_fashion}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "women_fashion"/>
+                                </div>
+                                <p className='mt-2 text-center'>WOMEN FASHION</p>
+                            </div>
+                        </Link>
+                    </div>
+                    <div class="col-3">
+                        <Link className = 'nav-link text-dark' to={'/search?category=others'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light others" id = "category-inner">
+                                    <img
+                                     src={others}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "others"/>
+                                </div>
+                                <p className='mt-2 text-center'>OTHERS</p>
+                            </div>
+                        </Link>
                     </div>
                 </div>
     const electronicsCat = 
