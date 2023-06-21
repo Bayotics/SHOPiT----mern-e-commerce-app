@@ -372,6 +372,19 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
+                        <Link className = 'nav-link text-dark' to={'/search?category=women%20shoes'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light women_shoes" id = "category-inner">
+                                    <img
+                                     src={women_shoes}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "women_shoes"/>
+                                </div>
+                                <p className='mt-2 text-center'>WOMEN SHOES</p>
+                            </div>
+                        </Link>
+                    </div>
+                    <div class="col-3">
                         <Link className = 'nav-link text-dark' to={'/search?category=others'}>
                             <div  id = "category-item">
                                 <div class="border bg-light others" id = "category-inner">
@@ -388,130 +401,205 @@ const Categories = () => {
     const electronicsCat = 
                 <div className="row g-3">
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Phones and tablets</p>
-                        </div>
+                        <Link to={'/search?category=Phones%20and%20tablets'} className = 'nav-link text-dark'>
+                            <div  id = "category-item">
+                                <div class="bg-light phones-and-tab" id = "category-inner">
+                                    <img
+                                     src={phones_and_accessories}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "phones and tabs"/>
+                                </div>
+                                <p className='mt-2 text-center'>PHONES AND TABLETS</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Computers and Computer Accessories</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Computers%20and%20Computer%20Accessories'}>
+                            <div  id = "category-item">
+                                <div class="bg-light computer_and_accessories" id = "category-inner">
+                                    <img
+                                     src={computer}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "computer_and_accessories"/>
+                                </div>
+                                <p className='mt-2 text-center'>COMPUTERS & COMPUTER ACCESSORIES</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Electronics</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=appliances'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light appliances" id = "category-inner">
+                                    <img
+                                     src={appliances}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "appliances"/>
+                                </div>
+                                <p className='mt-2 text-center'>APPLIANCES</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Gaming and toys</p>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Appliances</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=gaming'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light gaming" id = "category-inner">
+                                    <img
+                                     src={gaming}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "gaming"/>
+                                </div>
+                                <p className='mt-2 text-center'>GAMING</p>
+                            </div>
+                        </Link>
                     </div>
                 </div>
     const fashionCat = 
                 <div className="row g-3">
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Fragrance</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=fragrance'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light fragrance" id = "category-inner">
+                                    <img
+                                     src={fragrance}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "fragrance"/>
+                                </div>
+                                <p className='mt-2 text-center'>FRAGRANCE</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Hair Care</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=hair%20care'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light hair-care" id = "category-inner">
+                                    <img
+                                     src={hair_care}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "hair_care"/>
+                                </div>
+                                <p className='mt-2 text-center'>HAIR CARE</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Men's Fashion</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=men%20fashion'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light men_fashion" id = "category-inner">
+                                    <img
+                                     src={men_fashion}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "men_fashion"/>
+                                </div>
+                                <p className='mt-2 text-center'>MEN FASHION</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Women's Fashion</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=women%20fashion'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light women_fashion" id = "category-inner">
+                                    <img
+                                     src={women_fashion}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "women_fashion"/>
+                                </div>
+                                <p className='mt-2 text-center'>WOMEN FASHION</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Watches</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=men%20shoes'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light men_shoes" id = "category-inner">
+                                    <img
+                                     src={men_shoes}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "men_shoes"/>
+                                </div>
+                                <p className='mt-2 text-center'>MEN SHOES</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Sunglasses</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=glasses'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light glasses" id = "category-inner">
+                                    <img
+                                     src={glasses}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "glasses"/>
+                                </div>
+                                <p className='mt-2 text-center'>GLASSES</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Fashion</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=men%20shoes'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light men_shoes" id = "category-inner">
+                                    <img
+                                     src={men_shoes}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "men_shoes"/>
+                                </div>
+                                <p className='mt-2 text-center'>MEN SHOES</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Men's Shoes</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=women%20shoes'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light women_shoes" id = "category-inner">
+                                    <img
+                                     src={women_shoes}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "women_shoes"/>
+                                </div>
+                                <p className='mt-2 text-center'>WOMEN SHOES</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Women's Shoes</p>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Make up</p>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Personal care</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=make%20up'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light makeup" id = "category-inner">
+                                    <img
+                                     src={makeup}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "makeup"/>
+                                </div>
+                                <p className='mt-2 text-center'>MAKE UP</p>
+                            </div>
+                        </Link>
                     </div>
         </div>
     const foodCat = 
                 <div className="row g-3">
-                    <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Food, fruits and Beverages</p>
-                        </div>
+                     <div class="col-3">
+                        <Link className = 'nav-link text-dark' to={'/search?category=food%20and%20beverages'}>
+                            <div  id = "category-item">
+                                <div class=" border bg-light food_and_beverages" id = "category-inner">
+                                    <img
+                                     src={food_and_beverages}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "food and beverages"/>
+                                </div>
+                                <p className='mt-2 text-center'>FOOD AND BEVERAGES</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Drinks</p>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Health Care</p>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div  id = "category-item">
-                            <div class="p-3 border bg-light" id = "category-inner"></div>
-                            <p className='mt-2 text-center'>Personal care</p>
-                        </div>
+                        <Link className = 'nav-link text-dark' to={'/search?category=drinks'}>
+                            <div  id = "category-item">
+                                <div class="border bg-light drinks" id = "category-inner">
+                                    <img
+                                     src={drinks}
+                                     style={{height: "100%", width: "100%"}}
+                                       alt= "drinks"/>
+                                </div>
+                                <p className='mt-2 text-center'>DRINKS</p>
+                            </div>
+                        </Link>
                     </div>
         </div>
 
