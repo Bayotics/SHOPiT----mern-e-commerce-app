@@ -78,11 +78,11 @@ export default function ProductCreateScreen() {
 
   const categoriesList = [
     "", "Food and Beverages", "Household Cleaning", "Drinks",
-    "Fragrance", "Hair Care", "Oral Care", "Health Care","furniture","Electronic Appliances",
+    "Fragrance", "Hair Care", "Oral Care","furniture","Electronic Appliances",
     "Phones and tablets","Computers and Computer Accessories","Generators and Portable power","Men Fashion",
-    "Women Fashion", "Watches", "glasses", "Fashion", "Baby Products", "Sporting and Sporting accessories",
-    "Books", "Music", "Pets","Make up", "skin care","Gaming", "Vehicles",
-    "Men Shoes", "Women Shoes", "Others",
+    "Women Fashion", "Watches", "glasses", "Baby Products", "Sporting accessories",
+    "Books", "Music", "Pets","Make Up", "skin care","gaming", "vehicles",
+    "Men Shoes", "Women Shoes", "others",
   ]
   categoriesList.sort();
 
@@ -184,7 +184,7 @@ export default function ProductCreateScreen() {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="price">
-            <Form.Label>Price</Form.Label>
+            <Form.Label>Price in ₦</Form.Label>
             <Form.Control
               value={price}
               onChange={(e) => setPrice(e.target.value)}
@@ -273,6 +273,7 @@ export default function ProductCreateScreen() {
           <Form.Group className="mb-3" controlId="longDescription">
             <Form.Label>Long Description</Form.Label>
             <Form.Control
+              placeholder='More details about your product. e.g color, size, etc'
               value={longDescription}
               onChange={(e) => setLongDescription(e.target.value)}
               required

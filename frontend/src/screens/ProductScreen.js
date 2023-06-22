@@ -109,11 +109,9 @@ function ProductScreen() {
       product.reviews.unshift(data.review);
       product.numReviews = data.numReviews;
       product.rating = data.rating;
+      setComment('');
+      setRating(0);
       dispatch({ type: 'REFRESH_PRODUCT', payload: product });
-      // window.scrollTo({
-      //   behavior: 'smooth',
-      //   top: reviewsRef.current.offsetTop,
-      // });
     } catch (error) {
       toast.error(getError(error));
       dispatch({ type: 'CREATE_FAIL' });

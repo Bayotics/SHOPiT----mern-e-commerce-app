@@ -32,8 +32,8 @@ import women_shoes from '../assets/women_shoes.jpg';
 const Categories = () => {
 
     const allCat =
-    <div className="row g-3">
-                    <div class="col-3">
+    <div className="row g-3" id = "all-cat">
+                    <div class="col-3" id = "phones-and-tab">
                         <Link to={'/search?category=Phones%20and%20tablets'} className = 'nav-link text-dark'>
                             <div  id = "category-item">
                                 <div class="bg-light phones-and-tab" id = "category-inner">
@@ -60,7 +60,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=men%20fashion'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Men%20Fashion'}>
                             <div  id = "category-item">
                                 <div class="border bg-light men_fashion" id = "category-inner">
                                     <img
@@ -73,7 +73,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=food%20and%20beverages'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Food%20and%20Beverages'}>
                             <div  id = "category-item">
                                 <div class=" border bg-light food_and_beverages" id = "category-inner">
                                     <img
@@ -86,7 +86,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=fragrance'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Fragrance'}>
                             <div  id = "category-item">
                                 <div class="border bg-light fragrance" id = "category-inner">
                                     <img
@@ -99,7 +99,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=household%20cleaning'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Household%20Cleaning'}>
                             <div  id = "category-item">
                                 <div class="border bg-light household_cleaning" id = "category-inner">
                                     <img
@@ -112,7 +112,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=drinks'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Drinks'}>
                             <div  id = "category-item">
                                 <div class="border bg-light drinks" id = "category-inner">
                                     <img
@@ -125,7 +125,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=appliances'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Appliances'}>
                             <div  id = "category-item">
                                 <div class="border bg-light appliances" id = "category-inner">
                                     <img
@@ -138,7 +138,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=baby%20products'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Baby%20Products'}>
                             <div  id = "category-item">
                                 <div class="border bg-light baby_products" id = "category-inner">
                                     <img
@@ -151,7 +151,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=books'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Books'}>
                             <div  id = "category-item">
                                 <div class="border bg-light books" id = "category-inner">
                                     <img
@@ -177,7 +177,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=generator'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Generators%20and%20Portable%20power'}>
                             <div  id = "category-item">
                                 <div class="border bg-light generator" id = "category-inner">
                                     <img
@@ -216,7 +216,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=make%20up'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Make%20Up'}>
                             <div  id = "category-item">
                                 <div class="border bg-light makeup" id = "category-inner">
                                     <img
@@ -229,7 +229,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=hair%20care'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Hair%20Care'}>
                             <div  id = "category-item">
                                 <div class="border bg-light hair-care" id = "category-inner">
                                     <img
@@ -241,21 +241,8 @@ const Categories = () => {
                             </div>
                         </Link>
                     </div>
-                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=men%20shoes'}>
-                            <div  id = "category-item">
-                                <div class="border bg-light men-shoes" id = "category-inner">
-                                    <img
-                                     src={men_shoes}
-                                     style={{height: "100%", width: "100%"}}
-                                       alt= "men_shoes"/>
-                                </div>
-                                <p className='mt-2 text-center'>MEN SHOES</p>
-                            </div>
-                        </Link>
-                    </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=music'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Music'}>
                             <div  id = "category-item">
                                 <div class="border bg-light music" id = "category-inner">
                                     <img
@@ -268,7 +255,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=oral%20care'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Oral%20Care'}>
                             <div  id = "category-item">
                                 <div class="border bg-light oral_care" id = "category-inner">
                                     <img
@@ -281,7 +268,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=pets'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Pets'}>
                             <div  id = "category-item">
                                 <div class="border bg-light pets" id = "category-inner">
                                     <img
@@ -294,7 +281,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=sporting'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=sporting%20accessories'}>
                             <div  id = "category-item">
                                 <div class="border bg-light sporting" id = "category-inner">
                                     <img
@@ -333,7 +320,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=watches'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Watches'}>
                             <div  id = "category-item">
                                 <div class="border bg-light watches" id = "category-inner">
                                     <img
@@ -346,7 +333,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=men%20shoes'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Men%20Shoes'}>
                             <div  id = "category-item">
                                 <div class="border bg-light men_shoes" id = "category-inner">
                                     <img
@@ -359,7 +346,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=women%20fashion'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Women%20Fashion'}>
                             <div  id = "category-item">
                                 <div class="border bg-light women_fashion" id = "category-inner">
                                     <img
@@ -372,7 +359,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=women%20shoes'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Women%20Shoes'}>
                             <div  id = "category-item">
                                 <div class="border bg-light women_shoes" id = "category-inner">
                                     <img
@@ -399,7 +386,7 @@ const Categories = () => {
                     </div>
                 </div>
     const electronicsCat = 
-                <div className="row g-3">
+                <div className="row g-3" id = "electronics-cat">
                     <div class="col-3">
                         <Link to={'/search?category=Phones%20and%20tablets'} className = 'nav-link text-dark'>
                             <div  id = "category-item">
@@ -426,8 +413,8 @@ const Categories = () => {
                             </div>
                         </Link>
                     </div>
-                    <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=appliances'}>
+                    <div class="col-3" id = "appliances">
+                        <Link className = 'nav-link text-dark' to={'/search?category=Appliances'}>
                             <div  id = "category-item">
                                 <div class="border bg-light appliances" id = "category-inner">
                                     <img
@@ -454,9 +441,9 @@ const Categories = () => {
                     </div>
                 </div>
     const fashionCat = 
-                <div className="row g-3">
+        <div className="row g-3" id = "fashion-cat">
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=fragrance'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Fragrance'}>
                             <div  id = "category-item">
                                 <div class="border bg-light fragrance" id = "category-inner">
                                     <img
@@ -469,7 +456,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=hair%20care'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Hair%20Care'}>
                             <div  id = "category-item">
                                 <div class="border bg-light hair-care" id = "category-inner">
                                     <img
@@ -482,7 +469,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=men%20fashion'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Men%20Fashion'}>
                             <div  id = "category-item">
                                 <div class="border bg-light men_fashion" id = "category-inner">
                                     <img
@@ -495,7 +482,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=women%20fashion'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Women%20Fashion'}>
                             <div  id = "category-item">
                                 <div class="border bg-light women_fashion" id = "category-inner">
                                     <img
@@ -508,7 +495,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=men%20shoes'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Men%20Shoes'}>
                             <div  id = "category-item">
                                 <div class="border bg-light men_shoes" id = "category-inner">
                                     <img
@@ -534,7 +521,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=men%20shoes'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Men%20Shoes'}>
                             <div  id = "category-item">
                                 <div class="border bg-light men_shoes" id = "category-inner">
                                     <img
@@ -547,7 +534,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=women%20shoes'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Women%20Shoes'}>
                             <div  id = "category-item">
                                 <div class="border bg-light women_shoes" id = "category-inner">
                                     <img
@@ -560,7 +547,7 @@ const Categories = () => {
                         </Link>
                     </div>
                     <div class="col-3">
-                        <Link className = 'nav-link text-dark' to={'/search?category=make%20up'}>
+                        <Link className = 'nav-link text-dark' to={'/search?category=Make%20Up'}>
                             <div  id = "category-item">
                                 <div class="border bg-light makeup" id = "category-inner">
                                     <img
@@ -574,7 +561,7 @@ const Categories = () => {
                     </div>
         </div>
     const foodCat = 
-                <div className="row g-3">
+                <div className="row g-3" id = "food-cat">
                      <div class="col-3">
                         <Link className = 'nav-link text-dark' to={'/search?category=food%20and%20beverages'}>
                             <div  id = "category-item">
