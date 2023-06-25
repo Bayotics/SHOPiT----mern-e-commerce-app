@@ -64,7 +64,7 @@ function HomeScreen() {
         <div >
           <Categories />
         </div>
-        <h1 className='text-center fw-bold'>FEATURED PRODUCTS</h1>
+        <h1 className='text-center fw-normal'><span className='theme-color'>FEATURED </span> PRODUCTS</h1>
         <div className="products" id = "featured-products">
           {loading ? (
             <LoadingBox />
