@@ -150,9 +150,9 @@ export default function SearchScreen() {
       <Helmet>
         <title>Search Products</title>
       </Helmet>
-      <Row>
+      <Row id = "search-row">
         <Col md={3}>
-          <h3>Department</h3>
+          <h3>Category</h3>
           <div>
             <ul>
               <li>
@@ -258,10 +258,10 @@ export default function SearchScreen() {
                       navigate(getFilterUrl({ order: e.target.value }));
                     }}
                   >
-                    <option value="newest">Newest Arrivals</option>
+                    <option value="newest">Latest Arrivals</option>
                     <option value="lowest">Price: Low to High</option>
                     <option value="highest">Price: High to Low</option>
-                    <option value="toprated">Avg. Customer Reviews</option>
+                    <option value="toprated">Avgerage Reviews</option>
                   </select>
                 </Col>
               </Row>

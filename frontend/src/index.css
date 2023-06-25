@@ -427,3 +427,15 @@ product-details-tab {
 #order-button{
   border-radius: 0;
 }
+#search-row li{
+  list-style-type: none;
+}
+#signin-button{
+  border-radius: 0;
+}
+#button-search{
+  background-color: rgb(224, 91, 113);
+  width: 40px;
+  color: white;
+  border: none;
+}

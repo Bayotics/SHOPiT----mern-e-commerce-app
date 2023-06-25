@@ -10,8 +10,10 @@ export default function SearchBox() {
   const [query, setQuery] = useState('');
   const submitHandler = (e) => {
     e.preventDefault();
-    navigate(query ? `/search/?query=${query}` : '/search');
-    e.target.reset();
+    if(query !== ''){
+        navigate(query ? `/search/?query=${query}` : '/search');
+        e.target.reset();
+    }
   };
 
   return (
@@ -27,9 +29,10 @@ export default function SearchBox() {
           aria-label="Search Products"
           aria-describedby="button-search"
         ></FormControl>
-        <Button variant="dark" type="submit" id="button-search">
+
+        <button className = "rounded-right" type="submit" id="button-search">
           <i className="fas fa-search"></i>
-        </Button>
+        </button>
       </InputGroup>
     </Form>
   );

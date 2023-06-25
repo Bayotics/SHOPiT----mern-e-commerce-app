@@ -22,6 +22,7 @@ import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import PaymentScreen from "./screens/PaymentScreen";
 import ProfileScreen from './screens/ProfileScreen';
+import ProfiledisplayScreen from './screens/ProfileDisplayScreen'
 import Button from 'react-bootstrap/Button';
 import { getError } from './utils';
 import axios from 'axios';
@@ -117,7 +118,10 @@ function App() {
                   {userInfo ? (
                     <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
                       <LinkContainer to="/profile">
-                        <NavDropdown.Item>User Profile</NavDropdown.Item>
+                        <NavDropdown.Item>Edit Profile</NavDropdown.Item>
+                      </LinkContainer>
+                      <LinkContainer to="/profiledisplay">
+                        <NavDropdown.Item>Display Profile</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to="/orderhistory">
                         <NavDropdown.Item>Order History</NavDropdown.Item>
@@ -184,7 +188,6 @@ function App() {
           </Nav>
         </div>
         <main>
-          {/* <MainScreen /> */}
           <Container className="mt-3" id = "main-container">
             <Routes>
               <Route path="/product/:id" element={<ProductScreen />} />
@@ -192,7 +195,6 @@ function App() {
               <Route path="/search" element={<SearchScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
               <Route path="/signup" element={<SignupScreen />} />
-              <Route path='/mainscreen' element = {<MainScreen />} />
               <Route
                 path="/profile"
                 element={
@@ -200,7 +202,11 @@ function App() {
                     <ProfileScreen />
                   </ProtectedRoute>
                 }
-              />              
+              />
+              <Route path = "/profiledisplay"
+                     element = {<ProtectedRoute>
+                        <ProfiledisplayScreen />
+                        </ProtectedRoute>} />           
               <Route path="/placeorder" element={<PlaceOrderScreen />} />
               <Route
                 path="/order/:id"
