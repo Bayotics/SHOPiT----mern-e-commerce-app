@@ -141,7 +141,7 @@ export default function OrderScreen() {
         <div>
             <button onClick={() => {
                 initializePayment(onSuccess, onClose)
-            }}>Pay with Paystack</button>
+            }}>Pay with {order.paymentMethod}</button>
         </div>
       );
   };
@@ -185,7 +185,7 @@ export default function OrderScreen() {
               </Card.Text>
               {order.isPaid  ? (
                 <MessageBox variant="success">
-                  Paid at {order.paidAt}
+                  Paid. Please check order history for your order details
                 </MessageBox>
               ) : (
                 <MessageBox variant="danger">Not Paid</MessageBox>

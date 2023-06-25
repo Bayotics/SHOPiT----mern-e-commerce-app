@@ -280,7 +280,8 @@ function App() {
                   </AdminRoute>
                 }
               ></Route>
-              <Route path="/" element={<HomeScreen />} />
+              <Route path="/products" element={<HomeScreen />} />
+              <Route path = '/' element = {<MainScreen />} />
             </Routes>
           </Container>
         </main>

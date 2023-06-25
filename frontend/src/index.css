@@ -424,3 +424,6 @@ product-details-tab {
 #category-inner img:hover{
   transform: translateY(-15px);
 }
+#order-button{
+  border-radius: 0;
+}

@@ -6,6 +6,8 @@ import axios from 'axios';
 import { useContext } from 'react';
 import { Store } from '../Store';
 
+
+
 function Product(props) {
   const { product } = props;
 
