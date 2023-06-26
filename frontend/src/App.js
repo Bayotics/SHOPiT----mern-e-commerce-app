@@ -172,12 +172,11 @@ function App() {
         >
           <Nav className="flex-column text-white w-100 p-2">
              <Dropdown>
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
+              <Dropdown.Toggle variant="primary" id="dropdown-basic">
                 Categories
               </Dropdown.Toggle>
-              <Dropdown.Menu>
+              <Dropdown.Menu >
               {categories.map((category) => (
-                
                   <Dropdown.Item key = {category}>
                      <LinkContainer
                         to={{
