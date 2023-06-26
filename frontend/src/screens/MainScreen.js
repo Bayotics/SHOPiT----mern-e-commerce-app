@@ -8,6 +8,7 @@ import Categories from '../components/Categories';
 import { Helmet } from 'react-helmet-async';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import Slider from '../components/Slider';
 // import data from '../data';
 
 const reducer = (state, action) => {
@@ -54,7 +55,7 @@ function HomeScreen() {
   return (
     <div>
       <div id="hero-background" className='w-100 border mb-4'>
-
+        <Slider />
       </div>
       <div className='border' id = "main-products">
 

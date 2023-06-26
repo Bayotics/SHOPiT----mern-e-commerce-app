@@ -144,9 +144,7 @@ button.thumbnail {
   padding: 0;
 }
 #hero-background{
-  height: 1080px;
-  background-image: url(./assets/hero-3.jpg);
-  background-size: cover;
+  
 }
 #contact-nav{
   margin-right: 70px;
@@ -450,6 +448,9 @@ product-details-tab {
 }
 .nav-link{
   cursor: pointer;
+}
+#carousel-caption{
+  margin-bottom: 300px;
 }
 /* #dropdown-basic{
     transition: color 0.15s ease-in-out,
