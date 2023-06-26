@@ -7,6 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Badge from 'react-bootstrap/Badge';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Dropdown from 'react-bootstrap/Dropdown';
 import Container from 'react-bootstrap/Container';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useContext, useEffect, useState } from 'react';
@@ -37,6 +38,7 @@ import ProductEditScreen from './screens/ProductEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
+import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 
 
 function App() {
@@ -169,22 +171,27 @@ function App() {
           }
         >
           <Nav className="flex-column text-white w-100 p-2">
-            <Nav.Item>
-              <strong>Categories</strong>
-            </Nav.Item>
-            {categories.map((category) => (
-              <Nav.Item key={category}>
-                 <LinkContainer
-                  to={{
-                    pathname: "/search",
-                    search: `?category=${category}`,
-                  }}
-                  onClick={() => setSidebarIsOpen(false)}
-                >
-                  <Nav.Link>{category}</Nav.Link>
-              </LinkContainer>
-              </Nav.Item>
-            ))}
+             <Dropdown>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Categories
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+              {categories.map((category) => (
+                
+                  <Dropdown.Item key = {category}>
+                     <LinkContainer
+                        to={{
+                          pathname: "/search",
+                          search: `?category=${category}`,
+                        }}
+                        onClick={() => setSidebarIsOpen(false)}
+                      >
+                        <Nav.Link>{category}</Nav.Link>
+                      </LinkContainer>
+                  </Dropdown.Item>
+              ))}
+              </Dropdown.Menu>
+            </Dropdown>
           </Nav>
         </div>
         <main>

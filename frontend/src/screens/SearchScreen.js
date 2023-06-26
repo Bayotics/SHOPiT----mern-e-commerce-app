@@ -199,7 +199,7 @@ export default function SearchScreen() {
             </ul>
           </div>
           <div>
-            <h3>Avg. Customer Review</h3>
+            <h3>Avgerage Rating</h3>
             <ul>
               {ratings.map((r) => (
                 <li key={r.name}>
