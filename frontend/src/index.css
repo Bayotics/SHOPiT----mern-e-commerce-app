@@ -452,9 +452,7 @@ product-details-tab {
 #carousel-caption{
   margin-bottom: 300px;
 }
-/* #dropdown-basic{
-    transition: color 0.15s ease-in-out,
-    background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
-} */
+#cate-gory{
+  height: 300px;
+  background: tan
+}

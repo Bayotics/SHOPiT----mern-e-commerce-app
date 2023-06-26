@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 function Slider() {
   return (
     <Carousel>
-      <Carousel.Item interval={1000}>
+      <Carousel.Item interval={3000}>
         <img
           className="d-block w-100"
           src={bgOne}
@@ -20,7 +20,7 @@ function Slider() {
           <Button variant='primary'>SHOP NOW</Button>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item interval={500}>
+      <Carousel.Item interval={3000}>
         <img
           className="d-block w-100"
           src={bgTwo}

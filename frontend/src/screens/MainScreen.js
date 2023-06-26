@@ -54,10 +54,10 @@ function HomeScreen() {
   }, [page]);
   return (
     <div>
-      <div id="hero-background" className='w-100 border mb-4'>
+      <div id="hero-background" className='w-100 mb-4'>
         <Slider />
       </div>
-      <div className='border' id = "main-products">
+      <div className='' id = "main-products">
 
         <Helmet>
           <title>SHOPiT</title>
@@ -65,7 +65,7 @@ function HomeScreen() {
         <div >
           <Categories />
         </div>
-        <h1 className='text-center fw-normal'><span className='theme-color'>FEATURED </span> PRODUCTS</h1>
+        <h1 className='text-center fw-normal mt-4'><span className='theme-color'>FEATURED </span> PRODUCTS</h1>
         <div className="products" id = "featured-products">
           {loading ? (
             <LoadingBox />
