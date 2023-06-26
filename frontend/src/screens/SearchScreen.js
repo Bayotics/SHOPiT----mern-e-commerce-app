@@ -12,6 +12,8 @@ import MessageBox from '../components/MessageBox';
 import Button from 'react-bootstrap/Button';
 import Product from '../components/Product';
 import LinkContainer from 'react-router-bootstrap/LinkContainer';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -152,28 +154,32 @@ export default function SearchScreen() {
       </Helmet>
       <Row id = "search-row">
         <Col md={3}>
-          <h3>Category</h3>
           <div>
-            <ul>
-              <li>
-                <Link
+            <Card style = {{width: '18rem'}} >
+              <Card.Header>
+                <h3>Category</h3>
+              </Card.Header>
+              <ListGroup variant='flush'>
+                <ListGroup.Item>
+                  <Link
                   className={'all' === category ? 'text-bold' : ''}
                   to={getFilterUrl({ category: 'all' })}
                 >
                   Any
                 </Link>
-              </li>
-              {categories.map((c) => (
-                <li key={c}>
-                  <Link
-                    className={c === category ? 'text-bold' : ''}
-                    to={getFilterUrl({ category: c })}
+                </ListGroup.Item>
+                {categories.map((e) => (
+                  <ListGroup.Item>
+                    <Link
+                    className={e === category ? 'text-bold' : ''}
+                    to={getFilterUrl({ category: e })}
                   >
-                    {c}
+                    {e}
                   </Link>
-                </li>
-              ))}
-            </ul>
+                  </ListGroup.Item>
+                ))}
+              </ListGroup>
+            </Card>
           </div>
           <div>
             <h3>Price</h3>
