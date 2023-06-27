@@ -33,7 +33,7 @@ const Categories = () => {
     return(
         <div className='mt-4'>
             <h1 id = "" className='text-center fw-normal'><span className='theme-color'>TOP </span>CATEGORIES</h1>
-            <Carousel data-bs-theme="dark">
+            <Carousel variant='dark'>
             <Carousel.Item interval={1000}>
             <div className='row'>
             <div className="col-3" id = "phones-and-tab">
@@ -58,7 +58,7 @@ const Categories = () => {
                                 style={{height: "100%", width: "100%"}}
                                 alt= "computer_and_accessories"/>
                         </div>
-                        <p className='mt-2 text-center'>COMPUTERS & COMPUTER ACCESSORIES</p>
+                        <p className='mt-2 text-center'>COMPUTERS & ACCESSORIES</p>
                     </div>
                 </Link>
             </div>

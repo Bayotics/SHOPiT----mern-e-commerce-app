@@ -169,7 +169,7 @@ export default function SearchScreen() {
                 </Link>
                 </ListGroup.Item>
                 {categories.map((e) => (
-                  <ListGroup.Item>
+                  <ListGroup.Item key = {e}>
                     <Link
                     className={e === category ? 'text-bold' : ''}
                     to={getFilterUrl({ category: e })}
@@ -181,51 +181,55 @@ export default function SearchScreen() {
               </ListGroup>
             </Card>
           </div>
-          <div>
-            <h3>Price</h3>
-            <ul>
-              <li>
-                <Link
+          <div className='mt-2'>
+            <Card style={{ width: '18rem' }}>
+                <Card.Header><h3>Price</h3></Card.Header>
+                <ListGroup variant='flush'>
+                  <ListGroup.Item>
+                    <Link
                   className={'all' === price ? 'text-bold' : ''}
                   to={getFilterUrl({ price: 'all' })}
-                >
-                  Any
-                </Link>
-              </li>
-              {prices.map((p) => (
-                <li key={p.value}>
-                  <Link
-                    to={getFilterUrl({ price: p.value })}
-                    className={p.value === price ? 'text-bold' : ''}
                   >
-                    {p.name}
+                    Any
                   </Link>
-                </li>
-              ))}
-            </ul>
+                  </ListGroup.Item>
+                  {prices.map((e) => (
+                    <ListGroup.Item key = {e}>
+                      <Link
+                        to={getFilterUrl({ price: e.value })}
+                        className={e.value === price ? 'text-bold' : ''}
+                      >
+                        {e.name}
+                      </Link>
+                    </ListGroup.Item>
+                  ))}
+                </ListGroup>
+            </Card>
           </div>
-          <div>
-            <h3>Avgerage Rating</h3>
-            <ul>
-              {ratings.map((r) => (
-                <li key={r.name}>
+          <div className='mt-2'>
+            <Card style={{ width: '18rem' }}>
+              <Card.Header><h3>Avgerage Rating</h3></Card.Header>
+              <ListGroup variant='flush'>
+                {ratings.map((e) => (
+                  <ListGroup.Item key = {e}>
+                    <Link
+                      to={getFilterUrl({ rating: e.rating })}
+                      className={`${e.rating}` === `${rating}` ? 'text-bold' : ''}
+                    >
+                      <Rating caption={' & up'} rating={e.rating}></Rating>
+                    </Link>
+                  </ListGroup.Item>
+                ))}
+                <ListGroup.Item>
                   <Link
-                    to={getFilterUrl({ rating: r.rating })}
-                    className={`${r.rating}` === `${rating}` ? 'text-bold' : ''}
+                    to={getFilterUrl({ rating: 'all' })}
+                    className={rating === 'all' ? 'text-bold' : ''}
                   >
-                    <Rating caption={' & up'} rating={r.rating}></Rating>
+                    <Rating caption={' & up'} rating={0}></Rating>
                   </Link>
-                </li>
-              ))}
-              <li>
-                <Link
-                  to={getFilterUrl({ rating: 'all' })}
-                  className={rating === 'all' ? 'text-bold' : ''}
-                >
-                  <Rating caption={' & up'} rating={0}></Rating>
-                </Link>
-              </li>
-            </ul>
+                </ListGroup.Item>
+              </ListGroup>
+            </Card>
           </div>
         </Col>
         <Col md={9}>
