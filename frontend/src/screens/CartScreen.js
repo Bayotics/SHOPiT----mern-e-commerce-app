@@ -9,6 +9,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Table from 'react-bootstrap/Table';
 
 export default function CartScreen() {
   const navigate = useNavigate();
@@ -38,67 +39,75 @@ export default function CartScreen() {
 
   return (
     <div>
-      <Helmet>
+      <Helmet >
         <title>Shopping Cart</title>
       </Helmet>
-      <div className=" page-header text-center">
+      <div className=" page-header">
         		<div className="container">
-        			<h1 className="page-title">Shopping Cart</h1>
+        			<h1 className="page-title  text-center">Shopping Cart</h1>
         		</div>
       </div>
       <Row>
-        <Col md={8}>
+        <Col md = {8}>
           {cartItems.length === 0 ? (
             <MessageBox>
-              Cart is empty. <Link to="/">Go Shopping</Link>
+              Cart is currently empty. <Link to="/">Go Shopping</Link>
             </MessageBox>
           ) : (
-            <ListGroup>
-              {cartItems.map((item) => (
-                <ListGroup.Item key={item._id}>
-                  <Row className="align-items-center">
-                    <Col md={4}>
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="img-fluid rounded img-thumbnail"
-                      ></img>{' '}
-                      <Link to={`/product/${item._id}`}>{item.title}</Link>
-                    </Col>
-                    <Col md={3}>
-                      <Button
+          <Table bordered hover>
+             <thead>
+              <tr>
+                <th>Image</th>
+                <th>Product name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Remove</th>
+              </tr>
+            </thead>
+            {cartItems.map((e) => (
+              <tbody key = {e._id}>
+              <tr>
+                <td>
+                  <img style ={{height: '60px', width: '120px'}}
+                        src={e.image}
+                        alt={e.title}
+                        className="img-fluid rounded img-responsive"
+                      ></img>
+                </td>
+                <td><Link to={`/product/${e._id}`}>{e.title}</Link></td>
+                <td>
+                  <Button
                         onClick={() =>
-                          updateCartHandler(item, item.quantity - 1)
+                          updateCartHandler(e, e.quantity - 1)
                         }
                         variant="light"
-                        disabled={item.quantity === 1}
+                        disabled={e.quantity === 1}
                       >
                         <i className="fas fa-minus-circle"></i>
                       </Button>{' '}
-                      <span>{item.quantity}</span>{' '}
+                      <span>{e.quantity}</span>{' '}
                       <Button
                         variant="light"
                         onClick={() =>
-                          updateCartHandler(item, item.quantity + 1)
+                          updateCartHandler(e, e.quantity + 1)
                         }
-                        disabled={item.quantity === item.countInStock}
+                        disabled={e.quantity === e.countInStock}
                       >
                         <i className="fas fa-plus-circle"></i>
                       </Button>
-                    </Col>
-                    <Col md={3}>₦{item.price}</Col>
-                    <Col md={2}>
-                      <Button
-                        onClick={() => removeItemHandler(item)}
+                </td>
+                <td>₦{e.price}</td>
+                <td><Button
+                        onClick={() => removeItemHandler(e)}
                         variant="light"
                       >
                         <i className="fas fa-trash"></i>
                       </Button>
-                    </Col>
-                  </Row>
-                </ListGroup.Item>
-              ))}
-            </ListGroup>
+                </td>
+              </tr>
+              </tbody>
+            ))}
+          </Table>
           )}
         </Col>
         <Col md={4}>
@@ -107,7 +116,7 @@ export default function CartScreen() {
               <ListGroup variant="flush">
                 <ListGroup.Item>
                   <h3>
-                    Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}{' '}
+                    Total ({cartItems.reduce((a, c) => a + c.quantity, 0)}{' '}
                     items) : ₦
                     {cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}
                   </h3>
@@ -120,7 +129,7 @@ export default function CartScreen() {
                       onClick={checkoutHandler}
                       disabled={cartItems.length === 0}
                     >
-                      Proceed to Checkout
+                      Checkout
                     </Button>
                   </div>
                 </ListGroup.Item>
