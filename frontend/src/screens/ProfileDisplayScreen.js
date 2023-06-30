@@ -1,5 +1,4 @@
-import React, { useContext, useReducer, useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useContext, useReducer, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -25,42 +24,60 @@ const reducer = (state, action) => {
 const ProfileDisplayScreen = () => {
      const { state, dispatch: ctxDispatch } = useContext(Store);
   const { userInfo } = state;
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [name, setName] = useState(userInfo.name);
+  const [email, setEmail] = useState(userInfo.email);
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const [{ loadingUpdate }, dispatch] = useReducer(reducer, {
     loadingUpdate: false,
   });
 
-  const params = useParams();
-  const { id: userId } = params;
-
- useEffect(() => {
-    const fetchData = async () => {
-      try {
-        dispatch({ type: 'FETCH_REQUEST' });
-        const { data } = await axios.get(`/api/users/${userId}`, {
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    if(password === confirmPassword){
+    try {
+      const { data } = await axios.put(
+        '/api/users/profile',
+        {
+          name,
+          email,
+          password,
+        },
+        {
           headers: { Authorization: `Bearer ${userInfo.token}` },
-        });
-        setName(data.name);
-        setEmail(data.email);
-        dispatch({ type: 'FETCH_SUCCESS' });
-      } catch (err) {
-        dispatch({
-          type: 'FETCH_FAIL',
-          payload: getError(err),
-        });
-      }
-    };
-    fetchData();
-  }, [userId, userInfo]);
+        }
+      );
+      dispatch({
+        type: 'UPDATE_SUCCESS',
+      });
+      ctxDispatch({ type: 'USER_SIGNIN', payload: data });
+      localStorage.setItem('userInfo', JSON.stringify(data));
+      toast.success('User updated successfully');
+    } catch (err) {
+      dispatch({
+        type: 'FETCH_FAIL',
+      });
+      toast.error(getError(err));
+    }
+    }
+    else{
+        toast.error('Passwords do not match')
+    }
+  };
   return(
-    <div>
-        <h1>Name {name}</h1>
-        <h1>Email {email}</h1>
+    <div className='container d-flex justify-content-center border'>
+        <div className="card mt-4" style={{width: '28rem', height: '26rem'}}>
+          <img className="card-img-top" src="..." alt="Card cap" />
+          <div className="card-body">
+            <h5 className="card-title">Card title</h5>
+            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div className="btn btn-primary">Go somewhere</div>
+          </div>
+        </div>
     </div>
   )
 
 }
 
-export default ProfileDisplayScreen
+export default ProfileDisplayScreen 
