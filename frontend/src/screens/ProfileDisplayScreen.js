@@ -1,4 +1,5 @@
-import React, { useContext, useReducer, useState } from 'react';
+import React, { useContext, useReducer, useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -24,47 +25,35 @@ const reducer = (state, action) => {
 const ProfileDisplayScreen = () => {
      const { state, dispatch: ctxDispatch } = useContext(Store);
   const { userInfo } = state;
-  const [name, setName] = useState(userInfo.name);
-  const [email, setEmail] = useState(userInfo.email);
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
 
   const [{ loadingUpdate }, dispatch] = useReducer(reducer, {
     loadingUpdate: false,
   });
 
-  const submitHandler = async (e) => {
-    e.preventDefault();
-    if(password === confirmPassword){
-    try {
-      const { data } = await axios.put(
-        '/api/users/profile',
-        {
-          name,
-          email,
-          password,
-        },
-        {
+  const params = useParams();
+  const { id: userId } = params;
+
+ useEffect(() => {
+    const fetchData = async () => {
+      try {
+        dispatch({ type: 'FETCH_REQUEST' });
+        const { data } = await axios.get(`/api/users/${userId}`, {
           headers: { Authorization: `Bearer ${userInfo.token}` },
-        }
-      );
-      dispatch({
-        type: 'UPDATE_SUCCESS',
-      });
-      ctxDispatch({ type: 'USER_SIGNIN', payload: data });
-      localStorage.setItem('userInfo', JSON.stringify(data));
-      toast.success('User updated successfully');
-    } catch (err) {
-      dispatch({
-        type: 'FETCH_FAIL',
-      });
-      toast.error(getError(err));
-    }
-    }
-    else{
-        toast.error('Passwords do not match')
-    }
-  };
+        });
+        setName(data.name);
+        setEmail(data.email);
+        dispatch({ type: 'FETCH_SUCCESS' });
+      } catch (err) {
+        dispatch({
+          type: 'FETCH_FAIL',
+          payload: getError(err),
+        });
+      }
+    };
+    fetchData();
+  }, [userId, userInfo]);
   return(
     <div>
         <h1>Name {name}</h1>

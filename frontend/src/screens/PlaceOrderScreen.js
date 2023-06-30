@@ -41,7 +41,7 @@ export default function PlaceOrderScreen() {
     cart.cartItems.reduce((a, c) => a + c.quantity * c.price, 0)
   );
   cart.shippingPrice = cart.itemsPrice > 100 ? round2(0) : round2(10);
-  cart.taxPrice = round2(0.15 * cart.itemsPrice);
+  cart.taxPrice = round2(0.012 * cart.itemsPrice);
   cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
  
   const placeOrderHandler = async () => {
@@ -159,7 +159,7 @@ export default function PlaceOrderScreen() {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
-                    <Col>Tax</Col>
+                    <Col>VAT</Col>
                     <Col>₦{cart.taxPrice.toFixed(2)}</Col>
                   </Row>
                 </ListGroup.Item>

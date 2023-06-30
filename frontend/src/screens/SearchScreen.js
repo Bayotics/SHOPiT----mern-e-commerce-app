@@ -169,7 +169,7 @@ export default function SearchScreen() {
                 </Link>
                 </ListGroup.Item>
                 {categories.map((e) => (
-                  <ListGroup.Item key = {e}>
+                  <ListGroup.Item>
                     <Link
                     className={e === category ? 'text-bold' : ''}
                     to={getFilterUrl({ category: e })}
@@ -194,7 +194,7 @@ export default function SearchScreen() {
                   </Link>
                   </ListGroup.Item>
                   {prices.map((e) => (
-                    <ListGroup.Item key = {e}>
+                    <ListGroup.Item key = {e.value}>
                       <Link
                         to={getFilterUrl({ price: e.value })}
                         className={e.value === price ? 'text-bold' : ''}
@@ -211,7 +211,7 @@ export default function SearchScreen() {
               <Card.Header><h3>Avgerage Rating</h3></Card.Header>
               <ListGroup variant='flush'>
                 {ratings.map((e) => (
-                  <ListGroup.Item key = {e}>
+                  <ListGroup.Item key = {e.rating}>
                     <Link
                       to={getFilterUrl({ rating: e.rating })}
                       className={`${e.rating}` === `${rating}` ? 'text-bold' : ''}

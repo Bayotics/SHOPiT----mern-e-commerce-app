@@ -13,6 +13,8 @@ import MessageBox from '../components/MessageBox';
 import { Store } from '../Store';
 import { getError } from '../utils';
 import {usePaystackPayment} from "react-paystack";
+import Button from 'react-bootstrap/Button';
+
 
 
 function reducer(state, action) {
@@ -138,10 +140,10 @@ export default function OrderScreen() {
   const PaystackHookExample = () => {
       const initializePayment = usePaystackPayment(config);
       return (
-        <div>
-            <button onClick={() => {
+        <div className='mt-4'>
+            <Button onClick={() => {
                 initializePayment(onSuccess, onClose)
-            }}>Pay with {order.paymentMethod}</button>
+            }}>Pay with {order.paymentMethod}</Button>
         </div>
       );
   };
@@ -173,7 +175,7 @@ export default function OrderScreen() {
                   Delivered at {order.deliveredAt}
                 </MessageBox>
               ) : (
-                <MessageBox variant="danger">Not Delivered</MessageBox>
+                <div><p className='text-danger text-bold'>Not Delivered</p></div>
               )}
             </Card.Body>
           </Card>
@@ -184,11 +186,11 @@ export default function OrderScreen() {
                 <strong>Method:</strong> {order.paymentMethod}
               </Card.Text>
               {order.isPaid  ? (
-                <MessageBox variant="success">
-                  Paid. Please check order history for your order details
-                </MessageBox>
+                <div >
+                  <p className='text-success text-bold'>Paid. Please check order history for your order details</p>
+                </div>
               ) : (
-                <MessageBox variant="danger">Not Paid</MessageBox>
+                <div><p className='text-danger text-bold'>Not Paid</p></div>
               )}
             </Card.Body>
           </Card>
@@ -239,7 +241,7 @@ export default function OrderScreen() {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
-                    <Col>Tax</Col>
+                    <Col>Vat</Col>
                     <Col>₦{order.taxPrice.toFixed(2)}</Col>
                   </Row>
                 </ListGroup.Item>
