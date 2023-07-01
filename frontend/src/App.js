@@ -101,10 +101,10 @@ function App() {
               <Navbar.Collapse id="basic-navbar-nav">
                   <SearchBox />
                 <Nav className="me-auto  w-100  justify-content-end">
-                      <Link to = "/" className='nav-link text-dark'>HOME</Link>
-                      <Link to = "/" className='nav-link text-dark'>SHOP</Link>
-                      <Link to = "/" className='nav-link text-dark'>ABOUT</Link>
-                      <Link to = "/" className='nav-link text-dark' id = "contact-nav">CONTACT</Link>
+                      <Link to = "/" className='nav-link text-dark bold-text'>HOME</Link>
+                      <Link to = "/" className='nav-link text-dark bold-text'>SHOP</Link>
+                      <Link to = "/" className='nav-link text-dark bold-text'>ABOUT</Link>
+                      <Link to = "/" className='nav-link text-dark bold-text' id = "contact-nav">CONTACT</Link>
                   {/* <Link to = "/" 
                   className='nav-link text-dark'
                   >Dark mode

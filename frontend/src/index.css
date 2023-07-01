@@ -456,3 +456,6 @@ product-details-tab {
   height: 300px;
   background: tan
 }
+.bold-text{
+  font-weight: 500;
+}

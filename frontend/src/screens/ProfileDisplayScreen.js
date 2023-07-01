@@ -66,13 +66,12 @@ const ProfileDisplayScreen = () => {
     }
   };
   return(
-    <div className='container d-flex justify-content-center border'>
+    <div className='container d-flex justify-content-center'>
         <div className="card mt-4" style={{width: '28rem', height: '26rem'}}>
-          <img className="card-img-top" src="..." alt="Card cap" />
+          {/* <img className="card-img-top border" style={{width: '100%', height: '120px'}} src="..." alt="Card cap" /> */}
           <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <div className="btn btn-primary">Go somewhere</div>
+            <h5 className="card-title text-center">@{name}</h5>
+            <p className="card-text mt-4 text-center">{email}</p>
           </div>
         </div>
     </div>
