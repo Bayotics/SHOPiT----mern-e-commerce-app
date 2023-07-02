@@ -67,10 +67,24 @@ const PaymentScreen = () =>
   }, [payment, userInfo, paymentId, navigate]);
     return loading ? (<LoadingBox></LoadingBox>) : (
       <div className = "container bg-gray-300 h-full w-screen">
-        <h1>payment id: {paymentId}</h1>
-        <h3>Payment status: {payment.status}</h3>
-        <h3>Payment date: {payment.createdAt.substring(0, 19)}</h3>
-        <h3>Total price: ₦{payment.totalPrice}</h3>
+        <Table striped border hover>
+          <thead>
+            <tr>
+              <th><h2>Payment ID</h2></th>
+              <th><h2>Payment Status</h2></th>
+              <th><h2>Payment Date</h2></th>
+              <th><h2>Total Price</h2></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><h3>{paymentId}</h3></td>
+              <td><h3 className='text-success'>{payment.status}</h3></td>
+              <td><h3>{payment.createdAt.substring(0, 19)}</h3></td>
+              <td><h3>₦{payment.totalPrice}</h3></td>
+            </tr>
+          </tbody>
+        </Table>
         <br/>
         <br/>
         <div>
@@ -95,7 +109,7 @@ const PaymentScreen = () =>
                     ></img>{' '}</td>
                   <td>{e.title}</td>
                   <td>{e.quantity}</td>
-                  <td>₦{e.price}</td>
+                  <td>₦{e.price} X {e.quantity}</td>
               </tr>
               ))}
             </tbody>
