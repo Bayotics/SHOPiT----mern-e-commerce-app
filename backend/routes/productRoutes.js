@@ -30,10 +30,9 @@ productRouter.post(
   isAuth,
   isAdmin,
   expressAsyncHandler(async (req, res) => {
-    const {title,slug,image,price,category,brand,countInStock,rating,numReviews,description,longDescription } = req.body;
+    const {title,image,price,category,brand,countInStock,rating,numReviews,description,longDescription } = req.body;
     const newProduct = new Product({
       title,
-      slug,
       image,
       price,
       category,
@@ -58,7 +57,6 @@ productRouter.put(
     const product = await Product.findById(productId);
     if (product) {
       product.title = req.body.title;
-      product.slug = req.body.slug;
       product.price = req.body.price;
       product.image = req.body.image;
       product.images = req.body.images;
@@ -235,15 +233,6 @@ productRouter.get(
     res.send(categories);
   })
 );
-
-productRouter.get('/slug/:slug', async (req, res) => {
-  const product = await Product.findOne({ slug: req.params.slug });
-  if (product) {
-    res.send(product);
-  } else {
-    res.status(404).send({ message: 'Product Not Found' });
-  }
-});
 productRouter.get('/:id', async (req, res) => {
   const product = await Product.findById(req.params.id);
   if (product) {

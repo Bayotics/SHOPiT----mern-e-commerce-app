@@ -67,7 +67,6 @@ export default function ProductEditScreen() {
     });
 
   const [title, setTitle] = useState('');
-  const [slug, setSlug] = useState('');
   const [price, setPrice] = useState('');
   const [image, setImage] = useState('');
   const [images, setImages] = useState([]);
@@ -83,7 +82,6 @@ export default function ProductEditScreen() {
         dispatch({ type: 'FETCH_REQUEST' });
         const { data } = await axios.get(`/api/products/${productId}`);
         setTitle(data.title);
-        setSlug(data.slug);
         setPrice(data.price);
         setImage(data.image);
         setImages(data.images);
@@ -118,7 +116,6 @@ export default function ProductEditScreen() {
         {
           _id: productId,
           title,
-          slug,
           price,
           image,
           images,
@@ -196,14 +193,6 @@ export default function ProductEditScreen() {
             <Form.Control
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="slug">
-            <Form.Label>Slug</Form.Label>
-            <Form.Control
-              value={slug}
-              onChange={(e) => setSlug(e.target.value)}
               required
             />
           </Form.Group>

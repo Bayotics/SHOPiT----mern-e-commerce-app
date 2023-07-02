@@ -66,7 +66,6 @@ export default function ProductCreateScreen() {
     });
 
   const [title, setTitle] = useState('');
-  const [slug, setSlug] = useState('');
   const [price, setPrice] = useState('');
   const [image, setImage] = useState('');
   const [images, setImages] = useState([]);
@@ -95,7 +94,6 @@ export default function ProductCreateScreen() {
         `/api/products`,
         {
           title: title,
-          slug: slug,
           price: price,
           image: image,
           images: images,
@@ -172,14 +170,6 @@ export default function ProductCreateScreen() {
             <Form.Control
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="slug">
-            <Form.Label>Slug</Form.Label>
-            <Form.Control
-              value={slug}
-              onChange={(e) => setSlug(e.target.value)}
               required
             />
           </Form.Group>

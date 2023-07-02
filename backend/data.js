@@ -31,7 +31,6 @@ const data = {
     {
       // _id: '1',
       title: 'Nike Slim shirt',
-      slug: 'nike-slim-shirt',
       category: 'Shirts',
       image: '/images/p1.jpg', // 679px × 829px
       price: 120,
@@ -45,7 +44,6 @@ const data = {
     {
       // _id: '2',
       title: 'Adidas Fit Shirt',
-      slug: 'adidas-fit-shirt',
       category: 'Shirts',
       image: '/images/p2.jpg',
       price: 250,
@@ -59,7 +57,6 @@ const data = {
     {
       // _id: '3',
       title: 'Nike Slim Pant',
-      slug: 'nike-slim-pant',
       category: 'Pants',
       image: '/images/p3.jpg',
       price: 25,
@@ -73,7 +70,6 @@ const data = {
     {
       // _id: '4',
       title: 'Adidas Fit Pant',
-      slug: 'adidas-fit-pant',
       category: 'Pants',
       image: '/images/p4.jpg',
       price: 65,
