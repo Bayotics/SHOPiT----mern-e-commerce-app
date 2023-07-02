@@ -122,6 +122,7 @@ export default function PlaceOrderScreen() {
                     <Row className="align-items-center">
                       <Col md={6}>
                         <img
+                          style ={{height: '60px', width: '120px'}}
                           src={item.image}
                           alt={item.title}
                           className="img-fluid rounded img-thumbnail"
