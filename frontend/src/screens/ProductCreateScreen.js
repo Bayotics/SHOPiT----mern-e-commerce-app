@@ -6,7 +6,6 @@ import { Store } from '../Store';
 import { getError } from '../utils';
 import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
-import Dropdown from 'react-bootstrap/Dropdown'
 import Form from 'react-bootstrap/Form';
 import { Helmet } from 'react-helmet-async';
 import LoadingBox from '../components/LoadingBox';
@@ -158,12 +157,6 @@ export default function ProductCreateScreen() {
         <title>Create a new Product</title>
       </Helmet>
       <h1>Create a new Product</h1>
-
-      {/* {loading ? (
-        <LoadingBox></LoadingBox>
-      ) : error ? (
-        <MessageBox variant="danger">{error}</MessageBox>
-      ) : ( */}
         <Form onSubmit={submitHandler}>
           <Form.Group className="mb-3" controlId="title">
             <Form.Label>Name</Form.Label>
@@ -231,9 +224,6 @@ export default function ProductCreateScreen() {
                   <option key = {e}>{e}</option>
                 )
               })}
-              {/* <option>Select Product category</option>
-              <option>Constancia</option>
-              <option>Complemento</option> */}
             </Form.Control>
           </Form.Group>
           <Form.Group className="mb-3" controlId="brand">
@@ -284,7 +274,6 @@ export default function ProductCreateScreen() {
           </Button>
           </div>
         </Form>
-      {/* )} */}
     </Container>
   );
 }
