@@ -459,7 +459,8 @@ product-details-tab {
 .bold-text{
   font-weight: 500;
 }
-#search-banner{
+#main-banner{
   background-image: url(./assets/hero-6.png);
   background-size: contain;
+  background-attachment: fixed;
 }

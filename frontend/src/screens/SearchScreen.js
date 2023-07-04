@@ -14,7 +14,6 @@ import Product from '../components/Product';
 import LinkContainer from 'react-router-bootstrap/LinkContainer';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import ShopBanner from '../assets/hero-6.png'
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -155,7 +154,7 @@ export default function SearchScreen() {
       </Helmet>
        <Card style={{height: '200px', marginTop: '10px'}}
         className="text-center"
-        id='search-banner'>
+        id='main-banner'>
           <Card.Body style={{marginTop: '60px'}}>
               <span><h1 className='text-white fs-1'>Our Shop</h1></span>
           </Card.Body>

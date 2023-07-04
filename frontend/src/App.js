@@ -38,6 +38,7 @@ import ProductEditScreen from './screens/ProductEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
+import AboutScreen from './screens/AboutScreen';
 import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 
 
@@ -105,7 +106,7 @@ function App() {
                       <Link 
                       to = "/search?category=all&query=all&price=all&rating=all&order=newest&page=1" 
                       className='nav-link text-dark bold-text'>SHOP</Link>
-                      <Link to = "/" className='nav-link text-dark bold-text'>ABOUT</Link>
+                      <Link to = "/aboutus" className='nav-link text-dark bold-text'>ABOUT</Link>
                       <Link to = "/" className='nav-link text-dark bold-text' id = "contact-nav">CONTACT</Link>
                   {/* <Link to = "/" 
                   className='nav-link text-dark'
@@ -294,6 +295,7 @@ function App() {
                   </AdminRoute>
                 }
               ></Route>
+              <Route path = "/aboutus" element = {<AboutScreen />} ></Route> 
               <Route path="/products" element={<HomeScreen />} />
               <Route path = '/' element = {<MainScreen />} />
             </Routes>
