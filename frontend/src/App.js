@@ -102,7 +102,9 @@ function App() {
                   <SearchBox />
                 <Nav className="me-auto  w-100  justify-content-end">
                       <Link to = "/" className='nav-link text-dark bold-text'>HOME</Link>
-                      <Link to = "/" className='nav-link text-dark bold-text'>SHOP</Link>
+                      <Link 
+                      to = "/search?category=all&query=all&price=all&rating=all&order=newest&page=1" 
+                      className='nav-link text-dark bold-text'>SHOP</Link>
                       <Link to = "/" className='nav-link text-dark bold-text'>ABOUT</Link>
                       <Link to = "/" className='nav-link text-dark bold-text' id = "contact-nav">CONTACT</Link>
                   {/* <Link to = "/" 
