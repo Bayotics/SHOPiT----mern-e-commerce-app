@@ -17,7 +17,7 @@ function Slider() {
         <Carousel.Caption id = "carousel-caption">
           <h1 className='display-1'>REASONABLE PRICE</h1>
           <p>10% OFF YOUR FIRST ORDER</p>
-          <Button variant='primary'>SHOP NOW</Button>
+          <Button variant='primary'>SHOP NOW!</Button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={3000}>
