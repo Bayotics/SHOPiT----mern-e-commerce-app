@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 function Slider() {
   return (
     <Carousel>
-      <Carousel.Item interval={5000}>
+      <Carousel.Item interval={1000}>
         <img
           className="d-block w-100"
           src={bgOne}
