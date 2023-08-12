@@ -7,14 +7,14 @@ import Button from 'react-bootstrap/Button';
 function Slider() {
   return (
     <Carousel>
-      <Carousel.Item interval={3000}>
+      <Carousel.Item interval={5000}>
         <img
           className="d-block w-100"
           src={bgOne}
           alt="First slide"
-          style={{height: "800px"}}
+          style={{ height: "800px" }}
         />
-        <Carousel.Caption id = "carousel-caption">
+        <Carousel.Caption id="carousel-caption">
           <h1 className='display-1'>REASONABLE PRICE</h1>
           <p>10% OFF YOUR FIRST ORDER</p>
           <Button variant='primary'>SHOP NOW!</Button>
@@ -25,9 +25,9 @@ function Slider() {
           className="d-block w-100"
           src={bgTwo}
           alt="Second slide"
-          style={{height: "800px"}}
+          style={{ height: "800px" }}
         />
-        <Carousel.Caption id = "carousel-caption">
+        <Carousel.Caption id="carousel-caption">
           <h1 className='display-1'>REASONABLE PRICE</h1>
           <p>10% OFF YOUR FIRST ORDER</p>
           <Button variant='primary'>SHOP NOW</Button>
@@ -38,9 +38,9 @@ function Slider() {
           className="d-block w-100"
           src={bgThree}
           alt="Third slide"
-          style={{height: "800px"}}
+          style={{ height: "800px" }}
         />
-        <Carousel.Caption id = "carousel-caption">
+        <Carousel.Caption id="carousel-caption">
           <h1 className='display-1'>REASONABLE PRICE</h1>
           <p>10% OFF YOUR FIRST ORDER</p>
           <Button variant='primary'>SHOP NOW</Button>
