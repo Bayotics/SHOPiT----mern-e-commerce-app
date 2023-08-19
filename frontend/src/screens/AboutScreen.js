@@ -88,7 +88,7 @@ const AboutScreen = () => {
                              style={{height: '250px', width: '250px', borderRadius: '50%', marginTop: '15px'}}
                              alt = "about-one" />
                         </div>
-                        <h2 className="fw-normal">Unclebayotics</h2>
+                        <h2 className="fw-normal">Bayotics</h2>
                         <p>Team Lead</p>
                     </div>
                     <div className='text-center'>
