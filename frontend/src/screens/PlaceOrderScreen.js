@@ -36,12 +36,12 @@ export default function PlaceOrderScreen() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart, userInfo } = state;
 
-  const round2 = (num) => Math.round(num * 100 + Number.EPSILON) / 100; // 123.2345 => 123.23
+  const round2 = (num) => Math.round(num * 100 + Number.EPSILON) / 100;
   cart.itemsPrice = round2(
     cart.cartItems.reduce((a, c) => a + c.quantity * c.price, 0)
   );
   cart.shippingPrice = cart.itemsPrice > 100 ? round2(0) : round2(10);
-  cart.taxPrice = round2(0.15 * cart.itemsPrice);
+  cart.taxPrice = round2(0.012 * cart.itemsPrice);
   cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
  
   const placeOrderHandler = async () => {
@@ -87,29 +87,29 @@ export default function PlaceOrderScreen() {
       <Helmet>
         <title>Preview Order</title>
       </Helmet>
-      <h1 className="my-3">Preview Order</h1>
+      <h1 className="my-3">Your Order</h1>
       <Row>
         <Col md={8}>
           <Card className="mb-3">
             <Card.Body>
-              <Card.Title>Shipping</Card.Title>
+              <Card.Title>Shipping Info</Card.Title>
               <Card.Text>
                 <strong>Name:</strong> {cart.shippingAddress.fullName} <br />
                 <strong>Address: </strong> {cart.shippingAddress.address},
                 {cart.shippingAddress.city}, {cart.shippingAddress.postalCode},
                 {cart.shippingAddress.country}
               </Card.Text>
-              <Link to="/shipping">Edit</Link>
+              <Link to="/shipping">Edit shipping info?</Link>
             </Card.Body>
           </Card>
 
           <Card className="mb-3">
             <Card.Body>
-              <Card.Title>Payment</Card.Title>
+              <Card.Title>Payment Method</Card.Title>
               <Card.Text>
                 <strong>Method:</strong> {cart.paymentMethod}
               </Card.Text>
-              <Link to="/payment">Edit</Link>
+              <Link to="/payment">Edit payment method?</Link>
             </Card.Body>
           </Card>
 
@@ -122,11 +122,12 @@ export default function PlaceOrderScreen() {
                     <Row className="align-items-center">
                       <Col md={6}>
                         <img
+                          style ={{height: '60px', width: '120px'}}
                           src={item.image}
-                          alt={item.name}
+                          alt={item.title}
                           className="img-fluid rounded img-thumbnail"
                         ></img>{' '}
-                        <Link to={`/product/${item.slug}`}>{item.name}</Link>
+                        <Link to={`/product/${item._id}`}>{item.title}</Link>
                       </Col>
                       <Col md={3}>
                         <span>{item.quantity}</span>
@@ -159,7 +160,7 @@ export default function PlaceOrderScreen() {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
-                    <Col>Tax</Col>
+                    <Col>VAT</Col>
                     <Col>₦{cart.taxPrice.toFixed(2)}</Col>
                   </Row>
                 </ListGroup.Item>
@@ -176,6 +177,7 @@ export default function PlaceOrderScreen() {
                 <ListGroup.Item>
                   <div className="d-grid">
                     <Button
+                      id = "order-button"
                       type="button"
                       onClick={placeOrderHandler}
                       disabled={cart.cartItems.length === 0}

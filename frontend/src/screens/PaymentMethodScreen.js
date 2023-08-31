@@ -35,10 +35,10 @@ export default function PaymentMethodScreen() {
         <Helmet>
           <title>Payment Method</title>
         </Helmet>
-        <h1 className="my-3">Payment Method</h1>
+        <h1 className="my-3">Choose a payment method</h1>
         <Form onSubmit={submitHandler}>
           <div className="mb-3">
-            <Form.Check
+            <Form.Check 
               type="radio"
               id="Paystack"
               label="Paystack"
@@ -48,17 +48,17 @@ export default function PaymentMethodScreen() {
             />
           </div>
           <div className="mb-3">
-            <Form.Check
+            <Form.Check disabled
               type="radio"
               id="Stripe"
-              label="Stripe"
+              label="Stripe (Coming Soon...)"
               value="Stripe"
-              checked={paymentMethodName === 'Stripe(not available)'}
+              checked={paymentMethodName === 'Stripe'}
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
           </div>
           <div className="mb-3">
-            <Button type="submit">Continue</Button>
+            <Button type="submit">Next</Button>
           </div>
         </Form>
       </div>

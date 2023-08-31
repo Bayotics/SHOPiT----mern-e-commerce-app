@@ -1,14 +1,8 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useReducer } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { useNavigate, useParams } from 'react-router-dom';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import ListGroup from 'react-bootstrap/ListGroup';
-import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
+import Table from 'react-bootstrap/Table';
 import LoadingBox from '../components/LoadingBox';
-import MessageBox from '../components/MessageBox';
 import { Store } from '../Store';
 import { getError } from '../utils';
 
@@ -65,28 +59,56 @@ const PaymentScreen = () =>
     }
   }, [payment, userInfo, paymentId, navigate]);
     return loading ? (<LoadingBox></LoadingBox>) : (
-
-        <div className = "container bg-gray-300 h-full w-screen">
-            <h1>payment id: {paymentId}</h1>
-            <h3>Payment status: {payment.status}</h3>
-            <h3>Payment date: {payment.createdAt.substring(0, 19)}</h3>
-            <h3>Total price: ₦{payment.totalPrice}</h3>
-            <br/>
-            <br/>
-        <div>{payment.orderItems.map((e) => (
-                <div key = {e._id}>
-                    <h3>order name: {e.name}</h3>
-                    <h3>order id: {e._id}</h3>
-                    <h3>quantity: {e.quantity}</h3>
-                    <h3>price: {e.price}</h3>
+      <div className = "container bg-gray-300 h-full w-screen">
+        <Table striped border hover>
+          <thead>
+            <tr>
+              <th><h2>Payment ID</h2></th>
+              <th><h2>Payment Status</h2></th>
+              <th><h2>Payment Date</h2></th>
+              <th><h2>Total Price</h2></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><h3>{paymentId}</h3></td>
+              <td><h3 className='text-success'>{payment.status}</h3></td>
+              <td><h3>{payment.createdAt.substring(0, 19)}</h3></td>
+              <td><h3>₦{payment.totalPrice}</h3></td>
+            </tr>
+          </tbody>
+        </Table>
+        <br/>
+        <br/>
+        <div>
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>Pic</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {payment.orderItems.map((e) => (
+                <tr key={e._id}>
+                  <td>
                     <img
-                          src={e.image}
-                          alt={e.name}
-                          className="img-fluid rounded img-thumbnail"
-                    ></img>{' '}
-                </div>
-        ))}</div>
+                            style ={{height: '60px', width: '120px'}}
+                            src={e.image}
+                            alt={e.name}
+                            className="img-fluid rounded img-thumbnail"
+                    ></img>{' '}</td>
+                  <td>{e.title}</td>
+                  <td>{e.quantity}</td>
+                  <td>₦{e.price} X {e.quantity}</td>
+              </tr>
+              ))}
+            </tbody>
+          </Table>
         </div>
+    </div>
     )
 }
 

@@ -6,6 +6,8 @@ import axios from 'axios';
 import { useContext } from 'react';
 import { Store } from '../Store';
 
+
+
 function Product(props) {
   const { product } = props;
 
@@ -27,24 +29,39 @@ function Product(props) {
       payload: { ...item, quantity },
     });
   };
+  console.log()
 
   return (
-    <Card>
-      <Link to={`/product/${product.slug}`}>
-        <img src={product.image} className="card-img-top" alt={product.name} />
+    <Card className='shadow-lg p-3 mb-5 bg-white rounded'>
+      <Link to={`/product/${product._id}`}>
+        <img 
+        src={product.image} 
+        className="card-img-top" 
+        alt={product.title} 
+        style={{height: "200px", width: "100%"}}
+        />
       </Link>
-      <Card.Body>
-        <Link to={`/product/${product.slug}`}>
-          <Card.Title>{product.name}</Card.Title>
+      <Card.Body className = "">
+        <Link className='text-decoration-none' to={`/product/${product._id}`}>
+          <Card.Title className='text-center text-dark font-weight-bold'>{product.title}</Card.Title>
         </Link>
-        <Rating rating={product.rating} numReviews={product.numReviews} />
-        <Card.Text>₦{product.price}</Card.Text>
+        <div className = "d-flex justify-content-center">
+          <Rating rating={product.rating} />
+        </div>
+        <Card.Text className='text-xl font-semibold text-center'>₦{product.price}</Card.Text>
         {product.countInStock === 0 ? (
-          <Button variant="light" disabled>
+          <div  className='d-flex justify-content-center'>
+            <Button variant="danger" disabled>
             Out of stock
           </Button>
+          </div>
+          
         ) : (
-          <Button onClick={() => addToCartHandler(product)}>Add to cart</Button>
+          <div className='d-flex justify-content-center'>
+            <Button onClick={() => addToCartHandler(product)}>
+              <i className="fas fa-shopping-cart"></i>
+            </Button>
+          </div>
         )}
       </Card.Body>
     </Card>

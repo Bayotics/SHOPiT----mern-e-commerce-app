@@ -7,6 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Badge from 'react-bootstrap/Badge';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Dropdown from 'react-bootstrap/Dropdown';
 import Container from 'react-bootstrap/Container';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useContext, useEffect, useState } from 'react';
@@ -22,6 +23,7 @@ import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import PaymentScreen from "./screens/PaymentScreen";
 import ProfileScreen from './screens/ProfileScreen';
+import ProfiledisplayScreen from './screens/ProfileDisplayScreen'
 import Button from 'react-bootstrap/Button';
 import { getError } from './utils';
 import axios from 'axios';
@@ -31,16 +33,20 @@ import ProtectedRoute from './components/ProtectedRoute';
 import DashboardScreen from './screens/DashboardScreen';
 import AdminRoute from './components/AdminRoute';
 import ProductListScreen from './screens/ProductListScreen';
+import ProductCreateScreen from './screens/ProductCreateScreen';
 import ProductEditScreen from './screens/ProductEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
+import AboutScreen from './screens/AboutScreen';
+import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart, userInfo } = state;
 
+  // const currentMode = "bg-light"
   const signoutHandler = () => {
     ctxDispatch({ type: 'USER_SIGNOUT' });
     localStorage.removeItem('userInfo');
@@ -50,12 +56,20 @@ function App() {
   };
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
   const [categories, setCategories] = useState([]);
+  // const [mode, setMode] = useState(currentMode)
+  // const [bgmode, setBgMode] = useState(false);
+
+  // const darkMode = () => {
+  //   setMode("bg-dark")
+  //   setBgMode(!bgmode)
+  // }
 
   useEffect(() => {
     const fetchCategories = async () => {
       try {
         const { data } = await axios.get(`/api/products/categories`);
         setCategories(data);
+        console.log(data)
       } catch (err) {
         toast.error(getError(err));
       }
@@ -72,24 +86,34 @@ function App() {
         }
       >
         <ToastContainer position="bottom-center" limit={1} />
-        <header>
-          <Navbar bg="dark" variant="dark" expand="lg">
-            <Container>
+        <header className='mt-20'>
+          <Navbar bg="white" variant="white" expand="lg">
+            <Container id = "main-container">
                <Button
-                variant="dark"
+                variant="white"
                 onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
               >
                 <i className="fas fa-bars"></i>
               </Button>
               <LinkContainer to="/">
-                <Navbar.Brand>SHOPiT</Navbar.Brand>
+                <Navbar.Brand id = "mail-logo">SHOPiT</Navbar.Brand>
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                   <SearchBox />
                 <Nav className="me-auto  w-100  justify-content-end">
-                  <Link to="/cart" className="nav-link">
-                    Cart
+                      <Link to = "/" className='nav-link text-dark bold-text'>HOME</Link>
+                      <Link 
+                      to = "/search?category=all&query=all&price=all&rating=all&order=newest&page=1" 
+                      className='nav-link text-dark bold-text'>SHOP</Link>
+                      <Link to = "/aboutus" className='nav-link text-dark bold-text'> ABOUT US</Link>
+                      <Link to = "/" className='nav-link text-dark bold-text' id = "contact-nav">CONTACT</Link>
+                  {/* <Link to = "/" 
+                  className='nav-link text-dark'
+                  >Dark mode
+                  <i className="fa fa-toggle-off" aria-hidden="true"></i></Link> */}
+                  <Link to="/cart" className="nav-link text-dark">
+                    <i className="fas fa-shopping-cart"></i>
                     {cart.cartItems.length > 0 && (
                       <Badge pill bg="danger">
                         {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
@@ -99,14 +123,17 @@ function App() {
                   {userInfo ? (
                     <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
                       <LinkContainer to="/profile">
-                        <NavDropdown.Item>User Profile</NavDropdown.Item>
+                        <NavDropdown.Item>Edit Profile</NavDropdown.Item>
+                      </LinkContainer>
+                      <LinkContainer to="/profiledisplay">
+                        <NavDropdown.Item>Display Profile</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to="/orderhistory">
                         <NavDropdown.Item>Order History</NavDropdown.Item>
                       </LinkContainer>
                       <NavDropdown.Divider />
                       <Link
-                        className="dropdown-item"
+                        className="dropdown-item text-dark"
                         to="#signout"
                         onClick={signoutHandler}
                       >
@@ -114,7 +141,7 @@ function App() {
                       </Link>
                     </NavDropdown>
                   ) : (
-                    <Link className="nav-link" to="/signin">
+                    <Link className="nav-link text-dark" to="/signin">
                       Sign In
                     </Link>
                   )}
@@ -147,29 +174,32 @@ function App() {
           }
         >
           <Nav className="flex-column text-white w-100 p-2">
-            <Nav.Item>
-              <strong>Categories</strong>
-            </Nav.Item>
-            {categories.map((category) => (
-              <Nav.Item key={category}>
-                 <LinkContainer
-                  to={{
-                    pathname: "/search",
-                    search: `?category=${category}`,
-                  }}
-                  onClick={() => setSidebarIsOpen(false)}
-                >
-                  <Nav.Link>{category}</Nav.Link>
-              </LinkContainer>
-              </Nav.Item>
-            ))}
+             <Dropdown>
+              <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                Categories
+              </Dropdown.Toggle>
+              <Dropdown.Menu >
+              {categories.map((category) => (
+                  <Dropdown.Item key = {category}>
+                     <LinkContainer
+                        to={{
+                          pathname: "/search",
+                          search: `?category=${category}`,
+                        }}
+                        onClick={() => setSidebarIsOpen(false)}
+                      >
+                        <Nav.Link>{category}</Nav.Link>
+                      </LinkContainer>
+                  </Dropdown.Item>
+              ))}
+              </Dropdown.Menu>
+            </Dropdown>
           </Nav>
         </div>
         <main>
-          <MainScreen />
-          <Container className="mt-3">
+          <Container className="mt-3" id = "main-container">
             <Routes>
-              <Route path="/product/:slug" element={<ProductScreen />} />
+              <Route path="/product/:id" element={<ProductScreen />} />
               <Route path="/cart" element={<CartScreen />} />
               <Route path="/search" element={<SearchScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
@@ -181,7 +211,11 @@ function App() {
                     <ProfileScreen />
                   </ProtectedRoute>
                 }
-              />              
+              />
+              <Route path = "/profiledisplay"
+                     element = {<ProtectedRoute>
+                        <ProfiledisplayScreen />
+                        </ProtectedRoute>} />           
               <Route path="/placeorder" element={<PlaceOrderScreen />} />
               <Route
                 path="/order/:id"
@@ -245,6 +279,14 @@ function App() {
                   </AdminRoute>
                 }
               ></Route>
+              <Route
+                path="/productcreatescreen"
+                element={
+                  <AdminRoute>
+                    <ProductCreateScreen />
+                  </AdminRoute>
+                }
+              ></Route>             
                <Route
                 path="/admin/user/:id"
                 element={
@@ -253,7 +295,9 @@ function App() {
                   </AdminRoute>
                 }
               ></Route>
-              <Route path="/" element={<HomeScreen />} />
+              <Route path = "/aboutus" element = {<AboutScreen />} ></Route> 
+              <Route path="/products" element={<HomeScreen />} />
+              <Route path = '/' element = {<MainScreen />} />
             </Routes>
           </Container>
         </main>

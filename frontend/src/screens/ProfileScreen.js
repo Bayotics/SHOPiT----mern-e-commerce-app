@@ -69,9 +69,9 @@ export default function ProfileScreen() {
   return (
     <div className="container small-container">
       <Helmet>
-        <title>User Profile</title>
+        <title>Edit Profile</title>
       </Helmet>
-      <h1 className="my-3">User Profile</h1>
+      <h1 className="my-3">Edit Your Profile</h1>
       <form onSubmit={submitHandler}>
         <Form.Group className="mb-3" controlId="name">
           <Form.Label>Name</Form.Label>
@@ -105,7 +105,7 @@ export default function ProfileScreen() {
           />
         </Form.Group>
         <div className="mb-3">
-          <Button type="submit">Update</Button>
+          <Button variant= "outline-primary" type="submit">Update Profile</Button>
         </div>
       </form>
     </div>

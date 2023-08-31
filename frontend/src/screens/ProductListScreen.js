@@ -95,29 +95,9 @@ export default function ProductListScreen() {
     }
   }, [page, userInfo, successDelete]);
 
-  const createHandler = async () => {
-    if (window.confirm('Are you sure to create?')) {
-      try {
-        dispatch({ type: 'CREATE_REQUEST' });
-        const { data } = await axios.post(
-          '/api/products',
-          {},
-          {
-            headers: { Authorization: `Bearer ${userInfo.token}` },
-          }
-        );
-        toast.success('product created successfully');
-        dispatch({ type: 'CREATE_SUCCESS' });
-        navigate(`/admin/product/${data.product._id}`);
-      } catch (err) {
-        toast.error(getError(error));
-        dispatch({
-          type: 'CREATE_FAIL',
-        });
-      }
-    }
-  };
-
+  const createProduct = () => {
+    navigate(`/ProductCreateScreen`)
+  }
   const deleteHandler = async (product) => {
     if (window.confirm('Are you sure to delete?')) {
       try {
@@ -143,8 +123,8 @@ export default function ProductListScreen() {
         </Col>
         <Col className="col text-end">
           <div>
-            <Button type="button" onClick={createHandler}>
-              Create Product
+            <Button type="button" onClick={createProduct}>
+              Add new Product
             </Button>
           </div>
         </Col>
@@ -174,7 +154,7 @@ export default function ProductListScreen() {
               {products.map((product) => (
                 <tr key={product._id}>
                   <td>{product._id}</td>
-                  <td>{product.name}</td>
+                  <td>{product.title}</td>
                   <td>{product.price}</td>
                   <td>{product.category}</td>
                   <td>{product.brand}</td>

@@ -12,6 +12,8 @@ import MessageBox from '../components/MessageBox';
 import Button from 'react-bootstrap/Button';
 import Product from '../components/Product';
 import LinkContainer from 'react-router-bootstrap/LinkContainer';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -36,17 +38,33 @@ const reducer = (state, action) => {
 
 const prices = [
   {
-    name: '$1 to $50',
-    value: '1-50',
+    name: '₦1 to ₦1,000',
+    value: '1-1000',
   },
   {
-    name: '$51 to $200',
-    value: '51-200',
+    name: '₦1k to ₦10k',
+    value: '1000-10000',
   },
   {
-    name: '$201 to $1000',
-    value: '201-1000',
+    name: '₦10k to ₦100k',
+    value: '10000-100000',
   },
+  {
+    name: '₦100k to ₦500k',
+    value: '100000-500000'
+  },
+  {
+    name: '₦500k to ₦1M',
+    value: '500000-1000000'
+  },
+  {
+    name: '₦1M to ₦5M',
+    value: '1000000-5000000'
+  },
+  {
+    name: '₦5M to ₦20M',
+    value: '5000000-20000000'
+  }
 ];
 
 export const ratings = [
@@ -134,76 +152,91 @@ export default function SearchScreen() {
       <Helmet>
         <title>Search Products</title>
       </Helmet>
-      <Row>
+       <Card style={{height: '200px', marginTop: '10px'}}
+        className="text-center"
+        id='main-banner'>
+          <Card.Body style={{marginTop: '60px'}}>
+              <span><h1 className='text-white fs-1'>Our Shop</h1></span>
+          </Card.Body>
+        </Card>
+      <Row id = "search-row" style={{marginTop: '90px'}}>
         <Col md={3}>
-          <h3>Department</h3>
           <div>
-            <ul>
-              <li>
-                <Link
+            <Card style = {{width: '18rem'}} >
+              <Card.Header>
+                <h3>Category</h3>
+              </Card.Header>
+              <ListGroup variant='flush'>
+                <ListGroup.Item>
+                  <Link
                   className={'all' === category ? 'text-bold' : ''}
                   to={getFilterUrl({ category: 'all' })}
                 >
                   Any
                 </Link>
-              </li>
-              {categories.map((c) => (
-                <li key={c}>
-                  <Link
-                    className={c === category ? 'text-bold' : ''}
-                    to={getFilterUrl({ category: c })}
+                </ListGroup.Item>
+                {categories.map((e) => (
+                  <ListGroup.Item>
+                    <Link
+                    className={e === category ? 'text-bold' : ''}
+                    to={getFilterUrl({ category: e })}
                   >
-                    {c}
+                    {e}
                   </Link>
-                </li>
-              ))}
-            </ul>
+                  </ListGroup.Item>
+                ))}
+              </ListGroup>
+            </Card>
           </div>
-          <div>
-            <h3>Price</h3>
-            <ul>
-              <li>
-                <Link
+          <div className='mt-2'>
+            <Card style={{ width: '18rem' }}>
+                <Card.Header><h3>Price</h3></Card.Header>
+                <ListGroup variant='flush'>
+                  <ListGroup.Item>
+                    <Link
                   className={'all' === price ? 'text-bold' : ''}
                   to={getFilterUrl({ price: 'all' })}
-                >
-                  Any
-                </Link>
-              </li>
-              {prices.map((p) => (
-                <li key={p.value}>
-                  <Link
-                    to={getFilterUrl({ price: p.value })}
-                    className={p.value === price ? 'text-bold' : ''}
                   >
-                    {p.name}
+                    Any
                   </Link>
-                </li>
-              ))}
-            </ul>
+                  </ListGroup.Item>
+                  {prices.map((e) => (
+                    <ListGroup.Item key = {e.value}>
+                      <Link
+                        to={getFilterUrl({ price: e.value })}
+                        className={e.value === price ? 'text-bold' : ''}
+                      >
+                        {e.name}
+                      </Link>
+                    </ListGroup.Item>
+                  ))}
+                </ListGroup>
+            </Card>
           </div>
-          <div>
-            <h3>Avg. Customer Review</h3>
-            <ul>
-              {ratings.map((r) => (
-                <li key={r.name}>
+          <div className='mt-2'>
+            <Card style={{ width: '18rem' }}>
+              <Card.Header><h3>Avgerage Rating</h3></Card.Header>
+              <ListGroup variant='flush'>
+                {ratings.map((e) => (
+                  <ListGroup.Item key = {e.rating}>
+                    <Link
+                      to={getFilterUrl({ rating: e.rating })}
+                      className={`${e.rating}` === `${rating}` ? 'text-bold' : ''}
+                    >
+                      <Rating caption={' & up'} rating={e.rating}></Rating>
+                    </Link>
+                  </ListGroup.Item>
+                ))}
+                <ListGroup.Item>
                   <Link
-                    to={getFilterUrl({ rating: r.rating })}
-                    className={`${r.rating}` === `${rating}` ? 'text-bold' : ''}
+                    to={getFilterUrl({ rating: 'all' })}
+                    className={rating === 'all' ? 'text-bold' : ''}
                   >
-                    <Rating caption={' & up'} rating={r.rating}></Rating>
+                    <Rating caption={' & up'} rating={0}></Rating>
                   </Link>
-                </li>
-              ))}
-              <li>
-                <Link
-                  to={getFilterUrl({ rating: 'all' })}
-                  className={rating === 'all' ? 'text-bold' : ''}
-                >
-                  <Rating caption={' & up'} rating={0}></Rating>
-                </Link>
-              </li>
-            </ul>
+                </ListGroup.Item>
+              </ListGroup>
+            </Card>
           </div>
         </Col>
         <Col md={9}>
@@ -242,10 +275,10 @@ export default function SearchScreen() {
                       navigate(getFilterUrl({ order: e.target.value }));
                     }}
                   >
-                    <option value="newest">Newest Arrivals</option>
+                    <option value="newest">Latest Arrivals</option>
                     <option value="lowest">Price: Low to High</option>
                     <option value="highest">Price: High to Low</option>
-                    <option value="toprated">Avg. Customer Reviews</option>
+                    <option value="toprated">Avgerage Reviews</option>
                   </select>
                 </Col>
               </Row>
