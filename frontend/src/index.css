@@ -1,10 +1,19 @@
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Open Sans, sans-serif'; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
 .site-container {
   min-height: 100vh;
 }
@@ -144,7 +153,10 @@ button.thumbnail {
   padding: 0;
 }
 #hero-background{
-  
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
 }
 #contact-nav{
   margin-right: 70px;
@@ -153,10 +165,10 @@ button.thumbnail {
   margin-top: 20px;;
 }
 #basic-nav-dropdown{
-  color: black;
+  color: white;
 }
 #admin-nav-dropdown{
-  color:black;
+  color:white;
 }
 #main-container{
   max-width: 1300px;
@@ -168,7 +180,8 @@ button.thumbnail {
   margin-top: 100px;
 }
 #main-products{
-  margin-top: 100px;
+  position: relative;
+  top: 800px;
 }
 product-details-tab {
   margin-bottom: 5rem
@@ -451,6 +464,17 @@ product-details-tab {
 }
 #carousel-caption{
   margin-bottom: 300px;
+  /* opacity: 1; */
+  animation-duration: 4s;
+  animation-fill-mode: both;
+  animation-name: fadeInAnimation;
+}
+
+#carousel-caption::after{
+  transition: fadeInAnimation ease 1s;
+}
+.carousel-item{
+  transition: transform 1s ease-in-out;
 }
 #cate-gory{
   height: 300px;

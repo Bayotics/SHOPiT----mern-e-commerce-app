@@ -1,13 +1,13 @@
 import Carousel from 'react-bootstrap/Carousel';
-import bgOne from '../assets/hero-1.jpg';
-import bgTwo from '../assets/hero-2.jpg';
-import bgThree from '../assets/hero-3.jpg';
+import bgOne from '../assets/fish/bg-1-edited.jpg';
+import bgTwo from '../assets/fish/bg-2-edited.jpg';
+import bgThree from '../assets/fish/bg-3-edited.jpg';
 import Button from 'react-bootstrap/Button';
 
 function Slider() {
   return (
     <Carousel>
-      <Carousel.Item interval={1000}>
+      <Carousel.Item interval={10000}>
         <img
           className="d-block w-100"
           src={bgOne}
@@ -15,12 +15,12 @@ function Slider() {
           style={{ height: "800px" }}
         />
         <Carousel.Caption id="carousel-caption">
-          <h1 className='display-1'>REASONABLE PRICE</h1>
-          <p>10% OFF YOUR FIRST ORDER</p>
+          <p>FRESH EVERYDAY</p>
+          <h1 className='display-1'>100% Fresh Collection</h1>
           <Button variant='primary'>SHOP NOW!</Button>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item interval={3000}>
+      <Carousel.Item interval={10000}>
         <img
           className="d-block w-100"
           src={bgTwo}
@@ -28,12 +28,12 @@ function Slider() {
           style={{ height: "800px" }}
         />
         <Carousel.Caption id="carousel-caption">
-          <h1 className='display-1'>REASONABLE PRICE</h1>
-          <p>10% OFF YOUR FIRST ORDER</p>
+          <p>FRESH EVERYDAY</p>
+          <h1 className='display-1'>100% Fresh Collection</h1>
           <Button variant='primary'>SHOP NOW</Button>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item  interval={10000}>
         <img
           className="d-block w-100"
           src={bgThree}
@@ -41,8 +41,8 @@ function Slider() {
           style={{ height: "800px" }}
         />
         <Carousel.Caption id="carousel-caption">
-          <h1 className='display-1'>REASONABLE PRICE</h1>
-          <p>10% OFF YOUR FIRST ORDER</p>
+            <p>FRESH EVERYDAY</p>
+          <h1 className='display-1'>100% Fresh Collection</h1>
           <Button variant='primary'>SHOP NOW</Button>
         </Carousel.Caption>
       </Carousel.Item>
