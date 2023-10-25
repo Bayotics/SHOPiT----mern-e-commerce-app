@@ -1,10 +1,10 @@
-
+import fishPng from "../assets/fish/pngs/png-fish-four.png"
 
 const About = () => {
     return(
-        <div className="border">
-            <div className="row border">
-                <div className="col border">
+        <div className="border about-landing-main">
+            <div className="row">
+                <div className="col">
                     <div className="about-captions">
                         <div className="about-heading pt-2">
                             <h1 className="text-white text-center">About Us</h1>
@@ -24,8 +24,10 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col border about-right-main">
-                    
+                <div className="col about-right-main">
+                    <div className="about-img-container">
+                        <img src={fishPng} alt="about-shopit" className="about-img-png"/>
+                    </div>
                 </div>
             </div>
         </div>

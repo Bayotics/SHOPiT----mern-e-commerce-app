@@ -67,7 +67,8 @@ function HomeScreen() {
           <About />
         </div>
         <div id='categories-main'>
-          <Categories />
+          <h1>This is the categories Section</h1>
+          {/* <Categories /> */}
         </div>
         <h1 className='text-center fw-normal mt-4'><span className='theme-color'>FEATURED </span> PRODUCTS</h1>
         <div className="products" id = "featured-products">
