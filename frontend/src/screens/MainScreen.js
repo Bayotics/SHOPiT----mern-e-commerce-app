@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Product from '../components/Product';
 import Categories from '../components/Categories';
+import LandingPageCategory from '../components/LandingPageCategory';
 import About from '../components/About';
 import { Helmet } from 'react-helmet-async';
 import LoadingBox from '../components/LoadingBox';
@@ -67,8 +68,8 @@ function HomeScreen() {
           <About />
         </div>
         <div id='categories-main'>
-          <h1>This is the categories Section</h1>
           {/* <Categories /> */}
+          <LandingPageCategory />
         </div>
         <h1 className='text-center fw-normal mt-4'><span className='theme-color'>FEATURED </span> PRODUCTS</h1>
         <div className="products" id = "featured-products">

@@ -164,6 +164,10 @@ main {
   height: 400px;
   width: 450px;
 }
+
+#categories-main{
+  margin-top: 90px;
+}
 /* Map */
 
 .full-box {
@@ -602,4 +606,8 @@ product-details-tab {
 }
 .team-main{
   margin-top: 50px;;
+}
+footer{
+  position: relative;
+  top: 1200px;
 }
