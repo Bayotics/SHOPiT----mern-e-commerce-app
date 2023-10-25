@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Product from '../components/Product';
 import Categories from '../components/Categories';
+import About from '../components/About';
 import { Helmet } from 'react-helmet-async';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
@@ -62,7 +63,10 @@ function HomeScreen() {
         <Helmet>
           <title>SHOPiT</title>
         </Helmet>
-        <div >
+        <div id='landing-page-about'>
+          <About />
+        </div>
+        <div id='categories-main'>
           <Categories />
         </div>
         <h1 className='text-center fw-normal mt-4'><span className='theme-color'>FEATURED </span> PRODUCTS</h1>

@@ -9,15 +9,15 @@ function Slider() {
     <Carousel>
       <Carousel.Item interval={10000}>
         <img
-          className="d-block w-100"
+          className="d-block w-100 carousel-background"
           src={bgOne}
           alt="First slide"
-          style={{ height: "800px" }}
+          style={{ height: "800px", backgroundColor: "rgba(0, 0, 0, 0.5)" }}
         />
-        <Carousel.Caption id="carousel-caption">
+        <Carousel.Caption id="carousel-caption" className='carousel-animation'>
           <p>FRESH EVERYDAY</p>
-          <h1 className='display-1'>100% Fresh Collection</h1>
-          <Button variant='primary'>SHOP NOW!</Button>
+          <h1 className='display-1'>Fresh fish at your fingertips</h1>
+            <button className='carousel-btn'>Shop now</button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={10000}>
@@ -28,9 +28,9 @@ function Slider() {
           style={{ height: "800px" }}
         />
         <Carousel.Caption id="carousel-caption">
-          <p>FRESH EVERYDAY</p>
-          <h1 className='display-1'>100% Fresh Collection</h1>
-          <Button variant='primary'>SHOP NOW</Button>
+          <p>SWIFT DELIVERY</p>
+          <h1 className='display-1'>Taste the Ocean's freshness</h1>
+          <button className='carousel-btn'>Shop now</button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item  interval={10000}>
@@ -41,9 +41,9 @@ function Slider() {
           style={{ height: "800px" }}
         />
         <Carousel.Caption id="carousel-caption">
-            <p>FRESH EVERYDAY</p>
+            <p>ORDER NOW</p>
           <h1 className='display-1'>100% Fresh Collection</h1>
-          <Button variant='primary'>SHOP NOW</Button>
+          <button className='carousel-btn'>Shop now</button>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

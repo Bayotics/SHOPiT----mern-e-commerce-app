@@ -100,11 +100,57 @@ main {
 .active-nav {
   left: 0;
 }
+.nav-texts{
+  color: #ec7c20;
+}
 
 .text-bold {
   font-weight: bold;
 }
+.about-captions{
+  float: right;
+  width: 90%;
+  border: 1px solid red;
+  margin-right: 0px;
+  margin-top: 30px;
+}
+.about-heading{
+  height: 70px;
+  width: 50%;
+  background-color: #ec7c20;
+}
+.about-paragraph{
+  margin-top: 40px;
+}
+.about-paragraph p{
+  font-size: 20px;
+  font-weight: 100;
+}
+.about-btn-main{
+  margin-top: 40px;
+}
+  .about-btn{
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    height: 50px;
+    width: 120px;
+    border: none;
+    margin-top: 10px;
+    transition: .3s ease-out;
+    cursor: pointer;
+    z-index: -1;
+}
+.about-btn:hover{
+  background-color: #ec7c20;
+  color: white; 
 
+}
+.about-right-main{
+  background-color: #f7fcf9;
+  height: 450px;
+}
 /* Map */
 
 .full-box {
@@ -260,7 +306,7 @@ product-details-tab {
 
 .nav.nav-pills .nav-link:hover,
 .nav.nav-pills .nav-link:focus {
-  color: #0d6efd
+  color: #ec7c20
 }
 
 .nav.nav-pills .nav-link:focus {
@@ -273,7 +319,7 @@ product-details-tab {
 
 .nav.nav-pills .nav-item.show .nav-link,
 .nav.nav-pills .nav-item .nav-link.active {
-  color: #0d6efd;
+  color: #ec7c20;
   border-color: #3f8cff;
   border-bottom-color: #0d6efd
 }
@@ -385,7 +431,7 @@ product-details-tab {
   bottom: 0;
   width: 100%;
   height: .1rem;
-  background-color: #0d6efd;
+  background-color: #ec7c20;
   transform-origin: right center;
   transform: scale(0, 1);
   transition: transform .3s ease
@@ -446,7 +492,7 @@ product-details-tab {
   border-radius: 0;
 }
 #button-search{
-  background-color: #0d6efd;
+  background-color: #051922;
   width: 40px;
   color: white;
   border: none;
@@ -454,13 +500,20 @@ product-details-tab {
 #button-search :hover{
 }
 #mail-logo{
-  color:#0d6efd;
+  color:#ec7c20;
 }
 .theme-color{
-  color: #0d6efd;
+  color: #ec7c20;
 }
 .nav-link{
   cursor: pointer;
+  color: white;
+}
+.nav-link:hover{
+  color: #ec7c20;
+}
+.carousel-background{
+ 
 }
 #carousel-caption{
   margin-bottom: 300px;
@@ -469,12 +522,46 @@ product-details-tab {
   animation-fill-mode: both;
   animation-name: fadeInAnimation;
 }
+.carousel-animation{
+  
+}
+#carousel-caption h1{
+  font-weight: 600;
+}
+#carousel-caption p{
+  margin-bottom: 0;
+  color: #ec7c20;
+  font-weight: 800;
+  letter-spacing: 6px;
+}
 
 #carousel-caption::after{
   transition: fadeInAnimation ease 1s;
 }
 .carousel-item{
   transition: transform 1s ease-in-out;
+}
+.carousel-btn-main{
+  height: 60px;
+  width: 200px;
+}
+.carousel-btn{
+  border-radius: 50px;
+  background-color: #ec7c20;
+  color: white;
+  font-size: 16px;
+  height: 50px;
+  width: 120px;
+  border: none;
+  margin-top: 10px;
+  transition: .1s ease-out;
+  cursor: pointer;
+  z-index: -1;
+}
+.carousel-btn:hover{
+  background-color: #051922;
+  color: #ec7c20;
+
 }
 #cate-gory{
   height: 300px;
