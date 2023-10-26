@@ -168,6 +168,23 @@ main {
 #categories-main{
   margin-top: 90px;
 }
+.category-heading{
+  height: 50px;
+  text-align: center;
+}
+.category-heading h1{
+  color: #ec7c20;
+  font-weight: 700;
+}
+.category-heading span{
+  color: black;
+}
+.category-tiles{
+  margin-top: 50px;
+}
+.category-tiles-first{
+  background-image: url(../src/assets/fish/category-all.jpg);
+}
 /* Map */
 
 .full-box {
