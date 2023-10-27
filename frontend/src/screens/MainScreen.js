@@ -59,18 +59,18 @@ function HomeScreen() {
       <div id="hero-background" className='w-100 mb-4'>
         <Slider />
       </div>
+      <div id='landing-page-about'>
+        <About />
+      </div>
+      <div id='categories-main'>
+          {/* <Categories /> */}
+          <LandingPageCategory />
+      </div>
+      {/* Products */}
       <div className='' id = "main-products">
-
         <Helmet>
           <title>SHOPiT</title>
         </Helmet>
-        <div id='landing-page-about'>
-          <About />
-        </div>
-        <div id='categories-main'>
-          {/* <Categories /> */}
-          <LandingPageCategory />
-        </div>
         <h1 className='text-center fw-normal mt-4'><span className='theme-color'>FEATURED </span> PRODUCTS</h1>
         <div className="products" id = "featured-products">
           {loading ? (
@@ -102,7 +102,6 @@ function HomeScreen() {
         </div>
       </div>
     </div>
-
   );
 }
 export default HomeScreen;
