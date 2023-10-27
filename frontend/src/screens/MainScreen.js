@@ -71,7 +71,7 @@ function HomeScreen() {
         <Helmet>
           <title>SHOPiT</title>
         </Helmet>
-        <h1 className='text-center fw-normal mt-4'><span className='theme-color'>FEATURED </span> PRODUCTS</h1>
+        <h1 className='text-center text-bold fw-normal mt-4'><span className='theme-color text-bold'>Featured </span> Products</h1>
         <div className="products" id = "featured-products">
           {loading ? (
             <LoadingBox />
