@@ -79,7 +79,7 @@ function HomeScreen() {
             <MessageBox variant="danger">{error}</MessageBox>
           ) : (
             <>
-              <Row>
+              <Row id = "main-product-row">
                 {products.map((product) => (
                   <Col key={product._id} sm={6} md={4} lg={3} className="mb-3">
                     <Product product={product}></Product>
@@ -101,6 +101,7 @@ function HomeScreen() {
           )}
         </div>
       </div>
+      {/* end of featured Products */}
     </div>
   );
 }

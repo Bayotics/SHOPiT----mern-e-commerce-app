@@ -32,37 +32,44 @@ function Product(props) {
   console.log()
 
   return (
-    <Card className='shadow-lg p-3 mb-5 bg-white rounded'>
+    <Card className='main-product-card shadow-lg mb-5 bg-white rounded'>
       <Link to={`/product/${product._id}`}>
         <img 
         src={product.image} 
-        className="card-img-top" 
+        className="card-img-top border" 
         alt={product.title} 
-        style={{height: "200px", width: "100%"}}
+        style={{height: "196.5px", width: "100%"}}
         />
       </Link>
       <Card.Body className = "">
         <Link className='text-decoration-none' to={`/product/${product._id}`}>
-          <Card.Title className='text-center text-dark font-weight-bold'>{product.title}</Card.Title>
+          <Card.Title className='text-dark product-title'>{product.title}</Card.Title>
         </Link>
-        <div className = "d-flex justify-content-center">
+
+        {/* <div className = "d-flex justify-content-center"> //rating
           <Rating rating={product.rating} />
+        </div> */}
+        <div className='card-text-main d-flex'>
+          <div>
+            <Card.Text className='text-xl font-semibold text-center'>₦{product.price} /500g</Card.Text>
+          </div>
+          <div>
+            {product.countInStock === 0 ? (
+              <div  className='d-flex justify-content-center'>
+                <Button variant="danger" disabled>
+                Out of stock
+              </Button>
+              </div>
+            ) : (
+              <div className='d-flex justify-content-center'>
+                <Button onClick={() => addToCartHandler(product)}>
+                  <i className="fas fa-shopping-cart"></i>
+                </Button>
+              </div>
+            )}
+          </div>
         </div>
-        <Card.Text className='text-xl font-semibold text-center'>₦{product.price}</Card.Text>
-        {product.countInStock === 0 ? (
-          <div  className='d-flex justify-content-center'>
-            <Button variant="danger" disabled>
-            Out of stock
-          </Button>
-          </div>
-          
-        ) : (
-          <div className='d-flex justify-content-center'>
-            <Button onClick={() => addToCartHandler(product)}>
-              <i className="fas fa-shopping-cart"></i>
-            </Button>
-          </div>
-        )}
+        
       </Card.Body>
     </Card>
   );

@@ -323,8 +323,33 @@ button.thumbnail {
 #main-products{
   position: absolute;
   top: 2250px;
+  width: 100%;
+  left: 0;
 }
-product-details-tab {
+#main-product-row{
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.main-product-card{
+  height: 305px;
+}
+.product-title{
+  font-size: 14px;
+}
+.card-text-main{
+  place-content: space-between;
+  margin-top: 25px;
+  font-size: 14px;
+  color: #ec7c20;
+  font-weight: 600;
+
+}
+
+
+
+
+.product-details-tab {
   margin-bottom: 5rem
 }
 
