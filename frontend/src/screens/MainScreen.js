@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Product from '../components/Product';
 import Categories from '../components/Categories';
 import LandingPageCategory from '../components/LandingPageCategory';
+import MostPopular from '../components/MostPopular';
 import About from '../components/About';
 import { Helmet } from 'react-helmet-async';
 import LoadingBox from '../components/LoadingBox';
@@ -45,11 +46,22 @@ function HomeScreen() {
       dispatch({ type: 'FETCH_REQUEST' });
       try {
         const {data} = await axios.get(`/api/products?page=${page}`);
+        console.log(data)
+        const productData = data.products
+        const newData = [...productData];
+        console.log(newData);
+        const landingProduct = newData.slice(0, 4);
+        console.log(landingProduct)
+        // console.log(productData);
+        // console.log({data}.products);
+        // const landingPageProduct = productData.slice(0, 4);
+        // console.log(landingPageProduct);
+        // // const landingProducts = data.products.slice(0, 4)
+        // console.log(landingProducts);
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: err.message });
       }
-
       // setProducts(result.data);
     };
     fetchData();
@@ -80,13 +92,13 @@ function HomeScreen() {
           ) : (
             <>
               <Row id = "main-product-row">
-                {products.map((product) => (
+                {products.slice(-16).map((product) => (
                   <Col key={product._id} sm={6} md={4} lg={3} className="mb-3">
                     <Product product={product}></Product>
                   </Col>
                 ))}
               </Row>
-              <div>
+              {/* <div>
                 {[...Array(pages).keys()].map((x) => (
                   <Link
                     className={x + 1 === Number(page) ? 'btn text-bold' : 'btn'}
@@ -96,12 +108,16 @@ function HomeScreen() {
                     {x + 1}
                   </Link>
                 ))}
-              </div>
+              </div> */}
             </>
           )}
         </div>
       </div>
       {/* end of featured Products */}
+      <div className='most-popular-main'>
+        <MostPopular />
+      </div>
+
     </div>
   );
 }

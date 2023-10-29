@@ -5,7 +5,7 @@ import { isAuth, isAdmin } from '../utils.js';
 
 const productRouter = express.Router();
 
-const productPage_size = 12;
+const productPage_size = 16;
 productRouter.get(
   '/', 
   expressAsyncHandler(async (req, res) => {

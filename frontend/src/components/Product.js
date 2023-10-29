@@ -29,14 +29,13 @@ function Product(props) {
       payload: { ...item, quantity },
     });
   };
-  console.log()
 
   return (
-    <Card className='main-product-card shadow-lg mb-5 bg-white rounded'>
+    <Card className='main-product-card mb-3 bg-white'>
       <Link to={`/product/${product._id}`}>
         <img 
         src={product.image} 
-        className="card-img-top border" 
+        className="card-img-top" 
         alt={product.title} 
         style={{height: "196.5px", width: "100%"}}
         />
@@ -50,19 +49,19 @@ function Product(props) {
           <Rating rating={product.rating} />
         </div> */}
         <div className='card-text-main d-flex'>
-          <div>
+          <div className='card-text-main-p'>
             <Card.Text className='text-xl font-semibold text-center'>₦{product.price} /500g</Card.Text>
           </div>
           <div>
             {product.countInStock === 0 ? (
               <div  className='d-flex justify-content-center'>
-                <Button variant="danger" disabled>
+                <button className='out-of-stock-button' disabled>
                 Out of stock
-              </Button>
+              </button>
               </div>
             ) : (
               <div className='d-flex justify-content-center'>
-                <Button onClick={() => addToCartHandler(product)}>
+                <Button className='add-to-cart-btn' onClick={() => addToCartHandler(product)}>
                   <i className="fas fa-shopping-cart"></i>
                 </Button>
               </div>

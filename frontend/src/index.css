@@ -243,9 +243,14 @@ main {
   color: white; 
 }
 
-
-
 /* Landing Category end */
+
+/* Most popular start */
+.most-popular-main{
+  position: absolute;
+  top: 3800px;
+}
+/* Most popular End */
 /* Map */
 
 .full-box {
@@ -318,7 +323,7 @@ button.thumbnail {
   width: 500px;
 }
 #featured-products{
-  margin-top: 100px;
+  margin-top: 50px;
 }
 #main-products{
   position: absolute;
@@ -333,6 +338,10 @@ button.thumbnail {
 }
 .main-product-card{
   height: 305px;
+  border-radius: 10px;
+}
+.card-img-top{
+  border-radius: 10px 10px 0 0 ;
 }
 .product-title{
   font-size: 14px;
@@ -343,10 +352,26 @@ button.thumbnail {
   font-size: 14px;
   color: #ec7c20;
   font-weight: 600;
-
 }
-
-
+.card-text-main-p{
+  padding-top: 10px;
+}
+.out-of-stock-button{
+  background-color: transparent;
+  border-color: rgb(204, 77, 77);
+  color: red;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.add-to-cart-btn{
+  background-color: black;
+  color: white;
+  border: none;
+  transition: .3s;
+}
+.add-to-cart-btn:hover{
+  background-color: #965521;
+}
 
 
 .product-details-tab {
@@ -712,5 +737,5 @@ button.thumbnail {
 }
 footer{
   position: absolute;
-  top: 3200px;
+  top: 5200px;
 }

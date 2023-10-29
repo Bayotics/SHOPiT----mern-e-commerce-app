@@ -75,12 +75,7 @@ export default function ProductCreateScreen() {
   const [longDescription, setLongDescription] = useState('');
 
   const categoriesList = [
-    "", "Food and Beverages", "Household Cleaning", "Drinks",
-    "Fragrance", "Hair Care", "Oral Care","furniture","Electronic Appliances",
-    "Phones and tablets","Computers and Computer Accessories","Generators and Portable power","Men Fashion",
-    "Women Fashion", "Watches", "glasses", "Baby Products", "Sporting accessories",
-    "Books", "Music", "Pets","Make Up", "skin care","gaming", "vehicles",
-    "Men Shoes", "Women Shoes", "others",
+    "", "All", "Shell", "Smoked and dried",
   ]
   categoriesList.sort();
 
@@ -235,7 +230,7 @@ export default function ProductCreateScreen() {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="countInStock">
-            <Form.Label>Count In Stock</Form.Label>
+            <Form.Label>Count In Stock (in Kg)</Form.Label>
             <Form.Control
               value={countInStock}
               onChange={(e) => setCountInStock(e.target.value)}
@@ -253,7 +248,7 @@ export default function ProductCreateScreen() {
           <Form.Group className="mb-3" controlId="longDescription">
             <Form.Label>Long Description</Form.Label>
             <Form.Control
-              placeholder='More details about your product. e.g color, size, etc'
+              placeholder='More details about your product'
               value={longDescription}
               onChange={(e) => setLongDescription(e.target.value)}
               required
