@@ -245,12 +245,72 @@ main {
 
 /* Landing Category end */
 
-/* Most popular start */
-.most-popular-main{
+/* Subscribe Comp start */
+.subscribe-comp-main{
+  padding-top: 50px;
   position: absolute;
-  top: 3800px;
+  top: 3750px;
+  background: rgb(248, 246, 246);
+  left: 0;
+  width: 100%;
+  padding-bottom: 50px;
 }
-/* Most popular End */
+.subscribe-heading{
+  text-align: center;
+}
+.subscribe-heading h1{
+  font-size: 32px;
+}
+.subscribe-comp-inner-main{
+  display: flex;
+  width: 80%;
+  margin: auto;
+  column-gap: 70px;
+  margin-top: 60px;
+}
+.subscribe-comp-inner{
+  width: 100%;
+}
+.subscribe-comp-inner-icon{
+  height: 50px;
+  width: 50px;
+  margin: auto;
+  margin-top: 10px;
+}
+.subscribe-comp-inner-icon img{
+  height: 50px;
+  width: 50px;
+}
+.subscribe-comp-inner-p{
+  height: 70px;
+  width: 90%;
+  margin: auto;
+  margin-top: 35px;
+  font-size: 16px;
+}
+.subscribe-comp-inner-btn{
+  height: 40px;
+  width: 50%;
+  margin: auto;
+  margin-top: 15px;
+}
+.subscribe-comp-inner-btn button{
+  height: 100%;
+  width: 100%;
+  border: 1px solid #eb8e41;
+  background-color: transparent;
+  color: black;
+  transition: .2s;
+}
+.subscribe-comp-inner-btn button:hover{
+  background-color: #eb8e41;
+}
+
+
+
+
+
+/* Subscribe comp End */
 /* Map */
 
 .full-box {

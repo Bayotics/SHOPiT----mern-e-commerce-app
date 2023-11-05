@@ -6,13 +6,13 @@ import Col from 'react-bootstrap/Col';
 import Product from '../components/Product';
 import Categories from '../components/Categories';
 import LandingPageCategory from '../components/LandingPageCategory';
-import MostPopular from '../components/MostPopular';
+import LandingPageSubscribe from '../components/LandingPageSubscribe';
 import About from '../components/About';
 import { Helmet } from 'react-helmet-async';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import Slider from '../components/Slider';
-// import data from '../data';
+import BlackFriday from '../components/BlackFriday';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -32,7 +32,7 @@ const reducer = (state, action) => {
 };
 
 function HomeScreen() {
-  const [{ loading, error, products, pages }, dispatch] = useReducer((reducer), {
+  const [{ loading, error, products }, dispatch] = useReducer((reducer), {
     products: [],
     loading: true,
     error: '',
@@ -46,23 +46,10 @@ function HomeScreen() {
       dispatch({ type: 'FETCH_REQUEST' });
       try {
         const {data} = await axios.get(`/api/products?page=${page}`);
-        console.log(data)
-        const productData = data.products
-        const newData = [...productData];
-        console.log(newData);
-        const landingProduct = newData.slice(0, 4);
-        console.log(landingProduct)
-        // console.log(productData);
-        // console.log({data}.products);
-        // const landingPageProduct = productData.slice(0, 4);
-        // console.log(landingPageProduct);
-        // // const landingProducts = data.products.slice(0, 4)
-        // console.log(landingProducts);
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: err.message });
       }
-      // setProducts(result.data);
     };
     fetchData();
   }, [page]);
@@ -115,7 +102,10 @@ function HomeScreen() {
       </div>
       {/* end of featured Products */}
       <div className='most-popular-main'>
-        <MostPopular />
+        <LandingPageSubscribe />
+      </div>
+      <div className='black-friday border border-black-100'>
+          <BlackFriday />
       </div>
 
     </div>
