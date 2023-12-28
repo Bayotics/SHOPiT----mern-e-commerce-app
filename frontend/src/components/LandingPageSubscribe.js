@@ -28,7 +28,7 @@ const LandingPageSubscribe = () => {
                     </div>
                     <div className="subscribe-comp-inner-p">
                         <p className="text-center">
-                            free delivery to anwhere in lagos when you order above N30000.
+                            free delivery to anwhere in lagos when you order above N30,000.
                         </p>
                     </div>
                     <div className="subscribe-comp-inner-btn">

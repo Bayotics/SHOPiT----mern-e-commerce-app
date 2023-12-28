@@ -306,11 +306,167 @@ main {
   background-color: #eb8e41;
 }
 
-
-
-
-
 /* Subscribe comp End */
+
+/* black friday start */
+.black-friday{
+  position: relative;
+  top: 3600px;
+  margin: auto;
+  height: 300px;
+  width: 100%;
+  border-radius: 10px;
+}
+.carousel-fade{
+  height: 100%;
+}
+.carousel-inner{
+  height: 100%;
+  /* border-radius: 10px; */
+}
+.carousel-slid-one{
+  background-image: url(../src/assets/fish/slider-bg-1.jpg);
+  height: 100%;
+  background-size: cover;
+}
+.carousel-slid-two{
+  background-image: url(../src/assets/fish/christmas-2.jpg);
+  height: 100%;
+  background-size: cover;
+}
+.carousel-slid-three{
+  background-image: url(../src/assets/fish/slider-bg-3.jpg);
+  height: 100%;
+  background-size: cover;
+}
+.bf-main{
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.bf-inner-left{
+  width: 30%;
+  padding-left: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.bf-inner-right{
+  width: 70%;
+}
+.bf-inner-left h1{
+  color: white;
+  font-weight: 800;
+  font-size: 48px;
+}
+.bf-left-mid{
+  height: 50px;
+  background-color: black;
+  width: 70%;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.discount-sect{
+  text-align: center;
+}
+.bf-left-mid h2{
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 30px;
+  color: white;
+  line-height: 2;
+}
+.bf-btn{
+  height: 40px;
+  width: 40%;
+  margin-top: 20px;
+}
+.bf-btn button{
+  height: 100%;
+  width: 100%;
+  background-color: rgb(231, 193, 25);
+  color: black;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+}
+.bf-fish-main{
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  padding-bottom: 300px;
+}
+.bf-img{
+  height: 300px;
+  width: 600px;
+}
+.slid-two-items{
+  height: 100%;
+  /* padding-top: 10px; */
+  overflow: hidden;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.slid-two-contents{
+  display: flex;
+  column-gap: 50px;
+}
+.slid-two-texts{
+  padding-top: 50px;
+  width: 50%;
+}
+.slid-two-texts h1{
+  color: rgb(255, 255, 255);
+  font-size: 56px;
+  font-weight: 900;
+}
+.sixty-percent-off{
+  margin-top: 50%;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: rgb(65, 37, 48);
+  text-align: center;
+  padding-top: 30px;
+  color: white;
+}
+.sixty-percent-off-style{
+  display: flex;
+  justify-content: center;
+}
+.sixty-percent{
+  font-weight: 700;
+  font-size: 32px;
+  margin-left: 5px;
+}
+.sixty-percent-off-off{
+  font-weight: 900;
+  font-size: 44px;
+}
+.holiday-img{
+  height: 60%;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* black friday end */
 /* Map */
 
 .full-box {
@@ -744,7 +900,7 @@ button.thumbnail {
   transition: fadeInAnimation ease 1s;
 }
 .carousel-item{
-  transition: transform 1s ease-in-out;
+  /* transition: transform 1s ease-in-out; */
 }
 .carousel-btn-main{
   height: 60px;

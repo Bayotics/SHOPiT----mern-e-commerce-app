@@ -104,7 +104,7 @@ function HomeScreen() {
       <div className='most-popular-main'>
         <LandingPageSubscribe />
       </div>
-      <div className='black-friday border border-black-100'>
+      <div className='black-friday  '>
           <BlackFriday />
       </div>
 
