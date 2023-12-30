@@ -20,7 +20,7 @@ function Slider() {
             <button className='carousel-btn'>Shop now</button>
         </Carousel.Caption>
       </Carousel.Item>
-      {/* <Carousel.Item interval={10000}>
+      <Carousel.Item interval={10000}>
         <img
           className="d-block w-100"
           src={bgTwo}
@@ -32,8 +32,8 @@ function Slider() {
           <h1 className='display-1'>Taste the Ocean's freshness</h1>
           <button className='carousel-btn'>Shop now</button>
         </Carousel.Caption>
-      </Carousel.Item> */}
-      {/* <Carousel.Item  interval={10000}>
+      </Carousel.Item>
+      <Carousel.Item  interval={10000}>
         <img
           className="d-block w-100"
           src={bgThree}
@@ -45,7 +45,7 @@ function Slider() {
           <h1 className='display-1'>100% Fresh Collection</h1>
           <button className='carousel-btn'>Shop now</button>
         </Carousel.Caption>
-      </Carousel.Item> */}
+      </Carousel.Item>
     </Carousel>
   );
 }

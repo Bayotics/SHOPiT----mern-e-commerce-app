@@ -45,7 +45,7 @@ const LandingPageSubscribe = () => {
                         </p>
                     </div>
                     <div className="subscribe-comp-inner-btn">
-                    <   button>Learn more</button>
+                        <button>Learn more</button>
                     </div>
                 </div>
             </div>

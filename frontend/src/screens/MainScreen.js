@@ -13,6 +13,7 @@ import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import Slider from '../components/Slider';
 import BlackFriday from '../components/BlackFriday';
+import WhyUs from '../components/WhyUs';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -104,8 +105,11 @@ function HomeScreen() {
       <div className='most-popular-main'>
         <LandingPageSubscribe />
       </div>
-      <div className='black-friday  '>
+      <div className='black-friday'>
           <BlackFriday />
+      </div>
+      <div className='why-us-main'>
+        <WhyUs />
       </div>
 
     </div>

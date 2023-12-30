@@ -39,6 +39,7 @@ import OrderListScreen from './screens/OrderListScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
 import AboutScreen from './screens/AboutScreen';
+import Footer from './components/Footer';
 import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 
 
@@ -304,7 +305,7 @@ function App() {
           </Container>
         </main>
         <footer>
-          <div className="text-center">All rights reserved</div>
+            <Footer />
         </footer>
       </div>
     </BrowserRouter>
