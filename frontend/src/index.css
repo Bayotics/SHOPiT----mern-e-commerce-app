@@ -14,6 +14,10 @@ body {
       transform: translateY(0);
   }
 }
+a{
+  text-decoration: none;
+  color: black;
+}
 .site-container {
   min-height: 100vh;
 }
@@ -1019,12 +1023,60 @@ button.thumbnail {
   font-weight: 500;
 }
 #main-banner{
-  background-image: url(./assets/hero-6.png);
-  background-size: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-image: url(./assets/fish/searchbg.jpg);
+  background-size: cover;
   background-attachment: fixed;
+  z-index: -1;
+  border-radius: 0;
 }
+.accordion-button{
+  background-color: #ec7c20;
+  box-shadow: none;
+  font-size: 28px;
+  font-weight: 500;
+}
+.accordion-button:not(.collapsed) {
+  color: black;
+  background-color: #ec7c20;
+  box-shadow: none;
+}
+.accordion-header{
+  font-size: 40px;
+}
+.card-header {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0;
+  background-color: #ec7c20;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+/* about screen */
+#main-banner-about{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-image: url(./assets/fish/about-screen-bg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -1;
+  border-radius: 0;
+}
+
 #about-row{
   font-size: 14px;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  border: 1px solid red;
+  margin-top: 250px;
 }
 #container-marketing-section{
   margin-top: 50px;
@@ -1039,6 +1091,7 @@ button.thumbnail {
   margin-top: 50px;;
 }
 
+/* about screen end */
 
 
 /********** FOOTER **********/
@@ -1051,8 +1104,73 @@ footer{
   padding-top: 50px;
   padding-bottom: 50px;
   padding-left: 20px;
+  padding-right: 100px;
   padding-top: 50px;
 }
 .footer-main{
   display: flex;
+  justify-content: space-between;
+}
+.footer-about{
+  width: 33%;
+}
+.footer-about h1{
+  font-size: 16px;
+  font-weight: 600px;
+  color: #ff9e15;
+  margin-bottom: 20px;
+}
+.footer-about p{
+  color: white;
+}
+.footer-about h6{
+  margin-top: 100px;
+  color: rgb(160, 157, 156);
+  font-weight: 100;
+  font-size: 12px;
+}
+.footer-learn-more h1{
+  font-size: 16px;
+  font-weight: 600px;
+  color: #ff9e15;
+  margin-bottom: 20px;
+}
+.footer-learn-more p{
+  color: white;
+}
+.footer-about-us h1{
+  font-size: 16px;
+  font-weight: 600px;
+  color: #ff9e15;
+  margin-bottom: 20px;
+}
+.footer-about-us p{
+  color: white;
+}
+.footer-socials{
+  width: 12%;
+}
+.footer-socials h1{
+  font-size: 16px;
+  font-weight: 600px;
+  color: #ff9e15;
+  margin-bottom: 20px;
+}
+.footer-socials p{
+  color: white;
+}
+.socials-main{
+  display: flex;
+  justify-content: space-between;
+}
+.social-icon{
+  background-color: #3f3d39;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  text-align: center;
+}
+.social-logo{
+  height: 18px;
+  width: 18px;
 }

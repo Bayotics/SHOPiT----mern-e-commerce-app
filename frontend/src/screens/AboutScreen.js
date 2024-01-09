@@ -11,18 +11,18 @@ import cart4 from '../assets/cart4.jpg'
 
 const AboutScreen = () => {
     return (
-        <div>
+        <div id='about-screen-main'>
             <Helmet>
                 <title>About Us</title>
             </Helmet>
-            <Card style={{ height: '200px', marginTop: '10px' }}
+            <Card style={{}}
                 className="text-center"
-                id='main-banner'>
-                <Card.Body style={{ marginTop: '60px' }}>
+                id='main-banner-about'>
+                <Card.Body style={{marginTop: '60px'}}>
                     <span><h1 className='text-white fs-1'>About Us</h1></span>
                 </Card.Body>
             </Card>
-            <Row style={{ height: '200px', marginTop: '90px' }} id="about-row">
+            <Row style={{ }} id="about-row">
                 <Col>
                     <h4>Our Vision</h4>
                     <p className='text-muted'>Our vision is to be the most customer-centric company,
