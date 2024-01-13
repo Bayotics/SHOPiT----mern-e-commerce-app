@@ -5,9 +5,11 @@ import { Helmet } from 'react-helmet-async';
 import about1 from '../assets/about1.png'
 import about2 from '../assets/about2.png'
 import about3 from '../assets/about3.png'
-import cart5 from '../assets/hero-7.jpg';
-import cart2 from '../assets/hero-8.jpg';
-import cart4 from '../assets/cart4.jpg'
+import fisherman from '../assets/fish/about-wp-4.jpg'
+import discount from '../assets/fish/pngs/discount.png'
+import snipped from '../assets/fish/about-wrapper.jpg'
+import telephone from '../assets/fish/pngs/telephone.png'
+import email from '../assets/fish/pngs/email.png'
 
 const AboutScreen = () => {
     return (
@@ -22,64 +24,84 @@ const AboutScreen = () => {
                     <span><h1 className='text-white fs-1'>About Us</h1></span>
                 </Card.Body>
             </Card>
-            <Row style={{ }} id="about-row">
-                <Col>
-                    <h4>Our Vision</h4>
-                    <p className='text-muted'>Our vision is to be the most customer-centric company,
-                        where customers can find and
-                        discover anything they might want to buy online.</p>
-                </Col>
-                <Col>
-                    <h4>Our Mission</h4>
-                    <p className='text-muted'>Our aim at SHOPiT is to listen to our customers and deliver a top tier service
-                        that allows users to feel the pride, respect and trust of everyone at our studio.
-                        We focus on guiding employees to create high-standard services and deliver excellent results..</p>
-                </Col>
-            </Row>
-            <hr className="featurette-divider" />
-
-            <div className="row featurette ">
-                <div className="col-md-7">
-                    <h2 className="featurette-heading fw-normal lh-1">Fast and Easy Payments.</h2>
-                    <p className="lead">Make Payments for your favorite products with ease. Any time, wherever you are in the world</p>
+            <div className='about-intro'>
+                <div className='about-intro-top'>
+                    <div className='intro-wp'>
+                        <img src = {snipped} alt='about-img' />
+                    </div>
+                    <div className='intro-caption'>
+                        <h1 className='about-main-heading'>Welcome to <span>SHOPiT</span></h1>
+                        <p className='about-intro-paragraph'>
+                            We at SHOPiT have made it our goal to introduce you to the best that the ocean has to offer since we recognise how important it is to eat premium, sustainably sourced seafood. Our voyage starts in the middle of pure waters, where our skilled fisherman painstakingly choose only the best catches, guaranteeing our patrons a wide and delicious variety of seafood alternatives.
+                        </p>
+                        <div className='about-intro-btn'>
+                            <button className='about-intro-btn-main'>Contact Us Now</button>
+                        </div>
+                    </div>
                 </div>
-                <div className="col-md-5">
-                    <div className='border'>
-                        <img src={cart2} alt="cart1" style={{ height: '500px', width: '100%' }} />
+                <p className='about-intro-paragraph-sub'>
+                    Founded in 2024, we are dedicated to delivering the finest quality and convenience of the ocean's produce straight to your table. It is more than just a fish delivery business. Our commitment to ethical and sustainable fishing methods is what makes us unique. This helps maintain the long-term health of our seas by guaranteeing that every product you receive is not only delicious but also responsibly sourced.
+                    We promise that the seafood you receive from SHOPiT is as fresh as if you had caught it yourself. We take pleasure in our streamlined and efficient supply chain. 
+                </p>
+            </div>
+            <div className='about-screen-why-us'>
+                <div className='why-us-icons'>
+                    <h1>Why <span>SHOPiT</span></h1>
+                    <div className='why-us-icons-top'>
+                        <div className='why-us-top-left'>
+                            <div className='why-us-top-icon'>
+                                <div className='why-us-top-icon-img'>
+                                    <img src= {discount} alt = 'discount' />
+                                </div>
+                            </div>
+                            <div className='why-us-top-caption'>
+                                <h1>Home Delivery</h1>
+                                <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+                            </div>
+                        </div>
+                        <div className='why-us-top-right'>
+                            <div className='why-us-top-icon'>
+                                <div className='why-us-top-icon-img'>
+                                    <img src= {discount} alt = 'discount' />
+                                </div>
+                            </div>
+                            <div className='why-us-top-caption'>
+                                <h1>Home Delivery</h1>
+                                <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='why-us-icons-top icons-bottom'>
+                        <div className='why-us-top-left'>
+                            <div className='why-us-top-icon'>
+                                <div className='why-us-top-icon-img'>
+                                    <img src= {discount} alt = 'discount' />
+                                </div>
+                            </div>
+                            <div className='why-us-top-caption'>
+                                <h1>Home Delivery</h1>
+                                <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+                            </div>
+                        </div>
+                        <div className='why-us-top-right'>
+                            <div className='why-us-top-icon'>
+                                <div className='why-us-top-icon-img'>
+                                    <img src= {discount} alt = 'discount' />
+                                </div>
+                            </div>
+                            <div className='why-us-top-caption'>
+                                <h1>Home Delivery</h1>
+                                <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className='why-us-bg'>
+                    <div className='why-us-img-main'>
+                        <img src = {fisherman} className='why-us-bg-img' alt = "why us"/>
                     </div>
                 </div>
             </div>
-
-            <hr className="featurette-divider" />
-
-            <div className="row featurette">
-                <div className="col-md-7 order-md-2">
-                    <h2 className="featurette-heading fw-normal lh-1">Best Prices<span className="text-body-secondary"></span></h2>
-                    <p className="lead">Every Product in our store is at a discounted price. You won't find them that Cheap anywhere</p>
-                </div>
-                <div className="col-md-5 order-md-1">
-                    <div className='border'>
-                        <img src={cart5} alt="cart1" style={{ height: '500px', width: '100%' }} />
-                    </div>
-                </div>
-            </div>
-
-            <hr className="featurette-divider" />
-
-            <div className="row featurette">
-                <div className="col-md-7">
-                    <h2 className="featurette-heading fw-normal lh-1">Swift Delivery</h2>
-                    <p className="lead">We deliver swiftly to over 100 countries around the world.
-                        We hope you’ll love every purchase, but if you ever need to return an item you can do so within a month of receipt</p>
-                </div>
-                <div className="col-md-5">
-                    <div className='border'>
-                        <img src={cart4} alt="cart1" style={{ height: '500px', width: '100%' }} />
-                    </div>
-                </div>
-            </div>
-            <hr className="featurette-divider" />
-
             <h3 className='text-center'>Meet Our Team</h3>
             <div className='d-flex justify-content-around team-main'>
                 <div className='text-center'>
@@ -108,6 +130,30 @@ const AboutScreen = () => {
                     </div>
                     <h2 className="fw-normal">John Doe</h2>
                     <p>Head designer</p>
+                </div>
+            </div>
+            <div className='about-contact-section'>
+                <div className='about-contact-section-content'>
+                    <div className='about-contact-section-caption'>
+                        <h1>Get in Touch</h1>
+                        <p>We love hearing from our valued customers at SHOPiT! If you have any questions, inquiries, or just want to share your seafood experiences with us, getting in touch is easy. Here's how you can reach us;</p>
+                    </div>
+                    <div className='about-contact-section-icons'>
+                        <div className='about-contact-section-phone'>
+                            <img src = {telephone} alt='telephone' />
+                            <div className='phone-captions'>
+                                <h4>Call Us</h4>
+                                <p>+234 90 3136 0523</p>
+                            </div>
+                        </div>
+                        <div className='about-contact-section-email'>
+                            <img src = {email} alt='email' />
+                            <div className='email-captions'>
+                                <h4>Email Us</h4>
+                                <p>contactshopit@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
