@@ -1056,7 +1056,7 @@ button.thumbnail {
   border-bottom: 1px solid rgba(0,0,0,.125);
 }
 
-/* about screen */
+/****************** about screen **************/
 #main-banner-about{
   position: absolute;
   top: 0;
@@ -1071,8 +1071,7 @@ button.thumbnail {
   border-radius: 0;
 }
 .about-intro{
-  margin-top: 300px;
-  border: 1px solid rgb(19, 18, 17);
+  margin-top: 400px;
   padding-left: 50px;padding-right: 50px;
 }
 .about-intro-top{
@@ -1133,7 +1132,6 @@ button.thumbnail {
   margin-top: 150px;
   margin-bottom: 200px;
   display: flex;
-  border: 1px solid rgb(19, 18, 17);
   padding-left: 50px;padding-right: 50px;
   justify-content: space-between;
   column-gap: 20px;
@@ -1271,9 +1269,168 @@ button.thumbnail {
 }
 
 
-
-
 /* about screen end */
+
+/*********** CONTACT SCREEN  *************/
+#main-banner-contact{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-image: url(./assets/fish/contact-bg.png);
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -1;
+  border-radius: 0;
+}
+.contact-form-main{
+  margin-top: 400px;
+}
+.contact-form-header{
+  text-align: center;
+  color: #eb8e41;
+  font-weight: 600;
+  font-size: 18px;
+}
+.contact-form-main h1{
+  text-align: center;
+  font-weight: 900;
+}
+.contact-form{
+  padding-left: 100px;
+  padding-right: 100px;
+  display: flex;
+  margin-top: 50px;
+}
+.contact-info{
+  width: 50%;
+  background-color: #030f27;
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 45px;
+  color: white;
+}
+.contact-address{
+  display: flex;
+  border: 1px solid rgb(95, 93, 93);
+  column-gap: 20px;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  margin-bottom: 25px;
+}
+.contact-address img{
+  height: 50px;
+  width: 35px;
+}
+.contact-tel{
+  display: flex;
+  border: 1px solid rgb(95, 93, 93);
+  column-gap: 20px;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  margin-bottom: 25px;
+}
+.contact-tel img{
+  height: 50px;
+  width: 50px;
+}
+.contact-email{
+  display: flex;
+  border: 1px solid rgb(95, 93, 93);
+  column-gap: 20px;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  margin-bottom: 25px;
+}
+.contact-email img{
+  height: 50px;
+  width: 50px;
+}
+.contact-info-card p{
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 18px;
+}
+.contact-location-img{
+  width: 600px;
+}
+.contact-input{
+  width: 50%;
+  background-color: #eb8e41;
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+}
+#name{
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgb(224, 220, 220);
+  padding-left: 20px;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#name::placeholder{
+  color: white;
+  font-weight: 500;
+}
+#email{
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgb(224, 220, 220);
+  padding-left: 20px;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 20px;
+}
+#email::placeholder{
+  color: white;
+  font-weight: 500;
+}
+#message{
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgb(224, 220, 220);
+  padding-left: 20px;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 20px;
+  height: 200px;
+}
+#message::placeholder{
+  color: white;
+  font-weight: 500;
+}
+#submit{
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: none;
+  background-color: #030f27;
+  color: #eb8e41;
+  margin-top: 10px;
+  font-weight: 600;
+  transition: .2s;
+}
+#submit:hover{
+  background-color: white;
+  color: #030f27;
+}
+/************** Contact Screen end  ****************/
+
 
 
 /********** FOOTER **********/
