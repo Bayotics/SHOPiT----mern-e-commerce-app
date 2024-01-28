@@ -75,7 +75,7 @@ export default function ProductCreateScreen() {
   const [longDescription, setLongDescription] = useState('');
 
   const categoriesList = [
-    "", "All", "Shell", "Smoked and dried",
+    "", "Fresh", "Shell", "Smoked and dried",
   ]
   categoriesList.sort();
 
@@ -95,7 +95,7 @@ export default function ProductCreateScreen() {
           brand: brand,
           countInStock: countInStock,
           description: description,
-          longDescription: description
+          longDescription: longDescription
         },
         {
           headers: { Authorization: `Bearer ${userInfo.token}` },
@@ -147,7 +147,7 @@ export default function ProductCreateScreen() {
     navigate(`/admin/products`)
   }
   return (
-    <Container className="small-container">
+    <Container className="small-container mt-4">
       <Helmet>
         <title>Create a new Product</title>
       </Helmet>
@@ -162,7 +162,7 @@ export default function ProductCreateScreen() {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="price">
-            <Form.Label>Price in ₦</Form.Label>
+            <Form.Label>Price in ₦ per Kg</Form.Label>
             <Form.Control
               value={price}
               onChange={(e) => setPrice(e.target.value)}
@@ -222,7 +222,7 @@ export default function ProductCreateScreen() {
             </Form.Control>
           </Form.Group>
           <Form.Group className="mb-3" controlId="brand">
-            <Form.Label>Brand</Form.Label>
+            <Form.Label>Brand/Vendor</Form.Label>
             <Form.Control
               value={brand}
               onChange={(e) => setBrand(e.target.value)}
@@ -248,6 +248,7 @@ export default function ProductCreateScreen() {
           <Form.Group className="mb-3" controlId="longDescription">
             <Form.Label>Long Description</Form.Label>
             <Form.Control
+              as="textarea" rows={6}
               placeholder='More details about your product'
               value={longDescription}
               onChange={(e) => setLongDescription(e.target.value)}

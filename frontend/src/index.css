@@ -18,6 +18,9 @@ a{
   text-decoration: none;
   color: black;
 }
+a:hover{
+  color: #ec7c20;
+}
 .site-container {
   min-height: 100vh;
 }
@@ -56,7 +59,14 @@ main {
 .product-info {
   padding: 1rem;
 }
-
+.product-screen-main{
+  margin-top: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.product-screen-row{
+  margin-right: 0;
+}
 .img-large {
   max-width: 100%;
 }
@@ -1029,6 +1039,10 @@ button.thumbnail {
   cursor: pointer;
   color: black;
   font-weight: 400;
+}
+.nav-link:focus{
+  color: black;
+  border: 1px dotted;
 }
 .nav-link:hover{
   color: #ec7c20;

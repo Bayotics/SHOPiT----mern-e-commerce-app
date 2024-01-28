@@ -42,6 +42,8 @@ const Footer = () => {
                         <img src= {whatsapp} alt="whatsapp-logo" className="social-logo"/>
                     </div>
                 </div>
+                <h1 className="mt-4">ADDRESS</h1>
+                <p>Chief Market, Epe Lagos, Nigeria</p>
             </div>
         </div>
     )

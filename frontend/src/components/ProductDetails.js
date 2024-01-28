@@ -18,9 +18,9 @@ const ProductDetails = ({product, rating}) => {
                             </div>;
         const shippingContent =  <div className="tab-pane fade show active" id="product-shipping-tab"   aria-labelledby="product-shipping-link">
                                 <div className="product-desc-content">
-                                    <h3>Delivery & returns</h3>
-                                    <p>We deliver to over 100 countries around the world. For full details of the delivery options we offer, please view our <a href="#">Delivery information</a><br/>
-                                    We hope you’ll love every purchase, but if you ever need to return an item you can do so within a month of receipt. For full details of how to make a return, please view our <a href="#">Returns information</a></p>
+                                    <h3>Delivery</h3>
+                                    <p>We deliver to anywhere in Lagos, Ogun and Ibadan. Monday to Saturday. Payments validates order.
+                                        <br /> All order and payment must come in before 10 am for same day delivery or delivery is postponed till next day <br/></p>
                                 </div>
                             </div>
         const reviewsContent = 
@@ -82,7 +82,7 @@ const ProductDetails = ({product, rating}) => {
                     <p className="nav-link" >Additional information</p>
                 </li>
                 <li className="nav-item" onClick={thirdMenufunction}>
-                    <p className="nav-link" >Shipping & Returns</p>
+                    <p className="nav-link" >Delivery</p>
                 </li>
                 <li className="nav-item" onClick={fourthMenuContent}>
                     <p className="nav-link" >Reviews</p>

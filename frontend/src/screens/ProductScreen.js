@@ -122,8 +122,8 @@ function ProductScreen() {
   ) : error ? (
     <MessageBox variant="danger">{error}</MessageBox>
   ) : (
-    <div>
-      <Row>
+    <div className='product-screen-main'>
+      <Row className='product-screen-row'>
         <Col md={6}>
           <img
             className="img-large"
@@ -182,7 +182,7 @@ function ProductScreen() {
             {product.countInStock > 0 && (
                   <ListGroup.Item>
                     <div className="d-grid">
-                      <Button onClick={addToCartHandler} variant="primary">
+                      <Button className="checkout-button" onClick={addToCartHandler}>
                        <i className="fas fa-shopping-cart"></i>
                       </Button>
                     </div>
@@ -230,9 +230,9 @@ function ProductScreen() {
               </FloatingLabel>
 
               <div className="mb-3">
-                <Button disabled={loadingCreateReview} type="submit">
+                <button className="checkout-button" disabled={loadingCreateReview} type="submit">
                   Submit
-                </Button>
+                </button>
                 {loadingCreateReview && <LoadingBox></LoadingBox>}
               </div>
             </form>

@@ -151,7 +151,7 @@ export default function SearchScreen() {
     return (
     <div>
       <Helmet>
-        <title>Search Products</title>
+        <title>Search Fish</title>
       </Helmet>
        <Card
         className="text-center"
