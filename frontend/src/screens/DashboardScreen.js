@@ -51,7 +51,7 @@ export default function DashboardScreen() {
   }, [userInfo]);
 
   return (
-    <div>
+    <div className='dashboard-main'>
       <h1>Dashboard</h1>
       {loading ? (
         <LoadingBox />
@@ -59,7 +59,7 @@ export default function DashboardScreen() {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <>
-          <Row>
+          <Row className='dashboard-row'>
             <Col md={4}>
               <Card>
                 <Card.Body>
@@ -68,7 +68,7 @@ export default function DashboardScreen() {
                       ? summary.users[0].numUsers
                       : 0}
                   </Card.Title>
-                  <Card.Text> Users</Card.Text>
+                  <Card.Text>Total Users</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
@@ -80,7 +80,7 @@ export default function DashboardScreen() {
                       ? summary.orders[0].numOrders
                       : 0}
                   </Card.Title>
-                  <Card.Text> Orders</Card.Text>
+                  <Card.Text>Total Orders</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
@@ -88,7 +88,7 @@ export default function DashboardScreen() {
               <Card>
                 <Card.Body>
                   <Card.Title>
-                    $
+                    ₦
                     {summary.orders && summary.users[0]
                       ? summary.orders[0].totalSales.toFixed(2)
                       : 0}
@@ -99,7 +99,7 @@ export default function DashboardScreen() {
             </Col>
           </Row>
           <div className="my-3">
-            <h2>Sales</h2>
+            <h2>Total Sales</h2>
             {summary.dailyOrders.length === 0 ? (
               <MessageBox>No Sale</MessageBox>
             ) : (

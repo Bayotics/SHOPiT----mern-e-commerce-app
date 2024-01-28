@@ -255,18 +255,18 @@ export default function ProductCreateScreen() {
             />
             </Form.Group>
           <div className="mb-3">
-            <Button disabled={loadingUpdate} type="submit">
+            <button disabled={loadingUpdate} className="checkout-button" type="submit">
               Create
-            </Button>
-            {loadingUpdate && <LoadingBox></LoadingBox>}
+            </button>
+                {loadingUpdate && <LoadingBox></LoadingBox>}
 
-            <Button
-            type="button"
-            variant="danger"
-            onClick={cancelHandler}
-          >
-            Cancel
-          </Button>
+                <Button
+                type="button"
+                variant="danger"
+                onClick={cancelHandler}
+                >
+                Cancel
+              </Button>
           </div>
         </Form>
     </Container>

@@ -55,18 +55,59 @@ function HomeScreen() {
     fetchData();
   }, [page]);
   return (
-    <div>
-      <div id="hero-background" className='w-100 mb-4'>
+    <div className='big-wrap'>
+      <div className='big-wrap-test'>
+        <div id="hero-background" className='w-100 mb-4'>
+          <Slider />
+        </div>
+        <div id='landing-page-about'>
+          <About />
+        </div>
+        <div id='categories-main'>
+          <LandingPageCategory />
+        </div>
+        <div className='' id = "main-products">
+          <Helmet>
+            <title>SHOPiT</title>
+          </Helmet>
+          <h1 className='text-center text-bold fw-normal mt-4'><span className='theme-color text-bold'>Featured </span> Products</h1>
+          <div className="products" id = "featured-products">
+            {loading ? (
+              <LoadingBox />
+            ) : error ? (
+              <MessageBox variant="danger">{error}</MessageBox>
+            ) : (
+              <>
+                <Row id = "main-product-row">
+                  {products.slice(-16).map((product) => (
+                    <Col key={product._id} sm={6} md={4} lg={3} className="mb-3">
+                      <Product product={product}></Product>
+                    </Col>
+                  ))}
+                </Row>
+              </>
+            )}
+          </div>
+        </div>
+        <div className='most-popular-main'>
+          <LandingPageSubscribe />
+        </div>
+        <div className='black-friday'>
+          <BlackFriday />
+        </div>
+        <div className='why-us-main'>
+          <WhyUs />
+        </div> 
+      </div>
+      {/* <div id="hero-background" className='w-100 mb-4'>
         <Slider />
       </div>
       <div id='landing-page-about'>
         <About />
       </div>
       <div id='categories-main'>
-          {/* <Categories /> */}
           <LandingPageCategory />
       </div>
-      {/* Products */}
       <div className='' id = "main-products">
         <Helmet>
           <title>SHOPiT</title>
@@ -86,22 +127,10 @@ function HomeScreen() {
                   </Col>
                 ))}
               </Row>
-              {/* <div>
-                {[...Array(pages).keys()].map((x) => (
-                  <Link
-                    className={x + 1 === Number(page) ? 'btn text-bold' : 'btn'}
-                    key={x + 1}
-                    to={`/products?page=${x + 1}`}
-                  >
-                    {x + 1}
-                  </Link>
-                ))}
-              </div> */}
             </>
           )}
         </div>
       </div>
-      {/* end of featured Products */}
       <div className='most-popular-main'>
         <LandingPageSubscribe />
       </div>
@@ -110,7 +139,7 @@ function HomeScreen() {
       </div>
       <div className='why-us-main'>
         <WhyUs />
-      </div>
+      </div> */}
 
     </div>
   );

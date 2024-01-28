@@ -35,7 +35,7 @@ export default function PaymentMethodScreen() {
         <Helmet>
           <title>Payment Method</title>
         </Helmet>
-        <h1 className="my-3">Choose a payment method</h1>
+        <h1 className="my-3 text-center">Please Select a payment method</h1>
         <Form onSubmit={submitHandler}>
           <div className="mb-3">
             <Form.Check 
@@ -58,7 +58,7 @@ export default function PaymentMethodScreen() {
             />
           </div>
           <div className="mb-3">
-            <Button type="submit">Next</Button>
+            <button className='checkout-button' type="submit">Next</button>
           </div>
         </Form>
       </div>

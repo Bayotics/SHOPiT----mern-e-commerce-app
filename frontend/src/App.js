@@ -88,7 +88,7 @@ function App() {
         }
       >
         <ToastContainer position="bottom-center" limit={1} />
-        <header className='mt-20'>
+        <header className=''>
           <Navbar variant="white" expand="lg">
             <Container id = "main-container">
                <Button
@@ -116,7 +116,7 @@ function App() {
                   className='nav-link text-dark'
                   >Dark mode
                   <i className="fa fa-toggle-off" aria-hidden="true"></i></Link> */}
-                  <Link to="/cart" className="nav-link text-white">
+                  <Link to="/cart" className="nav-link text-black">
                     <i className="fas fa-shopping-cart"></i>
                     {cart.cartItems.length > 0 && (
                       <Badge pill bg="danger">
@@ -137,7 +137,7 @@ function App() {
                       </LinkContainer>
                       <NavDropdown.Divider />
                       <Link
-                        className="dropdown-item text-white"
+                        className="dropdown-item text-danger"
                         to="#signout"
                         onClick={signoutHandler}
                       >
@@ -145,7 +145,7 @@ function App() {
                       </Link>
                     </NavDropdown>
                   ) : (
-                    <Link className="nav-link text-white" to="/signin">
+                    <Link className="nav-link text-black" to="/signin">
                       Sign In
                     </Link>
                   )}
@@ -202,7 +202,7 @@ function App() {
         </div>
         <main>
           <div className='main-zero'>
-            <Container className="mt-3" id = "main-container">
+            <div className="" id = "">
               <Routes>
                 <Route path="/product/:id" element={<ProductScreen />} />
                 <Route path="/cart" element={<CartScreen />} />
@@ -305,7 +305,7 @@ function App() {
                 <Route path="/products" element={<HomeScreen />} />
                 <Route path = '/' element = {<MainScreen />} />
               </Routes>
-            </Container>
+            </div>
           </div>
         </main>
         <footer>

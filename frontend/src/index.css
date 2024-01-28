@@ -68,17 +68,62 @@ main {
 .small-container {
   max-width: 600px;
 }
-
+.checkout-steps{
+  margin-right: 0;
+  margin-top: 20px;
+}
 .checkout-steps>div {
   border-bottom: 0.2rem solid #a0a0a0;
   color: #a0a0a0;
 }
 
 .checkout-steps>div.active {
-  border-bottom: 0.2rem solid #0d6efd;
-  color: #0d6efd;
+  border-bottom: 0.2rem solid #ec7c20;
+  color: #ec7c20;
 }
-
+.checkout-button{
+  background-color: #ec7c20;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: none;
+  border-radius: 0;
+  border-color: black;
+}
+.checkout-button:hover{
+  background-color: #000000;
+  color: white;
+}
+.navbar{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: whitesmoke;
+}
+.shopping-cart-screen-main{
+  margin-top: 100px;
+}
+.shopping-cart-row{
+  margin-right: 0;
+  margin-top: 50px;
+}
+.shopping-cart-table{
+  padding-left: 30px;
+}
+.order-preview-main{
+  padding-left: 10px;
+}
+.order-preview-row{
+  margin-right: 0;
+}
+.admin-product-main{
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 20px;
+}
+.admin-product-row{
+  margin-right: 0;
+}
 /* sidebar */
 .navbar-brand {
   font-weight: bold;
@@ -92,7 +137,6 @@ main {
   background-color: #100901;
   transition: 0.5s;
 }
-
 .site-container {
   transition: 0.4s;
 }
@@ -106,14 +150,17 @@ main {
 }
 .nav-texts{
   color: #ec7c20;
+  
 }
-
 .text-bold {
   font-weight: bold;
 }
+/* touched */
+/* landing page about */
 #landing-page-about{
-  position: relative;
-  top: 800px;
+  margin-top: 150px;
+  /* position: relative;
+  top: 800px; */
 }
 .about-landing-main{
   box-shadow: #ddd 0px 0px 13px 5px;
@@ -172,11 +219,14 @@ main {
   width: 450px;
 }
 
+/* touched */
+/* Landing page categories */
+
 #categories-main{
-  margin-top: 90px;
-  position: absolute;
+  margin-top: 120px;
+  /* position: absolute;
   top: 1500px;
-  left: 0;
+  left: 0; */
   width: 100%;
 }
 .category-heading{
@@ -249,13 +299,14 @@ main {
 
 /* Landing Category end */
 
+/* touched */
 /* Subscribe Comp start */
 .subscribe-comp-main{
   padding-top: 50px;
-  position: absolute;
-  top: 3750px;
+  margin-top: 100px;
+  /* position: absolute;
+  top: 3750px; */
   background: rgb(248, 246, 246);
-  left: 0;
   width: 100%;
   padding-bottom: 50px;
 }
@@ -312,14 +363,15 @@ main {
 
 /* Subscribe comp End */
 
+/* touched */
 /* black friday start */
 .black-friday{
-  position: relative;
-  top: 3600px;
+  /* position: relative;
+  top: 3600px; */
   margin: auto;
+  margin-top: 150px;
   height: 300px;
   width: 100%;
-  border-radius: 10px;
 }
 .carousel-fade{
   height: 100%;
@@ -457,11 +509,12 @@ main {
 
 /* black friday end */
 
-
+/* touched */
 /*landing page Why us Start */
 .why-us-main{
-  position: absolute;
-  top: 4650px;
+  /* position: absolute;
+  top: 4650px; */
+  margin-top: 150px;
   width: 100%;
   border-radius: 10px;
   left: 0;
@@ -605,10 +658,11 @@ main {
 button.thumbnail {
   padding: 0;
 }
+/* touched */
 #hero-background{
-  position: absolute;
+  /* position: absolute;
   left: 0;
-  top: 0;
+  top: 0; */
   z-index: -1;
 }
 #contact-nav{
@@ -618,11 +672,12 @@ button.thumbnail {
   margin-top: 20px;;
 }
 #basic-nav-dropdown{
-  color: white;
+  color: black;
 }
 #admin-nav-dropdown{
-  color:white;
+  color: black;
 }
+/* touched */
 #main-container{
   max-width: 1300px;
 }
@@ -632,9 +687,11 @@ button.thumbnail {
 #featured-products{
   margin-top: 50px;
 }
+/* touched */
 #main-products{
-  position: absolute;
-  top: 2250px;
+  /* position: absolute;
+  top: 2250px; */
+  margin-top: 100px;
   width: 100%;
   left: 0;
 }
@@ -695,8 +752,8 @@ button.thumbnail {
 
 .product-details-tab .nav.nav-pills .nav-link:hover,
 .product-details-tab .nav.nav-pills .nav-link:focus {
-  color: #0d6efd;
-  border-bottom-color: #0d6efd
+  color: #ec7c20;
+  border-bottom-color: #ec7c20
 }
 
 .product-details-tab .nav.nav-pills .nav-item+.nav-item {
@@ -772,8 +829,8 @@ button.thumbnail {
 .nav.nav-pills .nav-item.show .nav-link,
 .nav.nav-pills .nav-item .nav-link.active {
   color: #ec7c20;
-  border-color: #3f8cff;
-  border-bottom-color: #0d6efd
+  border-color: #ec7c20;
+  border-bottom-color: #ec7c20
 }
 
 .nav-pills+.tab-content .tab-pane {
@@ -846,7 +903,7 @@ button.thumbnail {
 
 .tabs-vertical .nav.nav-tabs .nav-item.show .nav-link,
 .tabs-vertical .nav.nav-tabs .nav-item .nav-link.active {
-  border-color: #0d6efd;
+  border-color: #ec7c20;
   border-right-color: transparent
 }
 
@@ -937,6 +994,17 @@ button.thumbnail {
 #order-button{
   border-radius: 0;
 }
+.place-order-main{
+  padding-left: 10px;
+  margin-top: 30px;
+}
+.place-order-row{
+  margin-right: 0;
+}
+#search-row{
+  margin-right: 0;
+  padding-left: 10px;
+}
 #search-row li{
   list-style-type: none;
 }
@@ -959,7 +1027,8 @@ button.thumbnail {
 }
 .nav-link{
   cursor: pointer;
-  color: white;
+  color: black;
+  font-weight: 400;
 }
 .nav-link:hover{
   color: #ec7c20;
@@ -1214,8 +1283,6 @@ button.thumbnail {
   margin-top: 200px;
   background-color: #000000;
   width: 100%;
-  position: absolute;
-  left: 0;
   padding-left: 120px;
   padding-right: 100px;
   padding-top: 50px;
@@ -1389,7 +1456,7 @@ button.thumbnail {
   background: transparent;
   border: 1px solid rgb(224, 220, 220);
   padding-left: 20px;
-  color: white;
+  color: black;
   padding-top: 5px;
   padding-bottom: 5px;
   margin-top: 20px;
@@ -1434,17 +1501,17 @@ button.thumbnail {
 
 
 /********** FOOTER **********/
+/* touched */
 footer{
-  position: absolute;
+  /* position: absolute; */
   background-color: black;
-  top: 5600px;
+  /* top: 5600px; */
   width: 100%;
-  left: 0;
   padding-top: 50px;
   padding-bottom: 50px;
   padding-left: 20px;
   padding-right: 100px;
-  padding-top: 50px;
+  margin-top: 150px;
 }
 .footer-main{
   display: flex;
@@ -1512,4 +1579,21 @@ footer{
 .social-logo{
   height: 18px;
   width: 18px;
+}
+
+.big-wrap{
+  position: relative;
+}
+
+.big-wrap-test{
+  /* height: 2000px; */
+  background-color: transparent;
+}
+.dashboard-main{
+  padding-left: 15px;
+  margin-top: 20px;
+
+}
+.dashboard-row{
+  margin-right: 0;
 }
