@@ -136,7 +136,6 @@ export default function SearchScreen() {
     };
     fetchCategories();
   }, [dispatch]);
-
   const getFilterUrl = (filter, skipPathname) => {
     const filterPage = filter.page || page;
     const filterCategory = filter.category || category;
@@ -202,7 +201,7 @@ export default function SearchScreen() {
                         </Link>
                         </ListGroup.Item>
                         {categories.map((e) => (
-                          <ListGroup.Item>
+                          <ListGroup.Item key={e}>
                             <Link
                             className={e === category ? 'text-bold' : ''}
                             to={getFilterUrl({ category: e })}
@@ -222,9 +221,9 @@ export default function SearchScreen() {
                 <ListGroup variant='flush'>
                   <ListGroup.Item>
                     <Link
-                  className={'all' === price ? 'text-bold' : ''}
-                  to={getFilterUrl({ price: 'all' })}
-                  >
+                    className={'all' === price ? 'text-bold' : ''}
+                    to={getFilterUrl({ price: 'all' })}
+                    >
                     Any
                   </Link>
                   </ListGroup.Item>

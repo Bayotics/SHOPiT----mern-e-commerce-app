@@ -1050,6 +1050,12 @@ button.thumbnail {
 .carousel-background{
  
 }
+.carousel-control-next{
+  display: none;
+}
+.carousel-control-prev{
+  display: none;
+}
 #carousel-caption{
   margin-bottom: 300px;
   /* opacity: 1; */
@@ -1544,7 +1550,7 @@ footer{
   color: white;
 }
 .footer-about h6{
-  margin-top: 100px;
+  margin-top: 150px;
   color: rgb(160, 157, 156);
   font-weight: 100;
   font-size: 12px;

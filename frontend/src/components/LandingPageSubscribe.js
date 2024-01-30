@@ -1,6 +1,7 @@
 import subscribeIcon from '../assets/fish/pngs/subscribe.png'
 import discountIcon from '../assets/fish/pngs/discount.png'
 import experienceIcon from '../assets/fish/pngs/experience.png'
+import { Link } from 'react-router-dom';
 
 const LandingPageSubscribe = () => {
     return (
@@ -19,7 +20,7 @@ const LandingPageSubscribe = () => {
                         </p>
                     </div>
                     <div className="subscribe-comp-inner-btn">
-                        <button>SUBSCRIBE</button>
+                        <button>Subscribe</button>
                     </div>
                 </div>
                 <div className="subscribe-comp-inner">
@@ -32,7 +33,9 @@ const LandingPageSubscribe = () => {
                         </p>
                     </div>
                     <div className="subscribe-comp-inner-btn">
-                        <button>Shop now</button>
+                        <Link to = "/search?category=all&query=all&price=all&rating=all&order=newest&page=1" >
+                            <button>Shop now</button>
+                        </Link>  
                     </div>
                 </div>
                 <div className="subscribe-comp-inner">
@@ -45,7 +48,9 @@ const LandingPageSubscribe = () => {
                         </p>
                     </div>
                     <div className="subscribe-comp-inner-btn">
-                        <button>Learn more</button>
+                        <Link to = "/aboutus" >
+                            <button>Learn More</button>
+                        </Link>
                     </div>
                 </div>
             </div>

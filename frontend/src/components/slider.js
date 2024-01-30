@@ -2,7 +2,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import bgOne from '../assets/fish/bg-1-edited.jpg';
 import bgTwo from '../assets/fish/bg-2-edited.jpg';
 import bgThree from '../assets/fish/bg-3-edited.jpg';
-import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 function Slider() {
   return (
@@ -17,7 +17,9 @@ function Slider() {
         <Carousel.Caption id="carousel-caption" className='carousel-animation'>
           <p>FRESH EVERYDAY</p>
           <h1 className='display-1'>Fresh fish at your fingertips</h1>
-            <button className='carousel-btn'>Shop now</button>
+          <Link to = "/search?category=all&query=all&price=all&rating=all&order=newest&page=1" >
+            <button className='carousel-btn'>Shop now</button>  
+          </Link>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={10000}>
@@ -30,7 +32,9 @@ function Slider() {
         <Carousel.Caption id="carousel-caption">
           <p>SWIFT DELIVERY</p>
           <h1 className='display-1'>Taste the Ocean's freshness</h1>
-          <button className='carousel-btn'>Shop now</button>
+          <Link to = "/search?category=all&query=all&price=all&rating=all&order=newest&page=1" >
+            <button className='carousel-btn'>Shop now</button>  
+          </Link>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item  interval={10000}>
@@ -43,7 +47,9 @@ function Slider() {
         <Carousel.Caption id="carousel-caption">
             <p>ORDER NOW</p>
           <h1 className='display-1'>100% Fresh Collection</h1>
-          <button className='carousel-btn'>Shop now</button>
+          <Link to = "/search?category=all&query=all&price=all&rating=all&order=newest&page=1" >
+            <button className='carousel-btn'>Shop now</button>  
+          </Link>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

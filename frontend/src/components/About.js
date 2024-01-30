@@ -1,4 +1,6 @@
-import fishPng from "../assets/fish/pngs/png-fish-four.png"
+import fishPng from "../assets/fish/pngs/png-fish-four.png";
+import { Link } from 'react-router-dom';
+
 
 const About = () => {
     return(
@@ -20,7 +22,9 @@ const About = () => {
                             </p>
                         </div>
                         <div className="about-btn-main">
-                            <button className="about-btn">Explore</button>
+                            <Link to = "/search?category=all&query=all&price=all&rating=all&order=newest&page=1" >
+                                <button className="about-btn">Explore</button>
+                            </Link>
                         </div>
                     </div>
                 </div>

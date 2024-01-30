@@ -7,9 +7,12 @@ import about2 from '../assets/about2.png'
 import about3 from '../assets/about3.png'
 import fisherman from '../assets/fish/about-wp-4.jpg'
 import discount from '../assets/fish/pngs/discount.png'
+import experience from '../assets/fish/pngs/experience.png'
+import subscribe from '../assets/fish/pngs/subscribe.png'
 import snipped from '../assets/fish/about-wrapper.jpg'
 import telephone from '../assets/fish/pngs/telephone.png'
 import email from '../assets/fish/pngs/email.png'
+import { Link } from 'react-router-dom';
 
 const AboutScreen = () => {
     return (
@@ -34,14 +37,18 @@ const AboutScreen = () => {
                         <p className='about-intro-paragraph'>
                             We at SHOPiT have made it our goal to introduce you to the best that the ocean has to offer since we recognise how important it is to eat premium, sustainably sourced seafood. Our voyage starts in the middle of pure waters, where our skilled fisherman painstakingly choose only the best catches, guaranteeing our patrons a wide and delicious variety of seafood alternatives.
                         </p>
-                        <div className='about-intro-btn'>
-                            <button className='about-intro-btn-main'>Contact Us Now</button>
-                        </div>
+                        <Link className = '' to={'/contactus'}>
+                            <div className='about-intro-btn'>
+                                <button className='about-intro-btn-main'>Contact Us Now</button>
+                            </div>
+                        </Link>
+                        
                     </div>
                 </div>
                 <p className='about-intro-paragraph-sub'>
                     Founded in 2024, we are dedicated to delivering the finest quality and convenience of the ocean's produce straight to your table. It is more than just a fish delivery business. Our commitment to ethical and sustainable fishing methods is what makes us unique. This helps maintain the long-term health of our seas by guaranteeing that every product you receive is not only delicious but also responsibly sourced.
-                    We promise that the seafood you receive from SHOPiT is as fresh as if you had caught it yourself. We take pleasure in our streamlined and efficient supply chain. 
+                    We promise that the seafood you receive from SHOPiT is as fresh as if you had caught it yourself. We take pleasure in our streamlined and efficient supply chain. We deliver to anywhere in Lagos, Ogun and Ibadan. Monday to Saturday. Payments validates order.
+                    All order and payment must come in before 10 am for same day delivery or delivery is postponed till next day. Also, there is a free delivery within Lagos for orders of N30,000 and above.
                 </p>
             </div>
             <div className='about-screen-why-us'>
@@ -55,19 +62,19 @@ const AboutScreen = () => {
                                 </div>
                             </div>
                             <div className='why-us-top-caption'>
-                                <h1>Home Delivery</h1>
-                                <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+                                <h1>Sea to Doorstep Freshness</h1>
+                                <p>We guarantee that every piece of fish we sell is as fresh as it gets by sourcing it directly from reliable and sustainable fisheries.</p>
                             </div>
                         </div>
                         <div className='why-us-top-right'>
                             <div className='why-us-top-icon'>
                                 <div className='why-us-top-icon-img'>
-                                    <img src= {discount} alt = 'discount' />
+                                    <img src= {experience} alt = 'discount' />
                                 </div>
                             </div>
                             <div className='why-us-top-caption'>
-                                <h1>Home Delivery</h1>
-                                <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+                                <h1>Wide Variety, Impeccable Quality</h1>
+                                <p>Shopit boasts an extensive selection of the finest fish species, from succulent salmon to flavorful halibut and beyond.</p>
                             </div>
                         </div>
                     </div>
@@ -75,12 +82,12 @@ const AboutScreen = () => {
                         <div className='why-us-top-left'>
                             <div className='why-us-top-icon'>
                                 <div className='why-us-top-icon-img'>
-                                    <img src= {discount} alt = 'discount' />
+                                    <img src= {subscribe} alt = 'discount' />
                                 </div>
                             </div>
                             <div className='why-us-top-caption'>
-                                <h1>Home Delivery</h1>
-                                <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+                                <h1>Fast and Reliable Delivery</h1>
+                                <p> Our team ensures that your order is carefully and swiftly dispatched, so you can enjoy your seafood at the peak of its freshness</p>
                             </div>
                         </div>
                         <div className='why-us-top-right'>
@@ -90,8 +97,8 @@ const AboutScreen = () => {
                                 </div>
                             </div>
                             <div className='why-us-top-caption'>
-                                <h1>Home Delivery</h1>
-                                <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+                                <h1>Customer-Centric Approach</h1>
+                                <p>Our customer support team is ready to assist you with any inquiries, ensuring that your shopping experience with Shopit is exceptional.</p>
                             </div>
                         </div>
                     </div>

@@ -20,7 +20,7 @@ const ProductDetails = ({product, rating}) => {
                                 <div className="product-desc-content">
                                     <h3>Delivery</h3>
                                     <p>We deliver to anywhere in Lagos, Ogun and Ibadan. Monday to Saturday. Payments validates order.
-                                        <br /> All order and payment must come in before 10 am for same day delivery or delivery is postponed till next day <br/></p>
+                                    All order and payment must come in before 10 am for same day delivery or delivery is postponed till next day . Also, there is a free delivery within Lagos for orders of N30,000 and above.<br/></p>
                                 </div>
                             </div>
         const reviewsContent = 
@@ -73,7 +73,7 @@ const ProductDetails = ({product, rating}) => {
     }
 
     return (
-        <div>
+        <div className="mt-4">
             <ul className="nav nav-pills justify-content-center" role="tablist">
                 <li className="nav-item" onClick = {firstMenufunction}>
                     <p className="nav-link" >Description</p>

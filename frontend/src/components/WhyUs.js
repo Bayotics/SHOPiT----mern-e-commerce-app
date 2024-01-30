@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 
 const WhyUs = () => {
     return (
@@ -8,7 +8,9 @@ const WhyUs = () => {
                 <h3>At Shopit, we understand that when it comes to sourcing the finest, freshest fish, discerning customers like you demand nothing but the best.</h3>
                 <p>Freshness is more than just a promise to us at Shopit; it's our commitment. Every item of seafood we serve is as fresh as the ocean itself because of the hard work we do to ensure that. Our close collaborations with regional fishermen and sustainable fishing practices ensure a consistent supply of the best possible harvests every day. We know that when it comes to fresh seafood, prompt delivery is essential. Your order will be carefully packed and delivered to your door on time, maintaining the flawless quality of your seafood selection.</p>
                 <div className="why-us-btn">
-                    <button>Learn more</button>
+                    <Link to = "/aoutus" >
+                        <button>Learn more</button>
+                    </Link>
                 </div>
             </div>
             <div className="testimonials">

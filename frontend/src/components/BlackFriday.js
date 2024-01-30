@@ -1,6 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
 import bfFish from '../assets/fish/pngs/pngfish-one.png';
-import holidayfish from '../assets/fish/pngs/png-fish-eight.png'
+import holidayfish from '../assets/fish/pngs/png-fish-eight.png';
+import { Link } from 'react-router-dom';
 
 function BlackFriday() {
   return (
@@ -15,7 +16,9 @@ function BlackFriday() {
               </div>
             </div>
             <div className='bf-btn'>
-              <button>Shop Now  →</button>
+              <Link to = "/search?category=all&query=all&price=all&rating=all&order=newest&page=1" >
+                <button>Shop Now  →</button>
+              </Link>  
             </div>
           </div>
           <div className='bf-inner-right'>
@@ -31,7 +34,9 @@ function BlackFriday() {
             <div className='slid-two-texts'>
               <h1>Early <br /> Holiday Deals</h1>
               <div className='bf-btn'>
-                <button>Shop Now  →</button>
+                <Link to = "/search?category=all&query=all&price=all&rating=all&order=newest&page=1" >
+                  <button>Shop Now  →</button>
+                </Link>  
               </div>
             </div>
             <div className=''>
