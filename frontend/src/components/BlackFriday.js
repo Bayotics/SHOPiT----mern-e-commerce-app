@@ -9,7 +9,7 @@ function BlackFriday() {
       <Carousel.Item className='carousel-slid-one' interval={5000}>
         <div className='bf-main'>
           <div className=' bf-inner-left'>
-            <div><h1>Yuletide <br /> Sales!</h1></div>
+            <div className=' bf-inner-left-caption'><h1>Yuletide <br /> Sales!</h1></div>
             <div className='bf-left-mid'>
               <div className='discount-sect'>
                 <h2>UP TO 50% OFF</h2>
@@ -29,11 +29,12 @@ function BlackFriday() {
         </div>
       </Carousel.Item>
       <Carousel.Item className='carousel-slid-two' interval={5000}>
+        <div className='caro-inner'>
         <div className='slid-two-items'>
           <div className='slid-two-contents'>
             <div className='slid-two-texts'>
               <h1>Early <br /> Holiday Deals</h1>
-              <div className='bf-btn'>
+              <div className='bf-btn-down'>
                 <Link to = "/search?category=all&query=all&price=all&rating=all&order=newest&page=1" >
                   <button>Shop Now  →</button>
                 </Link>  
@@ -52,6 +53,7 @@ function BlackFriday() {
               <img src= {holidayfish} alt='holiday img' className='holiday-img'/>
             </div>
           </div>
+        </div>
         </div>
       </Carousel.Item>
       {/* <Carousel.Item className='carousel-slid-three'>

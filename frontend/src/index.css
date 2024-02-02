@@ -24,7 +24,9 @@ a:hover{
 .site-container {
   min-height: 100vh;
 }
-
+.navbar-toggler-icon{
+  background-image: url(./assets/fish/pngs/hamburger-menu.png);
+}
 main {
   flex: 1;
 }
@@ -226,7 +228,7 @@ main {
 .about-img-png{
   margin-top: 70px;
   height: 400px;
-  width: 450px;
+  width: 80%;
 }
 
 /* touched */
@@ -447,6 +449,20 @@ main {
   margin-top: 20px;
 }
 .bf-btn button{
+  height: 100%;
+  width: 100%;
+  background-color: rgb(231, 193, 25);
+  color: black;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+}
+.bf-btn-down{
+  height: 40px;
+  width: 40%;
+  margin-top: 20px;
+}
+.bf-btn-down button{
   height: 100%;
   width: 100%;
   background-color: rgb(231, 193, 25);
@@ -1617,3 +1633,2099 @@ footer{
 .dashboard-row{
   margin-right: 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   /* ********************MOBILE *************************/
+/* Galaxy fold */
+@media screen and (min-width: 279.5px) and (max-width: 340px) {
+    .navbar-toggler-icon{
+      height: 20px;
+      width: 20px;
+      }
+      #search-bar{
+        width: 250px;
+        margin-top: 20px;
+      }
+      .carousel-caption p{
+        font-size: 12px;
+      }
+      .carousel-caption h1{
+        font-size: 24px;
+        margin-top: 10px;
+      }
+      .about-landing-row{
+        display: flex;
+      }
+      .about-heading{
+        margin: auto;
+        height: 50px;
+      }
+      .about-paragraph{
+        margin-top: 20px;
+      }
+      .about-paragraph p{
+        font-size: 12px;
+        text-align: center;
+      }
+      .about-btn-main{
+        margin-top: 20px;
+        padding-bottom: 30px;
+        text-align: center;
+      }
+      .about-right-main{
+        display: none;
+      }
+      #landing-page-about{
+        margin-top: 70px;
+      }
+      #categories-main{
+        margin-top: 60px;
+      }
+      .category-tiles{
+        margin-top: 20px;
+        padding-left: 20px;
+        padding-right: 10px;
+        row-gap: 20px;
+      }
+      .cat{
+        height: 300px;
+      }
+      .category-tiles-inner{
+        height: 170px;
+        width: 200px;
+        margin-top: 70px;
+      }
+      .category-tiles-inner h1{
+        font-size: 20px;
+      }
+      .category-tiles-btn{
+        width: 120px;
+      }
+      .subscribe-comp-main{
+        margin-top: 40px;
+        padding-bottom: 20px;
+      }
+      .subscribe-heading h1 {
+        font-size: 18px;
+      }
+      .subscribe-comp-inner-main {
+        display: block;
+        
+      }
+      .subscribe-comp-inner-btn {
+        margin-bottom: 50px;
+      }
+      .sbscrb{
+        margin-top: 40px;
+      }
+      .subscribe-comp-inner-p {
+        margin-top: 5px;
+      }
+      .black-friday{
+        margin-top: 70px;
+        height: 550px;
+      }
+      .bf-main{
+        display: block;
+      }
+      .bf-inner-left{
+        width: 100%;
+      }
+      .bf-inner-right{
+        width: 100%;
+        margin-top: 250px;
+      }
+      .bf-fish-main{
+        margin: 0
+      }
+      .bf-img{
+        height: 280px;
+        width: 290px;
+        padding-bottom: 0;
+      }
+      .bf-inner-left-caption{
+        margin-top: 100px;
+      }
+      .bf-inner-left h1 {
+        font-size: 34px;
+        font-weight: 600;
+        text-align: center;
+        margin-right: 50px;
+      }
+      .bf-left-mid {
+        border-radius: 0;
+        margin-left: 7px;
+
+      }
+      .bf-left-mid h2{
+        font-size: 20px;
+        line-height: 2.5;
+      }
+      .bf-btn{
+        width: 65%;
+        margin-top: 30px;
+        margin-left: 15px;
+      }
+      .bf-btn-down{
+        width: 70%;
+        margin-top: 40px;
+        margin: auto;
+      }
+      .carousel-inner{
+        height: 650px;
+      }
+      .carousel-indicators{
+        display: none;
+      }
+      .slid-two-contents{
+        display: block;
+      }
+      .slid-two-texts {
+        margin: auto;
+        width: 100%;
+      }
+      .slid-two-texts h1{
+        font-size: 40px;
+        text-align: center;
+        font-weight: 600;
+      }
+      .sixty-percent-off{
+        margin: auto;
+        margin-top: 30px;
+      }
+      .why-us{
+        display: block;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      .why-us-captions {
+        width: 100%;
+      }
+      .why-us-captions h1 {
+        font-size: 40px;
+        text-align: center;
+      }
+      .why-us-captions h3 {
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+      }
+      .why-us-captions p {
+        font-size: 14px;
+        text-align: center;
+      }
+      .why-us-btn {
+        margin: auto;
+        width: 60%;
+      }
+      .testimonials{
+        width: 100%;
+      }
+      .testimonial-card {
+        padding-bottom: 10px;
+      }
+      .testimonial-card p {
+        font-size: 14px;
+      }
+      .testimonial-card h2{
+        text-align: center;
+      }
+      footer{
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-bottom: 100px;
+      }
+      .footer-main{
+        display: block;
+        font-size: 14px;
+      }
+      .footer-about {
+        width: 100%;
+      }
+      .footer-about h6 {
+        position: absolute;
+        margin-top: 730px;
+      }
+      .footer-learn-more{
+        margin-top: 50px;
+      }
+      .footer-about-us{
+        margin-top: 50px;
+      }
+      .footer-socials{
+        width: 100%;
+      }
+      .socials-main{
+        padding-right: 90px;
+      }
+      
+
+  }
+  
+  
+   /* samsung s8 plus */
+   @media screen and (min-width: 340.9px) and (max-width: 380px) {
+      .hero-left{
+        display: none;
+      }
+      #mail-logo{
+        position: relative;
+        left: 120px;
+      }
+      .fa-bars{
+        color: white;
+      }
+      .hero-right{
+        width: 100%;
+      }
+      .main-bg-captions{
+        margin-left: 50px;
+        text-align: center;
+        width: 80%;
+      }
+      .main-bg-captions h1{
+        text-align: center;
+      }
+      #basic-navbar-nav{
+        background-color: #262335;
+      }
+      #search-bar {
+        width: 300px;
+      }
+      #about-div {
+        top: 600px;
+      }
+      #about-text-box {
+        margin-left: 40px;
+      }
+      .row-main{
+        display: block;
+        margin-top: 50px
+      }
+      .about-card-inner{
+        width: 100%;
+        margin-left: 0;
+        height: 700px;
+      }
+      .about-button{
+        text-align: center;
+      }
+      #parallax-div {
+        top: 1900px;
+      }
+      #whyus-div {
+        top: 2000px;
+      }
+      #parallax-main {
+        display: block;
+        height: 33rem;
+      }
+      #parallax-item {
+        width: 19rem;
+        height: 32rem;
+        margin-left: 17px;
+      }
+      .parallax-button-trending{
+        width: 40%;
+      }
+      .start-learning-button {
+        width: 80%;
+      }
+      .carousel-indicators {
+        display: none;
+      }
+      .white-space-vertical{
+        margin-top: 0;
+      }
+      .why-us-cover{
+        display: block;
+      }
+      .why-us-cover-img{
+        display: none;
+      }
+      .why-us-right-header {
+        text-align: center;
+        width: 100%;
+      }
+      .why-us-cover-brand{
+        width: 50%;
+      }
+      .why-us-cover-brand-redhat{
+        display: none;
+      }
+      .why-us-cover-brand-google{
+        margin-right: 10px;
+        width: 50%;
+      }
+      #blog-div {
+        top: 2100px;
+      }
+      .main-heading{
+        width: 80%;
+        margin: auto;
+      }
+      .blog-cards-main{
+        display: block;
+        margin: auto;
+        padding-left: 7px;
+      }
+      .blog-img{
+        margin-bottom: 40px;
+      }
+      #testimonials-div {
+        top: 2150px;
+      }
+      .testimonials-section h5{
+        font-size: 30px;
+      }
+      .testimonials-section h1 {
+        font-size: 16px;
+      }
+      #testimonial-cap {
+        width: 80%;
+      }
+      #main-testimonial-cards{
+        display: block;
+      }
+      .testimonial-card-main{
+        margin-bottom: 50px;
+      }
+      footer{
+        top: 3700px;
+      }
+      #footer-inner {
+        display: block;
+      }
+  
+      #footer-lower {
+        display: block;
+      }
+      #products-list-row {
+        display: block;
+      }
+    }
+  
+    /* iphone 12 pro */
+    @media screen and (min-width: 381.5px) and (max-width: 409.9px) {
+      .hero-left {
+        display: none;
+      }
+  
+      #mail-logo {
+        position: relative;
+        left: 130px;
+      }
+  
+      .fa-bars {
+        color: white;
+      }
+  
+      .hero-right {
+        width: 100%;
+      }
+  
+      .main-bg-captions {
+        margin-left: 50px;
+        text-align: center;
+        width: 80%;
+      }
+  
+      .main-bg-captions h1 {
+        text-align: center;
+      }
+      #basic-navbar-nav {
+        background-color: #262335;
+      }
+  
+      #search-bar {
+        width: 300px;
+      }
+  
+      #about-div {
+        top: 600px;
+      }
+      #about-text{
+      padding-left: 40px;
+      }
+      #about-text-box {
+        margin-left: 40px;
+      }
+  
+      .row-main {
+        display: block;
+        margin-top: 50px
+      }
+  
+      .about-card-inner {
+        width: 100%;
+        margin-left: 0;
+        height: 700px;
+      }
+  
+      .about-button {
+        text-align: center;
+      }
+  
+      #parallax-div {
+        top: 1850px;
+      }
+  
+      #parallax-main {
+        display: block;
+        height: 33rem;
+      }
+  
+      #parallax-item {
+        width: 20.5rem;
+        height: 32rem;
+        margin-left: 17px;
+      }
+  
+      .parallax-button-trending {
+        width: 40%;
+      }
+  
+      .start-learning-button {
+        width: 80%;
+      }
+  
+      .carousel-indicators {
+        display: none;
+      }
+  
+      .white-space-vertical {
+        margin-top: 0;
+      }
+      #whyus-div {
+        top: 1950px;
+      }
+      .why-us-cover {
+        display: block;
+      }
+  
+      .why-us-cover-img {
+        display: none;
+      }
+  
+      .why-us-right-header {
+        text-align: center;
+        width: 100%;
+      }
+  
+      .why-us-cover-brand {
+        width: 50%;
+      }
+  
+      .why-us-cover-brand-redhat {
+        display: none;
+      }
+  
+      .why-us-cover-brand-google {
+        margin-right: 10px;
+        width: 50%;
+      }
+  
+      #blog-div {
+        top: 2050px;
+      }
+  
+      .main-heading {
+        width: 80%;
+        margin: auto;
+      }
+  
+      .blog-cards-main {
+        display: block;
+        margin: auto;
+        padding-left: 20px;
+      }
+  
+      .blog-img {
+        margin-bottom: 40px;
+      }
+  
+      #testimonials-div {
+        top: 2100px;
+      }
+  
+      .testimonials-section h5 {
+        font-size: 30px;
+      }
+  
+      .testimonials-section h1 {
+        font-size: 16px;
+      }
+  
+      #testimonial-cap {
+        width: 80%;
+      }
+  
+      #main-testimonial-cards {
+        display: block;
+      }
+  
+      .testimonial-card-main {
+        margin-bottom: 50px;
+      }
+  
+      footer {
+        top: 3700px;
+      }
+  
+      #footer-inner {
+        display: block;
+      }
+  
+      #footer-lower {
+        display: block;
+      }
+      #products-list-row {
+        display: block;
+      }
+    }
+  
+  /* iphone xr and iphone 11 */
+  @media screen and (min-width: 410px) and (max-width: 420px) {
+      .hero-left {
+        display: none;
+      }
+    
+      #mail-logo {
+        position: relative;
+        left: 130px;
+      }
+    
+      .fa-bars {
+        color: white;
+      }
+    
+      .hero-right {
+        width: 100%;
+      }
+    
+      .main-bg-captions {
+        margin-left: 50px;
+        text-align: center;
+        width: 80%;
+      }
+    
+      .main-bg-captions h1 {
+        text-align: center;
+      }
+    
+      #basic-navbar-nav {
+        background-color: #262335;
+      }
+    
+      #search-bar {
+        width: 300px;
+      }
+    
+      #about-div {
+        top: 600px;
+      }
+    
+      #about-text {
+        padding-left: 40px;
+      }
+    
+      #about-text-box {
+        margin-left: 40px;
+      }
+    
+      .row-main {
+        display: block;
+        margin-top: 50px
+      }
+    
+      .about-card-inner {
+        width: 100%;
+        margin-left: 0;
+        height: 670px;
+      }
+    
+      .about-button {
+        text-align: center;
+      }
+    
+      #parallax-div {
+        top: 1850px;
+      }
+    
+      #parallax-main {
+        display: block;
+        height: 33rem;
+      }
+    
+      #parallax-item {
+        width: 22rem;
+        height: 32rem;
+        margin-left: 17px;
+      }
+    
+      .parallax-button-trending {
+        width: 40%;
+      }
+    
+      .start-learning-button {
+        width: 80%;
+      }
+    
+      .carousel-indicators {
+        display: none;
+      }
+    
+      .white-space-vertical {
+        margin-top: 0;
+      }
+    
+      #whyus-div {
+        top: 1900px;
+      }
+    
+      .why-us-cover {
+        display: block;
+      }
+    
+      .why-us-cover-img {
+        display: none;
+      }
+    
+      .why-us-right-header {
+        text-align: center;
+        width: 100%;
+      }
+    
+      .why-us-cover-brand {
+        width: 50%;
+      }
+    
+      .why-us-cover-brand-redhat {
+        display: none;
+      }
+    
+      .why-us-cover-brand-google {
+        margin-right: 10px;
+        width: 50%;
+      }
+    
+      #blog-div {
+        top: 2000px;
+      }
+    
+      .main-heading {
+        width: 60%;
+        margin: auto;
+      }
+      .card{
+        width: 350px;
+      }
+      .blog-cards-main {
+        display: block;
+        margin: auto;
+        padding-left: 10px;
+      }
+    
+      .blog-img {
+        margin-bottom: 40px;
+      }
+    
+      #testimonials-div {
+        top: 2050px;
+      }
+    
+      .testimonials-section h5 {
+        font-size: 30px;
+      }
+    
+      .testimonials-section h1 {
+        font-size: 16px;
+      }
+    
+      #testimonial-cap {
+        width: 80%;
+      }
+    
+      #main-testimonial-cards {
+        display: block;
+      }
+    
+      .testimonial-card-main {
+        margin-bottom: 50px;
+      }
+    
+      footer {
+        top: 3500px;
+      }
+    
+      #footer-inner {
+        display: block;
+      }
+    
+      #footer-lower {
+        display: block;
+      }
+      #products-list-row {
+        display: block;
+      }
+  }
+  
+  @media screen and (min-width: 421px) and (max-width: 480px) {
+    .hero-left {
+        display: none;
+      }
+    
+      #mail-logo {
+        position: relative;
+        left: 160px;
+      }
+    
+      .fa-bars {
+        color: white;
+      }
+    
+      .hero-right {
+        width: 100%;
+      }
+    
+      .main-bg-captions {
+        margin-left: 50px;
+        text-align: center;
+        width: 80%;
+      }
+    
+      .main-bg-captions h1 {
+        text-align: center;
+      }
+    
+      #basic-navbar-nav {
+        background-color: #262335;
+      }
+    
+      #search-bar {
+        width: 300px;
+      }
+    
+      #about-div {
+        top: 600px;
+      }
+    
+      #about-text {
+        padding-left: 70px;
+      }
+    
+      #about-text-box {
+        margin-left: 40px;
+      }
+    
+      .row-main {
+        display: block;
+        margin-top: 50px
+      }
+    
+      .about-card-inner {
+        width: 100%;
+        margin-left: 0;
+        height: 650px;
+      }
+    
+      .about-button {
+        text-align: center;
+      }
+    
+      #parallax-div {
+        top: 1750px;
+      }
+    
+      #parallax-main {
+        display: block;
+        height: 33rem;
+      }
+    
+      #parallax-item {
+        width: 23rem;
+        height: 32rem;
+        margin-left: 30px;
+      }
+    
+      .parallax-button-trending {
+        width: 40%;
+      }
+    
+      .start-learning-button {
+        width: 80%;
+      }
+    
+      .carousel-indicators {
+        display: none;
+      }
+    
+      .white-space-vertical {
+        margin-top: 0;
+      }
+    
+      #whyus-div {
+        top: 1900px;
+      }
+    
+      .why-us-cover {
+        display: block;
+      }
+    
+      .why-us-cover-img {
+        display: none;
+      }
+    
+      .why-us-right-header {
+        text-align: center;
+        width: 100%;
+      }
+    
+      .why-us-cover-brand {
+        width: 50%;
+      }
+    
+      .why-us-cover-brand-redhat {
+        display: none;
+      }
+    
+      .why-us-cover-brand-google {
+        margin-right: 10px;
+        width: 50%;
+      }
+    
+      #blog-div {
+        top: 2000px;
+      }
+    
+      .main-heading {
+        width: 60%;
+        margin: auto;
+      }
+    
+      .card {
+        /* width: 380px; */
+      }
+    
+      .blog-cards-main {
+        display: block;
+        margin: auto;
+        padding-left: 20px;
+      }
+    
+      .blog-img {
+        margin-bottom: 40px;
+        width: 380px;
+      }
+    
+      #testimonials-div {
+        top: 2050px;
+      }
+    
+      .testimonials-section h5 {
+        font-size: 30px;
+      }
+    
+      .testimonials-section h1 {
+        font-size: 16px;
+      }
+    
+      #testimonial-cap {
+        width: 80%;
+      }
+    
+      #main-testimonial-cards {
+        display: block;
+      }
+    
+      .testimonial-card-main {
+        margin-bottom: 50px;
+      }
+    
+      footer {
+        top: 3500px;
+      }
+    
+      #footer-inner {
+        display: block;
+      }
+    
+      #footer-lower {
+        display: block;
+      }
+      #products-list-row {
+        display: block;
+      }
+  }
+  
+  /* surface duo */
+  @media screen and (min-width: 481px) and (max-width: 587px) {
+    .hero-left {
+        display: none;
+      }
+    
+      #mail-logo {
+        position: relative;
+        left: 210px;
+      }
+    
+      .fa-bars {
+        color: white;
+      }
+    
+      .hero-right {
+        width: 100%;
+      }
+    
+      .main-bg-captions {
+        margin-left: 60px;
+        text-align: center;
+        width: 80%;
+      }
+    
+      .main-bg-captions h1 {
+        text-align: center;
+        font-size: 54px;
+      }
+    
+      #basic-navbar-nav {
+        background-color: #262335;
+      }
+    
+      #search-bar {
+        width: 300px;
+      }
+    
+      #about-div {
+        top: 600px;
+      }
+    
+      #about-text {
+        padding-left: 70px;
+      }
+    
+      #about-text-box {
+        margin-left: 40px;
+      }
+    
+      .row-main {
+        display: block;
+        margin-top: 50px
+      }
+    
+      .about-card-inner {
+        width: 100%;
+        margin-left: 0;
+        height: 650px;
+      }
+      .about-p p{
+        font-size: 20px;
+      }
+    
+      .about-button {
+        text-align: center;
+      }
+    
+      #parallax-div {
+        top: 1600px;
+      }
+    
+      #parallax-main {
+        display: block;
+        height: 33rem;
+      }
+    
+      #parallax-item {
+        width: 27rem;
+        height: 32rem;
+        margin-left: 40px;
+      }
+    
+      .parallax-button-trending {
+        width: 40%;
+      }
+    
+      .start-learning-button {
+        width: 80%;
+      }
+    
+      .carousel-indicators {
+        display: none;
+      }
+    
+      .white-space-vertical {
+        margin-top: 0;
+      }
+    
+      #whyus-div {
+        top: 1700px;
+      }
+    
+      .why-us-cover {
+        display: block;
+      }
+    
+      .why-us-cover-img {
+        display: none;
+      }
+    
+      .why-us-right-header {
+        text-align: center;
+        width: 100%;
+      }
+    
+      .why-us-cover-brand {
+        width: 50%;
+      }
+    
+      .why-us-cover-brand-redhat {
+        display: none;
+      }
+    
+      .why-us-cover-brand-google {
+        margin-right: 10px;
+        width: 50%;
+      }
+    
+      #blog-div {
+        top: 1800px;
+      }
+    
+      .main-heading {
+        width: 60%;
+        margin: auto;
+      }
+    
+      .card {
+        width: 460px;
+      }
+    
+      .blog-cards-main {
+        display: block;
+        margin: auto;
+        padding-left: 20px;
+      }
+    
+      .blog-img {
+        margin-bottom: 40px;
+        width: 460px;
+      }
+    
+      #testimonials-div {
+        top: 1850px;
+      }
+    
+      .testimonials-section h5 {
+        font-size: 30px;
+      }
+    
+      .testimonials-section h1 {
+        font-size: 16px;
+      }
+    
+      #testimonial-cap {
+        width: 80%;
+      }
+    
+      #main-testimonial-cards {
+        display: block;
+      }
+    
+      .testimonial-card-main {
+        margin-bottom: 50px;
+      }
+    
+      footer {
+        top: 3150px;
+      }
+    
+      #footer-inner {
+        display: block;
+      }
+    
+      #footer-lower {
+        display: block;
+      }
+  }
+  
+  /* macbook and smaller laptop */
+  
+  @media screen and (min-width: 1050px) and (max-width: 1210px) {
+    #parallax-item{
+      width: 21rem;
+      height: 33rem;
+    }
+    #parallax-main {
+      height: 33rem;
+      padding-left: 20px;
+    }
+    .container-blog{
+      margin: auto;
+      margin-left: 30px;
+      padding-left: 30px;
+    }
+    #main-testimonial-cards{
+      margin: auto;
+      margin-top: 50px;
+      margin-left: 30px;
+    }
+    footer {
+      position: relative;
+      top: 1400px;
+    }
+    .about-card-inner{
+      height: 660px;
+    }
+    #products-list-row {
+      display: block;
+    }
+  }
+  
+  /* iphone 14 pro */
+  @media screen and (min-width: 588.5px) and (max-width: 600px) {
+    .hero-left {
+        display: none;
+      }
+      #main-hero {
+        height: 700px;
+      }
+      #mail-logo {
+        position: relative;
+        left: 220px;
+      }
+    
+      .fa-bars {
+        color: white;
+      }
+    
+      .hero-right {
+        width: 100%;
+      }
+    
+      .main-bg-captions {
+        margin-left: 70px;
+        text-align: center;
+        width: 80%;
+      }
+    
+      .main-bg-captions h1 {
+        text-align: center;
+        font-size: 54px;
+      }
+    
+      #basic-navbar-nav {
+        background-color: #262335;
+      }
+    
+      #search-bar {
+        width: 300px;
+      }
+    
+      #about-div {
+        top: 550px;
+      }
+      #about-inner-div {
+        display: block;
+      }
+      #about-text {
+        padding-left: 70px;
+        width: 90%;
+      }
+    
+      #about-text-box {
+        margin-left: 40px;
+      }
+      .about-h1 h1 {
+        font-size: 42px;
+      }
+      .about-text-box-p {
+        font-size: 18px;
+      }
+      #about-card{
+        width: 100%;
+      }
+      .row-main {
+        display: block;
+        margin-top: 50px
+      }
+    
+      .about-card-inner {
+        width: 100%;
+        margin-left: 0;
+        height: 650px;
+      }
+    
+      .about-p p {
+        font-size: 20px;
+      }
+    
+      .about-button {
+        text-align: center;
+      }
+    
+      #parallax-div {
+        top: 1750px;
+      }
+    
+      #parallax-main {
+        display: block;
+        height: 33rem;
+      }
+    
+      #parallax-item {
+        width: 29rem;
+        height: 32rem;
+        margin-left: 50px;
+      }
+    
+      .parallax-button-trending {
+        width: 40%;
+      }
+    
+      .start-learning-button {
+        width: 80%;
+      }
+    
+      .carousel-indicators {
+        display: none;
+      }
+      .carousel-control-next,
+      .carousel-control-prev {
+        /* opacity: 1; */
+      }
+    
+      .white-space-vertical {
+        margin-top: 0;
+      }
+    
+      #whyus-div {
+        top: 1800px;
+      }
+    
+      .why-us-cover {
+        display: block;
+      }
+    
+      .why-us-cover-img {
+        display: none;
+      }
+    
+      .why-us-right-header {
+        text-align: center;
+        width: 100%;
+      }
+    
+      .why-us-cover-brand {
+        width: 50%;
+      }
+    
+      .why-us-cover-brand-redhat {
+        display: none;
+      }
+    
+      .why-us-cover-brand-google {
+        margin-right: 10px;
+        width: 50%;
+      }
+    
+      #blog-div {
+        top: 1900px;
+      }
+    
+      .main-heading {
+        width: 60%;
+        margin: auto;
+      }
+    
+      .card {
+        width: 460px;
+      }
+    
+      .blog-cards-main {
+        display: block;
+        margin: auto;
+        padding-left: 30px;
+      }
+    
+      .blog-img {
+        margin-bottom: 40px;
+        width: 490px;
+      }
+    
+      #testimonials-div {
+        top: 1950px;
+      }
+    
+      .testimonials-section h5 {
+        font-size: 30px;
+      }
+    
+      .testimonials-section h1 {
+        font-size: 16px;
+      }
+    
+      #testimonial-cap {
+        width: 80%;
+      }
+    
+      #main-testimonial-cards {
+        display: block;
+      }
+    
+      .testimonial-card-main {
+        margin-bottom: 50px;
+      }
+    
+      footer {
+        top: 3150px;
+      }
+    
+      #footer-inner {
+        display: block;
+      }
+    
+      #footer-lower {
+        display: block;
+      }
+      #products-list-row {
+        display: block;
+      }
+    }
+  
+  /* iphone 14 pro max */
+  @media screen and (min-width: 601px) and (max-width: 650px) {
+    .hero-left {
+        display: none;
+      }
+    
+      #main-hero {
+        height: 700px;
+      }
+    
+      #mail-logo {
+        position: relative;
+        left: 250px;
+      }
+    
+      .fa-bars {
+        color: white;
+      }
+    
+      .hero-right {
+        width: 100%;
+      }
+    
+      .main-bg-captions {
+        margin-left: 75px;
+        text-align: center;
+        width: 80%;
+      }
+    
+      .main-bg-captions h1 {
+        text-align: center;
+        font-size: 54px;
+      }
+    
+      #basic-navbar-nav {
+        background-color: #262335;
+      }
+    
+      #search-bar {
+        width: 300px;
+      }
+    
+      #about-div {
+        top: 550px;
+      }
+    
+      #about-inner-div {
+        display: block;
+      }
+    
+      #about-text {
+        padding-left: 80px;
+        width: 90%;
+      }
+    
+      #about-text-box {
+        margin-left: 40px;
+      }
+    
+      .about-h1 h1 {
+        font-size: 42px;
+      }
+    
+      .about-text-box-p {
+        font-size: 18px;
+      }
+    
+      #about-card {
+        width: 100%;
+      }
+    
+      .row-main {
+        display: block;
+        margin-top: 50px
+      }
+    
+      .about-card-inner {
+        width: 100%;
+        margin-left: 0;
+        height: 650px;
+      }
+    
+      .about-p p {
+        font-size: 20px;
+      }
+    
+      .about-button {
+        text-align: center;
+      }
+    
+      #parallax-div {
+        top: 1700px;
+      }
+    
+      #parallax-main {
+        display: block;
+        height: 33rem;
+      }
+    
+      #parallax-item {
+        width: 30rem;
+        height: 32rem;
+        margin-left: 70px;
+      }
+      .parallax-description p{
+        font-size: 18px;
+      }
+      .parallax-button-trending {
+        width: 30%;
+      }
+    
+      .start-learning-button {
+        width: 80%;
+      }
+    
+      .carousel-indicators {
+        display: none;
+      }
+      .carousel-control-next,
+      .carousel-control-prev {
+        opacity: 1;
+      }
+      .white-space-vertical {
+        margin-top: 0;
+      }
+    
+      #whyus-div {
+        top: 1800px;
+      }
+    
+      .why-us-cover {
+        display: block;
+      }
+    
+      .why-us-cover-img {
+        display: none;
+      }
+    
+      .why-us-right-header {
+        text-align: center;
+        width: 100%;
+      }
+    
+      .why-us-cover-brand {
+        width: 50%;
+      }
+    
+      .why-us-cover-brand-redhat {
+        display: none;
+      }
+    
+      .why-us-cover-brand-google {
+        margin-right: 10px;
+        width: 50%;
+      }
+    
+      #blog-div {
+        top: 1900px;
+      }
+    
+      .main-heading {
+        width: 60%;
+        margin: auto;
+      }
+    
+      .card {
+        width: 460px;
+      }
+    
+      .blog-cards-main {
+        display: block;
+        margin: auto;
+        padding-left: 50px;
+      }
+    
+      .blog-img {
+        margin-bottom: 40px;
+        width: 500px;
+      }
+    
+      #testimonials-div {
+        top: 1950px;
+      }
+    
+      .testimonials-section h5 {
+        font-size: 30px;
+      }
+    
+      .testimonials-section h1 {
+        font-size: 16px;
+      }
+    
+      #testimonial-cap {
+        width: 80%;
+      }
+    
+      #main-testimonial-cards {
+        display: block;
+      }
+    
+      .testimonial-card-main {
+        margin-bottom: 50px;
+      }
+    
+      footer {
+        top: 3150px;
+      }
+    
+      #footer-inner {
+        display: block;
+      }
+    
+      #footer-lower {
+        display: block;
+      }
+      #products-list-row {
+        display: block;
+      }
+    }
+    @media screen and (min-width: 651px) and (max-width: 699px) {
+    .hero-left {
+      display: none;
+    }
+  
+    #main-hero {
+      height: 700px;
+    }
+  
+    #mail-logo {
+      position: relative;
+      left: 270px;
+    }
+  
+    .fa-bars {
+      color: white;
+    }
+  
+    .hero-right {
+      width: 100%;
+    }
+  
+    .main-bg-captions {
+      margin-left: 75px;
+      text-align: center;
+      width: 80%;
+    }
+  
+    .main-bg-captions h1 {
+      text-align: center;
+      font-size: 54px;
+    }
+  
+    #basic-navbar-nav {
+      background-color: #262335;
+    }
+  
+    #search-bar {
+      width: 300px;
+    }
+  
+    #about-div {
+      top: 550px;
+    }
+  
+    #about-inner-div {
+      display: block;
+    }
+  
+    #about-text {
+      padding-left: 100px;
+      width: 90%;
+    }
+  
+    #about-text-box {
+      margin-left: 40px;
+    }
+  
+    .about-h1 h1 {
+      font-size: 42px;
+    }
+  
+    .about-text-box-p {
+      font-size: 18px;
+    }
+  
+    #about-card {
+      width: 100%;
+    }
+  
+    .row-main {
+      display: block;
+      margin-top: 50px
+    }
+  
+    .about-card-inner {
+      width: 100%;
+      margin-left: 0;
+      height: 650px;
+    }
+  
+    .about-p p {
+      font-size: 20px;
+    }
+  
+    .about-button {
+      text-align: center;
+    }
+  
+    #parallax-div {
+      top: 1700px;
+    }
+  
+    #parallax-main {
+      display: block;
+      height: 33rem;
+    }
+  
+    #parallax-item {
+      width: 30rem;
+      height: 32rem;
+      margin-left: 95px;
+    }
+  
+    .parallax-description p {
+      font-size: 18px;
+    }
+  
+    .parallax-button-trending {
+      width: 30%;
+    }
+  
+    .start-learning-button {
+      width: 80%;
+    }
+  
+    .carousel-indicators {
+      display: none;
+    }
+    .carousel-control-next,
+    .carousel-control-prev {
+      opacity: 1;
+    }
+  
+    .white-space-vertical {
+      margin-top: 0;
+    }
+  
+    #whyus-div {
+      top: 1800px;
+    }
+  
+    .why-us-cover {
+      display: block;
+    }
+  
+    .why-us-cover-img {
+      display: none;
+    }
+  
+    .why-us-right-header {
+      text-align: center;
+      width: 100%;
+    }
+  
+    .why-us-cover-brand {
+      width: 50%;
+    }
+  
+    .why-us-cover-brand-redhat {
+      display: none;
+    }
+  
+    .why-us-cover-brand-google {
+      margin-right: 10px;
+      width: 50%;
+    }
+  
+    #blog-div {
+      top: 1900px;
+    }
+  
+    .main-heading {
+      width: 60%;
+      margin: auto;
+    }
+  
+    .card {
+      width: 460px;
+    }
+  
+    .blog-cards-main {
+      display: block;
+      margin: auto;
+      padding-left: 70px;
+    }
+  
+    .blog-img {
+      margin-bottom: 40px;
+      width: 520px;
+    }
+  
+    #testimonials-div {
+      top: 1950px;
+    }
+  
+    .testimonials-section h5 {
+      font-size: 30px;
+    }
+  
+    .testimonials-section h1 {
+      font-size: 16px;
+    }
+  
+    #testimonial-cap {
+      width: 80%;
+    }
+  
+    #main-testimonial-cards {
+      display: block;
+    }
+  
+    .testimonial-card-main {
+      margin-bottom: 50px;
+    }
+  
+    footer {
+      top: 3150px;
+    }
+  
+    #footer-inner {
+      display: block;
+    }
+  
+    #footer-lower {
+      display: block;
+    }
+  }
+  
+  
+   @media screen and (min-width: 700px) and (max-width: 799px) {
+      #about-text {
+        padding-left: 100px;
+        width: 90%;
+      }
+    
+      #about-text-box {
+        margin-left: 40px;
+      }
+    
+      .about-h1 h1 {
+        font-size: 42px;
+      }
+    
+      .about-text-box-p {
+        font-size: 18px;
+      }
+    
+      #about-card {
+        width: 100%;
+      }
+    
+      .skills-p {
+        width: 100%;
+      }
+    
+      .row-main {
+        margin-top: 50px;
+      }
+    
+      .about-card-inner {
+        height: 800px;
+      }
+    
+      .about-p p {
+        font-size: 24px;
+      }
+    
+      .about-promo p {
+        font-size: 24px;
+      }
+    
+      #parallax-div {
+        top: 1720px;
+      }
+    
+      #parallax-main {
+        display: block;
+        height: 33rem;
+      }
+  
+      #parallax-item {
+        width: 34.2rem;
+        height: 32rem;
+        margin-left: 99px;
+      }
+  
+      .parallax-description p {
+        font-size: 18px;
+      }
+  
+      .parallax-button-trending {
+        width: 30%;
+      }
+  
+      .start-learning-button {
+        width: 80%;
+      }
+  
+      .carousel-indicators {
+        display: none;
+      }
+  
+      .carousel-control-next,
+      .carousel-control-prev {
+        opacity: 1;
+      }
+    
+      #whyus-div {
+        top: 1800px;
+      }
+    
+      .parallax-button-trending {
+        height: 30px;
+        width: 50%;
+      }
+    
+      #blog-div {
+        top: 1850px;
+      }
+    
+      .container-blog {
+        margin: auto;
+        margin-left: 0px;
+        padding-left: 0px;
+      }
+    
+      #testimonials-div {
+        top: 1900px;
+      }
+    
+      .testimonials-section h5 {
+        font-size: 30px;
+      }
+    
+      .testimonials-section h1 {
+        font-size: 16px;
+      }
+    
+      #testimonial-cap {
+        width: 80%;
+      }
+    
+      #main-testimonial-cards {
+        display: block;
+      }
+    
+      .testimonial-card-main {
+        margin-bottom: 50px;
+      }
+    
+      footer {
+        top: 2900px;
+      }
+   }
+    
+   
+   /* macbook and smaller laptop */
+  
+  @media screen and (min-width: 800px) and (max-width: 950px) {
+      #about-text {
+        padding-left: 100px;
+        width: 90%;
+      }
+    
+      #about-text-box {
+        margin-left: 40px;
+      }
+    
+      .about-h1 h1 {
+        font-size: 42px;
+      }
+    
+      .about-text-box-p {
+        font-size: 18px;
+      }
+    
+      #about-card {
+        width: 100%;
+      }
+    .skills-p {
+      width: 100%;
+    }
+    .row-main{
+      margin-top: 50px;
+    }
+    .about-card-inner {
+      height: 800px;
+    }
+    .about-p p{
+      font-size: 24px;
+    }
+    .about-promo p{
+      font-size: 24px;
+    }
+    #parallax-div {
+      top: 1650px;
+    }
+    #parallax-main {
+      height: 41rem;
+      padding-right: 10px;
+    }
+    #parallax-item {
+      width: 15rem;
+      height: 40rem;
+    }
+    #whyus-div {
+      top: 1800px;
+    }
+    .parallax-button-trending {
+      height: 30px;
+      width: 50%;
+    }
+    #blog-div {
+      top: 1850px;
+    }
+    .container-blog {
+      margin: auto;
+      margin-left: 0px;
+      padding-left: 10px;
+    }
+    #testimonials-div {
+      top: 1900px;
+    }
+    .testimonials-section h5 {
+      font-size: 30px;
+    }
+  
+    .testimonials-section h1 {
+      font-size: 16px;
+    }
+  
+    #testimonial-cap {
+      width: 80%;
+    }
+  
+    #main-testimonial-cards {
+      display: block;
+    }
+  
+    .testimonial-card-main {
+      margin-bottom: 50px;
+    }
+    footer{
+      top: 2900px;
+    }
+  }
+   @media screen and (min-width: 951px) and (max-width: 1049px) {
+    .about-wordings{
+      margin-top: 50px;
+    }
+    .about-card-inner {
+      height: 700px;
+    }
+    #parallax-div {
+      top: 850px;
+    }
+     #parallax-main {
+      height: 41rem;
+      padding-right: 10px;
+    }
+    #parallax-item {
+      width: 19rem;
+      height: 40rem;
+    }
+    .parallax-button-trending {
+      width: 40%;
+    }
+    #whyus-div {
+      top: 950px;
+    }
+    #blog-div {
+      top: 1050px;
+    }
+    footer{
+      top: 1400px;
+    }
+    .container-blog {
+      padding-left: 19px;
+    }
+   }
+  
+   @media screen and (min-width: 1050px) and (max-width: 1210px) {
+     #parallax-item {
+       width: 21rem;
+       height: 33rem;
+     }
+  
+     #parallax-main {
+       height: 33rem;
+       padding-left: 20px;
+     }
+  
+     .container-blog {
+       margin: auto;
+       margin-left: 30px;
+       padding-left: 30px;
+     }
+  
+     #main-testimonial-cards {
+       margin: auto;
+       margin-top: 50px;
+       margin-left: 30px;
+     }
+  
+     footer {
+       position: relative;
+       top: 1400px;
+     }
+  
+     .about-card-inner {
+       height: 660px;
+     }
+   }

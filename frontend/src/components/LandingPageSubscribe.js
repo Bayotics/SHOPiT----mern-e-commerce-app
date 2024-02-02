@@ -19,7 +19,7 @@ const LandingPageSubscribe = () => {
                             Get seafood updates as soon as they are available. Skip, or terminate at any moment.
                         </p>
                     </div>
-                    <div className="subscribe-comp-inner-btn">
+                    <div className="subscribe-comp-inner-btn sbscrb">
                         <button>Subscribe</button>
                     </div>
                 </div>

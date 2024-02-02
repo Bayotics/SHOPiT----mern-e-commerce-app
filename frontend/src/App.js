@@ -91,12 +91,12 @@ function App() {
         <header className=''>
           <Navbar variant="white" expand="lg">
             <Container id = "main-container">
-               <Button
+               {/* <Button
                 variant="white"
                 onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
               >
                 <i className="fas fa-bars"></i>
-              </Button>
+              </Button> */}
               <LinkContainer to="/">
                 <Navbar.Brand id = "mail-logo">SHOPiT</Navbar.Brand>
               </LinkContainer>

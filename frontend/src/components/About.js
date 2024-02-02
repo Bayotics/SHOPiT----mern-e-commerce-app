@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const About = () => {
     return(
         <div className="border about-landing-main">
-            <div className="row">
+            <div className="row about-landing-row">
                 <div className="col">
                     <div className="about-captions">
                         <div className="about-heading pt-2">
