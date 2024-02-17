@@ -11,7 +11,7 @@ import About from '../components/About';
 import { Helmet } from 'react-helmet-async';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
-// import Slider from '../components/Slider';
+import Slider from '../components/Slider';
 import BlackFriday from '../components/BlackFriday';
 import WhyUs from '../components/WhyUs';
 
@@ -58,7 +58,7 @@ function HomeScreen() {
     <div className='big-wrap'>
       <div className='big-wrap-test'>
         <div id="hero-background" className='w-100 mb-4'>
-          {/* <Slider /> */}
+          <Slider />
         </div>
         <div id='landing-page-about'>
           <About />
