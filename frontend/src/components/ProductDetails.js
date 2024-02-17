@@ -36,7 +36,7 @@ const ProductDetails = ({product, rating}) => {
         </div>
                             {product.reviews.map((review) =>{
                                 return(
-                                    <div>
+                                    <div key={review._id}>
                                         <div className="col-auto">
                                             <h4>{review.name}</h4>
                                             <div className="ratings-container">
@@ -71,7 +71,6 @@ const ProductDetails = ({product, rating}) => {
     const fourthMenuContent = () => {
         setContent(reviewsContent)
     }
-
     return (
         <div className="mt-4">
             <ul className="nav nav-pills justify-content-center" role="tablist">

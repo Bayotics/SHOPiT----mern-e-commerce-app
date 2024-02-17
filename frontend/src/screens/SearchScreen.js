@@ -160,7 +160,7 @@ export default function SearchScreen() {
           </Card.Body>
         </Card>
       <Row id = "search-row" style={{marginTop: '300px'}}>
-        <Col md={3}>
+        <div className='shop-menu'>
           <div>
             {/* <Card style = {{width: '18rem'}} >
               <Card.Header>
@@ -187,7 +187,7 @@ export default function SearchScreen() {
                 ))}
               </ListGroup>
             </Card> */}
-            <Accordion defaultActiveKey={['0']} alwaysOpen style = {{width: '18rem'}}>
+            <Accordion defaultActiveKey={['0']} alwaysOpen>
               <Accordion.Item eventKey="0">
                 <Accordion.Header>Categories</Accordion.Header>
                 <Accordion.Body>
@@ -216,7 +216,7 @@ export default function SearchScreen() {
             </Accordion>
           </div>
           <div style={{ marginTop: '50px' }}>
-            <Card style={{ width: '18rem' }}>
+            <Card>
                 <Card.Header><h3>Filter by Price</h3></Card.Header>
                 <ListGroup variant='flush'>
                   <ListGroup.Item>
@@ -241,7 +241,7 @@ export default function SearchScreen() {
             </Card>
           </div>
           <div style={{ marginTop: '50px' }}>
-            <Card style={{ width: '18rem' }}>
+            <Card>
               <Card.Header><h3>Filter by Rating</h3></Card.Header>
               <ListGroup variant='flush'>
                 {ratings.map((e) => (
@@ -265,8 +265,8 @@ export default function SearchScreen() {
               </ListGroup>
             </Card>
           </div>
-        </Col>
-        <Col md={9}>
+        </div>
+        <div className='shop-contents'>
           {loading ? (
             <LoadingBox></LoadingBox>
           ) : error ? (
@@ -275,7 +275,7 @@ export default function SearchScreen() {
             <>
               <Row className="justify-content-between mb-3">
                 <Col md={6}>
-                  <div>
+                  <div className='product-count'>
                     {countProducts === 0 ? 'No' : countProducts} Results
                     {query !== 'all' && ' : ' + query}
                     {category !== 'all' && ' : ' + category}
@@ -315,7 +315,7 @@ export default function SearchScreen() {
 
               <Row>
                 {products.map((product) => (
-                  <Col sm={6} lg={4} className="mb-3" key={product._id}>
+                  <Col sm={6} lg={4} className="mb-3 product-card-outer" key={product._id}>
                     <Product product={product}></Product>
                   </Col>
                 ))}
@@ -342,7 +342,7 @@ export default function SearchScreen() {
               </div>
             </>
           )}
-        </Col>
+        </div>
       </Row>
     </div>
   );

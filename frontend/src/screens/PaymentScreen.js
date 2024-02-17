@@ -59,8 +59,8 @@ const PaymentScreen = () =>
     }
   }, [payment, userInfo, paymentId, navigate]);
     return loading ? (<LoadingBox></LoadingBox>) : (
-      <div className = "container bg-gray-300 h-full w-screen">
-        <Table striped border hover>
+      <div className = "container bg-gray-300 h-full w-screen mt-4">
+        <table>
           <thead>
             <tr>
               <th><h2>Payment ID</h2></th>
@@ -77,7 +77,7 @@ const PaymentScreen = () =>
               <td><h3>₦{payment.totalPrice}</h3></td>
             </tr>
           </tbody>
-        </Table>
+        </table>
         <br/>
         <br/>
         <div>

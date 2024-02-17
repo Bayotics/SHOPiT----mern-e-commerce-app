@@ -159,8 +159,7 @@ export default function OrderScreen() {
       <Helmet>
         <title>Order {orderId}</title>
       </Helmet>
-      <h1 className="my-3">Order {orderId}</h1>
-      {/* <button onClick={() => {setOrderisPaid(true)}}>Test</button> */}
+      <h1 className="my-3 place-order-main-order-id">Order {orderId}</h1>
       <Row className='place-order-row'>
         <Col md={8}>
           <Card className="mb-3">

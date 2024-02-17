@@ -53,7 +53,7 @@ const AboutScreen = () => {
             </div>
             <div className='about-screen-why-us'>
                 <div className='why-us-icons'>
-                    <h1>Why <span>SHOPiT</span></h1>
+                    <h1 className='why-shopit'>Why <span>SHOPiT</span></h1>
                     <div className='why-us-icons-top'>
                         <div className='why-us-top-left'>
                             <div className='why-us-top-icon'>
@@ -110,11 +110,11 @@ const AboutScreen = () => {
                 </div>
             </div>
             <h3 className='text-center'>Meet Our Team</h3>
-            <div className='d-flex justify-content-around team-main'>
+            <div className='justify-content-around team-main'>
                 <div className='text-center'>
                     <div className="team-circle">
                         <img src={about3}
-                            style={{ height: '250px', width: '250px', borderRadius: '50%', marginTop: '15px' }}
+                            
                             alt="about-one" />
                     </div>
                     <h2 className="fw-normal">Bayotics</h2>
@@ -123,7 +123,7 @@ const AboutScreen = () => {
                 <div className='text-center'>
                     <div className="team-circle">
                         <img src={about1}
-                            style={{ height: '250px', width: '250px', borderRadius: '50%', marginTop: '15px' }}
+                             
                             alt="about-one" />
                     </div>
                     <h2 className="fw-normal">Spendingg</h2>
@@ -132,7 +132,7 @@ const AboutScreen = () => {
                 <div className='text-center'>
                     <div className="team-circle">
                         <img src={about2}
-                            style={{ height: '250px', width: '250px', borderRadius: '50%', marginTop: '15px' }}
+                             
                             alt="about-one" />
                     </div>
                     <h2 className="fw-normal">John Doe</h2>
