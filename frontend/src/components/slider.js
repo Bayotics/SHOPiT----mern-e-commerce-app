@@ -11,7 +11,7 @@ const  Slider = () => {
         <img
           className="d-block w-100 carousel-background"
           src={bgOne}
-          alt="First slide"
+          alt="First carousel slide"
           style={{ height: "800px", backgroundColor: "rgba(0, 0, 0, 0.5)" }}
         />
         <Carousel.Caption id="carousel-caption" className='carousel-animation'>
