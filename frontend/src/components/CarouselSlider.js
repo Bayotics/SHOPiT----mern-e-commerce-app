@@ -4,7 +4,7 @@ import bgTwo from '../assets/fish/bg-2-edited.jpg';
 import bgThree from '../assets/fish/bg-3-edited.jpg';
 import { Link } from 'react-router-dom';
 
-const  Slider = () => {
+const  CarouselSlider = () => {
   return (
     <Carousel>
       <Carousel.Item interval={10000}>
@@ -57,4 +57,4 @@ const  Slider = () => {
 }
 
 
-export default Slider;
+export default CarouselSlider;
