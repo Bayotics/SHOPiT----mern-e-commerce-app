@@ -30,7 +30,6 @@ export default function OrderHistoryScreen() {
     loading: true,
     error: '',
   });
-  console.log(userInfo.token)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,7 +40,6 @@ export default function OrderHistoryScreen() {
 
           { headers: { Authorization: `Bearer ${userInfo.token}` } }
         );
-        console.log(userInfo.token)
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
       } catch (error) {
         dispatch({
@@ -52,7 +50,6 @@ export default function OrderHistoryScreen() {
     };
     fetchData();
   }, [ userInfo]);
-  console.log(userInfo.token)
   // console.log(payments)
   return (
     <div>
