@@ -100,9 +100,9 @@ export default function ShippingAddressScreen() {
             />
           </Form.Group>
           <div className="mb-3">
-            <Button variant="primary" type="submit">
+            <button className="checkout-button" type="submit">
               Next
-            </Button>
+            </button>
           </div>
         </Form>
       </div>

@@ -105,7 +105,7 @@ export default function ProfileScreen() {
           />
         </Form.Group>
         <div className="mb-3">
-          <Button variant= "outline-primary" type="submit">Update Profile</Button>
+          <button className="checkout-button" type="submit">Update Profile</button>
         </div>
       </form>
     </div>

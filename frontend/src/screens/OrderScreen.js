@@ -141,9 +141,11 @@ export default function OrderScreen() {
       const initializePayment = usePaystackPayment(config);
       return (
         <div className='mt-4'>
-            <Button onClick={() => {
+            <button
+            className="checkout-button"
+            onClick={() => {
                 initializePayment(onSuccess, onClose)
-            }}>Pay with {order.paymentMethod}</Button>
+            }}>Pay with {order.paymentMethod}</button>
         </div>
       );
   };
@@ -153,13 +155,12 @@ export default function OrderScreen() {
   ) : error ? (
     <MessageBox variant="danger">{error}</MessageBox>
   ) : (
-    <div>
+    <div className='place-order-main'>
       <Helmet>
         <title>Order {orderId}</title>
       </Helmet>
-      <h1 className="my-3">Order {orderId}</h1>
-      {/* <button onClick={() => {setOrderisPaid(true)}}>Test</button> */}
-      <Row>
+      <h1 className="my-3 place-order-main-order-id">Order {orderId}</h1>
+      <Row className='place-order-row'>
         <Col md={8}>
           <Card className="mb-3">
             <Card.Body>

@@ -82,13 +82,13 @@ export default function PlaceOrderScreen() {
   }, [cart, navigate]);
 
   return (
-    <div>
+    <div className='order-preview-main'>
       <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
       <Helmet>
         <title>Preview Order</title>
       </Helmet>
       <h1 className="my-3">Your Order</h1>
-      <Row>
+      <Row className = "order-preview-row">
         <Col md={8}>
           <Card className="mb-3">
             <Card.Body>
@@ -120,19 +120,19 @@ export default function PlaceOrderScreen() {
                 {cart.cartItems.map((item) => (
                   <ListGroup.Item key={item._id}>
                     <Row className="align-items-center">
-                      <Col md={6}>
+                      <Col md={6} className='product-price'>
                         <img
                           style ={{height: '60px', width: '120px'}}
                           src={item.image}
                           alt={item.title}
                           className="img-fluid rounded img-thumbnail"
                         ></img>{' '}
-                        <Link to={`/product/${item._id}`}>{item.title}</Link>
+                        <Link to={`/product/${item._id}` }>{item.title}</Link>
                       </Col>
                       <Col md={3}>
-                        <span>{item.quantity}</span>
+                        <span>quantity: {item.quantity}</span>
                       </Col>
-                      <Col md={3}>₦{item.price}</Col>
+                      <Col md={3}>Price: ₦{item.price}</Col>
                     </Row>
                   </ListGroup.Item>
                 ))}
@@ -176,14 +176,15 @@ export default function PlaceOrderScreen() {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <div className="d-grid">
-                    <Button
+                    <button
                       id = "order-button"
                       type="button"
                       onClick={placeOrderHandler}
                       disabled={cart.cartItems.length === 0}
+                      className="checkout-button"
                     >
                       Place Order
-                    </Button>
+                    </button>
                   </div>
                   {loading && <LoadingBox></LoadingBox>}
                 </ListGroup.Item>

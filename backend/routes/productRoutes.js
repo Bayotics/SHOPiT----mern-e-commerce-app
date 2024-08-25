@@ -5,7 +5,7 @@ import { isAuth, isAdmin } from '../utils.js';
 
 const productRouter = express.Router();
 
-const productPage_size = 12;
+const productPage_size = 16;
 productRouter.get(
   '/', 
   expressAsyncHandler(async (req, res) => {
@@ -98,7 +98,7 @@ productRouter.post(
       if (product.reviews.find((x) => x.name === req.user.name)) {
         return res
           .status(400)
-          .send({ message: 'You already submitted a review' });
+          .send({ message: 'You already made a review for this fish' });
       }
 
       const review = {
@@ -124,7 +124,7 @@ productRouter.post(
   })
 );
 
-const PAGE_SIZE = 6;
+const PAGE_SIZE = 24;
 
 productRouter.get(
   '/admin',

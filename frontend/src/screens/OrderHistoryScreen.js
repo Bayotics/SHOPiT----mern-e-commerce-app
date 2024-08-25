@@ -30,6 +30,7 @@ export default function OrderHistoryScreen() {
     loading: true,
     error: '',
   });
+
   useEffect(() => {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });

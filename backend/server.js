@@ -7,7 +7,7 @@ import productRouter from './routes/productRoutes.js';
 import userRouter from './routes/userRoutes.js';
 import orderRouter from './routes/orderRoutes.js';
 import paymentRouter from './routes/paymentRoutes.js';
-import uploadRouter from './routes/uploadRoutes.js';
+import postRouter from './routes/PostRoutes.js';
 import Product from './models/productModel.js';
 import User from './models/userModel.js';
 import Payment from './models/paymentModel.js';
@@ -41,7 +41,7 @@ app.get('/api/keys/paypal', (req, res) => {
 //   res.send({ key: process.env.GOOGLE_API_KEY || '' });
 // });
 
-app.use('/api/upload', uploadRouter);
+app.use('/api/upload', postRouter);
 app.use('/api/seed', seedRouter);
 app.use('/api/products', productRouter);
 app.use('/api/users', userRouter);

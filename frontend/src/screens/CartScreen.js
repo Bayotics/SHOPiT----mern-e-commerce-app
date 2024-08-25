@@ -38,7 +38,7 @@ export default function CartScreen() {
   };
 
   return (
-    <div>
+    <div className='shopping-cart-screen-main'>
       <Helmet >
         <title>Shopping Cart</title>
       </Helmet>
@@ -47,8 +47,8 @@ export default function CartScreen() {
         			<h1 className="page-title  text-center">Shopping Cart</h1>
         		</div>
       </div>
-      <Row>
-        <Col md = {8}>
+      <Row className='shopping-cart-row'>
+        <Col md = {8} className='shopping-cart-table'>
           {cartItems.length === 0 ? (
             <MessageBox>
               Cart is currently empty. <Link to="/">Go Shopping</Link>
@@ -123,14 +123,14 @@ export default function CartScreen() {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <div className="d-grid">
-                    <Button
+                    <button
                       type="button"
-                      variant="primary"
+                      className="checkout-button"
                       onClick={checkoutHandler}
                       disabled={cartItems.length === 0}
                     >
                       Checkout
-                    </Button>
+                    </button>
                   </div>
                 </ListGroup.Item>
               </ListGroup>

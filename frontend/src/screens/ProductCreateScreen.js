@@ -75,12 +75,7 @@ export default function ProductCreateScreen() {
   const [longDescription, setLongDescription] = useState('');
 
   const categoriesList = [
-    "", "Food and Beverages", "Household Cleaning", "Drinks",
-    "Fragrance", "Hair Care", "Oral Care","furniture","Electronic Appliances",
-    "Phones and tablets","Computers and Computer Accessories","Generators and Portable power","Men Fashion",
-    "Women Fashion", "Watches", "glasses", "Baby Products", "Sporting accessories",
-    "Books", "Music", "Pets","Make Up", "skin care","gaming", "vehicles",
-    "Men Shoes", "Women Shoes", "others",
+    "", "Fresh", "Shell", "Smoked and dried",
   ]
   categoriesList.sort();
 
@@ -100,7 +95,7 @@ export default function ProductCreateScreen() {
           brand: brand,
           countInStock: countInStock,
           description: description,
-          longDescription: description
+          longDescription: longDescription
         },
         {
           headers: { Authorization: `Bearer ${userInfo.token}` },
@@ -152,7 +147,7 @@ export default function ProductCreateScreen() {
     navigate(`/admin/products`)
   }
   return (
-    <Container className="small-container">
+    <Container className="small-container mt-4">
       <Helmet>
         <title>Create a new Product</title>
       </Helmet>
@@ -167,7 +162,7 @@ export default function ProductCreateScreen() {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="price">
-            <Form.Label>Price in ₦</Form.Label>
+            <Form.Label>Price in ₦ per Kg</Form.Label>
             <Form.Control
               value={price}
               onChange={(e) => setPrice(e.target.value)}
@@ -227,7 +222,7 @@ export default function ProductCreateScreen() {
             </Form.Control>
           </Form.Group>
           <Form.Group className="mb-3" controlId="brand">
-            <Form.Label>Brand</Form.Label>
+            <Form.Label>Brand/Vendor</Form.Label>
             <Form.Control
               value={brand}
               onChange={(e) => setBrand(e.target.value)}
@@ -235,7 +230,7 @@ export default function ProductCreateScreen() {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="countInStock">
-            <Form.Label>Count In Stock</Form.Label>
+            <Form.Label>Count In Stock (in Kg)</Form.Label>
             <Form.Control
               value={countInStock}
               onChange={(e) => setCountInStock(e.target.value)}
@@ -253,25 +248,26 @@ export default function ProductCreateScreen() {
           <Form.Group className="mb-3" controlId="longDescription">
             <Form.Label>Long Description</Form.Label>
             <Form.Control
-              placeholder='More details about your product. e.g color, size, etc'
+              as="textarea" rows={6}
+              placeholder='More details about your product'
               value={longDescription}
               onChange={(e) => setLongDescription(e.target.value)}
               required
             />
             </Form.Group>
           <div className="mb-3">
-            <Button disabled={loadingUpdate} type="submit">
+            <button disabled={loadingUpdate} className="checkout-button" type="submit">
               Create
-            </Button>
-            {loadingUpdate && <LoadingBox></LoadingBox>}
+            </button>
+                {loadingUpdate && <LoadingBox></LoadingBox>}
 
-            <Button
-            type="button"
-            variant="danger"
-            onClick={cancelHandler}
-          >
-            Cancel
-          </Button>
+                <Button
+                type="button"
+                variant="danger"
+                onClick={cancelHandler}
+                >
+                Cancel
+              </Button>
           </div>
         </Form>
     </Container>

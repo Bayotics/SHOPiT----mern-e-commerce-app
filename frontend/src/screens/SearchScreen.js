@@ -14,6 +14,7 @@ import Product from '../components/Product';
 import LinkContainer from 'react-router-bootstrap/LinkContainer';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import Accordion from 'react-bootstrap/Accordion';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -135,7 +136,6 @@ export default function SearchScreen() {
     };
     fetchCategories();
   }, [dispatch]);
-
   const getFilterUrl = (filter, skipPathname) => {
     const filterPage = filter.page || page;
     const filterCategory = filter.category || category;
@@ -150,19 +150,19 @@ export default function SearchScreen() {
     return (
     <div>
       <Helmet>
-        <title>Search Products</title>
+        <title>Search Fish</title>
       </Helmet>
-       <Card style={{height: '200px', marginTop: '10px'}}
+       <Card
         className="text-center"
         id='main-banner'>
           <Card.Body style={{marginTop: '60px'}}>
               <span><h1 className='text-white fs-1'>Our Shop</h1></span>
           </Card.Body>
         </Card>
-      <Row id = "search-row" style={{marginTop: '90px'}}>
-        <Col md={3}>
+      <Row id = "search-row" style={{marginTop: '300px'}}>
+        <div className='shop-menu'>
           <div>
-            <Card style = {{width: '18rem'}} >
+            {/* <Card style = {{width: '18rem'}} >
               <Card.Header>
                 <h3>Category</h3>
               </Card.Header>
@@ -186,17 +186,44 @@ export default function SearchScreen() {
                   </ListGroup.Item>
                 ))}
               </ListGroup>
-            </Card>
+            </Card> */}
+            <Accordion defaultActiveKey={['0']} alwaysOpen>
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>Categories</Accordion.Header>
+                <Accordion.Body>
+                <ListGroup variant='flush'>
+                        <ListGroup.Item>
+                          <Link
+                          className={'all' === category ? 'text-bold' : ''}
+                          to={getFilterUrl({ category: 'all' })}
+                        >
+                          Any
+                        </Link>
+                        </ListGroup.Item>
+                        {categories.map((e) => (
+                          <ListGroup.Item key={e}>
+                            <Link
+                            className={e === category ? 'text-bold' : ''}
+                            to={getFilterUrl({ category: e })}
+                          >
+                            {e}
+                          </Link>
+                          </ListGroup.Item>
+                        ))}
+                      </ListGroup>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
           </div>
-          <div className='mt-2'>
-            <Card style={{ width: '18rem' }}>
-                <Card.Header><h3>Price</h3></Card.Header>
+          <div style={{ marginTop: '50px' }}>
+            <Card>
+                <Card.Header><h3>Filter by Price</h3></Card.Header>
                 <ListGroup variant='flush'>
                   <ListGroup.Item>
                     <Link
-                  className={'all' === price ? 'text-bold' : ''}
-                  to={getFilterUrl({ price: 'all' })}
-                  >
+                    className={'all' === price ? 'text-bold' : ''}
+                    to={getFilterUrl({ price: 'all' })}
+                    >
                     Any
                   </Link>
                   </ListGroup.Item>
@@ -213,9 +240,9 @@ export default function SearchScreen() {
                 </ListGroup>
             </Card>
           </div>
-          <div className='mt-2'>
-            <Card style={{ width: '18rem' }}>
-              <Card.Header><h3>Avgerage Rating</h3></Card.Header>
+          <div style={{ marginTop: '50px' }}>
+            <Card>
+              <Card.Header><h3>Filter by Rating</h3></Card.Header>
               <ListGroup variant='flush'>
                 {ratings.map((e) => (
                   <ListGroup.Item key = {e.rating}>
@@ -223,7 +250,7 @@ export default function SearchScreen() {
                       to={getFilterUrl({ rating: e.rating })}
                       className={`${e.rating}` === `${rating}` ? 'text-bold' : ''}
                     >
-                      <Rating caption={' & up'} rating={e.rating}></Rating>
+                      <Rating caption={' and above '} rating={e.rating}></Rating>
                     </Link>
                   </ListGroup.Item>
                 ))}
@@ -232,14 +259,14 @@ export default function SearchScreen() {
                     to={getFilterUrl({ rating: 'all' })}
                     className={rating === 'all' ? 'text-bold' : ''}
                   >
-                    <Rating caption={' & up'} rating={0}></Rating>
+                    <Rating caption={' and above '} rating={0}></Rating>
                   </Link>
                 </ListGroup.Item>
               </ListGroup>
             </Card>
           </div>
-        </Col>
-        <Col md={9}>
+        </div>
+        <div className='shop-contents'>
           {loading ? (
             <LoadingBox></LoadingBox>
           ) : error ? (
@@ -248,7 +275,7 @@ export default function SearchScreen() {
             <>
               <Row className="justify-content-between mb-3">
                 <Col md={6}>
-                  <div>
+                  <div className='product-count'>
                     {countProducts === 0 ? 'No' : countProducts} Results
                     {query !== 'all' && ' : ' + query}
                     {category !== 'all' && ' : ' + category}
@@ -275,10 +302,10 @@ export default function SearchScreen() {
                       navigate(getFilterUrl({ order: e.target.value }));
                     }}
                   >
-                    <option value="newest">Latest Arrivals</option>
+                    <option value="newest">Latest Products</option>
                     <option value="lowest">Price: Low to High</option>
                     <option value="highest">Price: High to Low</option>
-                    <option value="toprated">Avgerage Reviews</option>
+                    <option value="toprated">Average Reviews</option>
                   </select>
                 </Col>
               </Row>
@@ -288,7 +315,7 @@ export default function SearchScreen() {
 
               <Row>
                 {products.map((product) => (
-                  <Col sm={6} lg={4} className="mb-3" key={product._id}>
+                  <Col sm={6} lg={4} className="mb-3 product-card-outer" key={product._id}>
                     <Product product={product}></Product>
                   </Col>
                 ))}
@@ -315,7 +342,7 @@ export default function SearchScreen() {
               </div>
             </>
           )}
-        </Col>
+        </div>
       </Row>
     </div>
   );

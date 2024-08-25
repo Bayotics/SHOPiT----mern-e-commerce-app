@@ -116,16 +116,16 @@ export default function ProductListScreen() {
   };
 
   return (
-    <div>
-      <Row>
+    <div className='admin-product-main'>
+      <Row className='admin-product-row'>
         <Col>
           <h1>Products</h1>
         </Col>
-        <Col className="col text-end">
+        <Col className="col text-end mt-3">
           <div>
-            <Button type="button" onClick={createProduct}>
+            <button className="checkout-button" type="button" onClick={createProduct}>
               Add new Product
-            </Button>
+            </button>
           </div>
         </Col>
       </Row>
